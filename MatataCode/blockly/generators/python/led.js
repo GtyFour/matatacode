@@ -34,14 +34,22 @@ Blockly.Python.addReservedWords('led');
 
 
 Blockly.Python['led_left'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    var colour_led = block.getFieldValue('LED');
     // TODO: Assemble Python into code variable.
     var code = '...\n';
     return code;
 };
 
 Blockly.Python['led_right'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    var colour_led = block.getFieldValue('LED');
+    // TODO: Assemble Python into code variable.
+    var code = '...\n';
+    return code;
+};
+
+Blockly.Python['led'] = function(block) {
+    var dropdown_eye = block.getFieldValue('EYE');
+    var dropdown_color = block.getFieldValue('COLOR');
     // TODO: Assemble Python into code variable.
     var code = '...\n';
     return code;

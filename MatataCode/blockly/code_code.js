@@ -192,7 +192,8 @@ Code.bindClick = function(el, func) {
     el = document.getElementById(el);
   }
   el.addEventListener('click', func, true);
-  el.addEventListener('touchend', func, true);
+  //el.addEventListener('touchend', func, true);
+    //2018年12月25日20:08:52 GTY注释 导致每个按钮被触发两次，不知道为啥这么设计
 };
 
 /**
@@ -516,17 +517,19 @@ Code.initLanguage = function() {
  * Just a quick and dirty eval.  Catch infinite loops.
  */
 Code.runJS = function() {
-  Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
+  Blockly.Python.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
   var timeouts = 0;
   var checkTimeout = function() {
     if (timeouts++ > 1000000) {
       throw MSG['timeout'];
     }
   };
-  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
+//  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
+  var code = Blockly.Python.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-    eval(code);
+//    eval(code);
+    window.webkit.messageHandlers.runcode.postMessage(code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }

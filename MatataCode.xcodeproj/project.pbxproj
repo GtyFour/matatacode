@@ -13,43 +13,20 @@
 		CE309F742189A89E0012C6EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE309F732189A89E0012C6EC /* Assets.xcassets */; };
 		CE309F772189A89E0012C6EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE309F752189A89E0012C6EC /* LaunchScreen.storyboard */; };
 		CE309F842189AA370012C6EC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE309F832189AA370012C6EC /* WebKit.framework */; };
-		CE80233E21A68941000357E4 /* HoriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80233C21A68941000357E4 /* HoriViewController.swift */; };
-		CE80233F21A68941000357E4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80233D21A68941000357E4 /* CustomViewController.swift */; };
+		CE850F6421D0C8DE004344A7 /* WeakScriptMessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE850F6321D0C8DE004344A7 /* WeakScriptMessageDelegate.swift */; };
 		CE8D839721D078B800B16C02 /* blockly in Resources */ = {isa = PBXBuildFile; fileRef = CE8D839621D078B800B16C02 /* blockly */; };
-		CEC19E5721C357690043A231 /* www in Resources */ = {isa = PBXBuildFile; fileRef = CEC19E5621C357690043A231 /* www */; };
-		CEC19E5C21C359840043A231 /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC19E5321C3574A0043A231 /* libCordova.a */; };
-		CEC19E5E21C359F30043A231 /* MatataCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC19E5D21C359F30043A231 /* MatataCodeViewController.swift */; };
-		CEC19E6421C894BC0043A231 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = CEC19E6321C894BC0043A231 /* config.xml */; };
+		CE9BD19521D0F76C0039FBEB /* ReceiveDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BD19421D0F76C0039FBEB /* ReceiveDataCenter.swift */; };
+		CE9BD19721D23B5F0039FBEB /* CBleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BD19621D23B5F0039FBEB /* CBleParser.swift */; };
+		CE9BD19921D36EFA0039FBEB /* MataEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BD19821D36EF90039FBEB /* MataEvaluator.swift */; };
 		CEDC88F2219C23CA005BD8DB /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC88F1219C23CA005BD8DB /* UserViewController.swift */; };
 		CEDC88F6219C3C39005BD8DB /* BBSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC88F5219C3C39005BD8DB /* BBSViewController.swift */; };
 		CEE16E8321903D1A0080DC62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE16E8221903D1A0080DC62 /* QuartzCore.framework */; };
+		D3678BD704096ADA092F3968 /* Pods_MatataCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAFD8F701FA4D7A35A1FBED /* Pods_MatataCode.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CEC19E5221C3574A0043A231 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEC19E4D21C357490043A231 /* CordovaLib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 68A32D7114102E1C006B237C;
-			remoteInfo = CordovaLib;
-		};
-		CEC19E5421C3574A0043A231 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEC19E4D21C357490043A231 /* CordovaLib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C0C01EB21E3911D50056E6CB;
-			remoteInfo = Cordova;
-		};
-		CEC19E5A21C359770043A231 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEC19E4D21C357490043A231 /* CordovaLib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = CordovaLib;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		AF3C253B241C7612D3876739 /* Pods-MatataCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatataCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatataCode/Pods-MatataCode.release.xcconfig"; sourceTree = "<group>"; };
+		B3A55C1DC9924F47635DEF1D /* Pods-MatataCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatataCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatataCode/Pods-MatataCode.debug.xcconfig"; sourceTree = "<group>"; };
 		CE309F692189A88C0012C6EC /* MatataCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatataCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE309F6C2189A88C0012C6EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE309F6E2189A88C0012C6EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,14 +35,12 @@
 		CE309F762189A89E0012C6EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE309F782189A89E0012C6EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE309F832189AA370012C6EC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		CE80233C21A68941000357E4 /* HoriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoriViewController.swift; sourceTree = "<group>"; };
-		CE80233D21A68941000357E4 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		CE850F6321D0C8DE004344A7 /* WeakScriptMessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakScriptMessageDelegate.swift; sourceTree = "<group>"; };
 		CE8D839621D078B800B16C02 /* blockly */ = {isa = PBXFileReference; lastKnownFileType = folder; path = blockly; sourceTree = "<group>"; };
-		CEC19E4D21C357490043A231 /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
-		CEC19E5621C357690043A231 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
-		CEC19E5D21C359F30043A231 /* MatataCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatataCodeViewController.swift; sourceTree = "<group>"; };
-		CEC19E6321C894BC0043A231 /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
-		CEC19E6521C8C5940043A231 /* MatataCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MatataCode-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE9BD19421D0F76C0039FBEB /* ReceiveDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveDataCenter.swift; sourceTree = "<group>"; };
+		CE9BD19621D23B5F0039FBEB /* CBleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBleParser.swift; sourceTree = "<group>"; };
+		CE9BD19821D36EF90039FBEB /* MataEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MataEvaluator.swift; sourceTree = "<group>"; };
+		CEAFD8F701FA4D7A35A1FBED /* Pods_MatataCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatataCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDC88F1219C23CA005BD8DB /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		CEDC88F5219C3C39005BD8DB /* BBSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSViewController.swift; sourceTree = "<group>"; };
 		CEE16E8221903D1A0080DC62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -76,25 +51,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC19E5C21C359840043A231 /* libCordova.a in Frameworks */,
 				CEE16E8321903D1A0080DC62 /* QuartzCore.framework in Frameworks */,
 				CE309F842189AA370012C6EC /* WebKit.framework in Frameworks */,
+				D3678BD704096ADA092F3968 /* Pods_MatataCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79242F21275F4A09DFC61ED2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3A55C1DC9924F47635DEF1D /* Pods-MatataCode.debug.xcconfig */,
+				AF3C253B241C7612D3876739 /* Pods-MatataCode.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE309F602189A88C0012C6EC = {
 			isa = PBXGroup;
 			children = (
-				CEC19E6321C894BC0043A231 /* config.xml */,
-				CEC19E5621C357690043A231 /* www */,
-				CEC19E4D21C357490043A231 /* CordovaLib.xcodeproj */,
 				CE309F6B2189A88C0012C6EC /* MatataCode */,
 				CE309F6A2189A88C0012C6EC /* Products */,
 				CE309F822189AA370012C6EC /* Frameworks */,
-				CEC19E6521C8C5940043A231 /* MatataCode-Bridging-Header.h */,
+				79242F21275F4A09DFC61ED2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,17 +91,18 @@
 			isa = PBXGroup;
 			children = (
 				CE8D839621D078B800B16C02 /* blockly */,
-				CE80233D21A68941000357E4 /* CustomViewController.swift */,
-				CE80233C21A68941000357E4 /* HoriViewController.swift */,
 				CE309F6C2189A88C0012C6EC /* AppDelegate.swift */,
 				CE309F6E2189A88C0012C6EC /* ViewController.swift */,
-				CEC19E5D21C359F30043A231 /* MatataCodeViewController.swift */,
 				CEDC88F1219C23CA005BD8DB /* UserViewController.swift */,
 				CEDC88F5219C3C39005BD8DB /* BBSViewController.swift */,
+				CE850F6321D0C8DE004344A7 /* WeakScriptMessageDelegate.swift */,
 				CE309F702189A88C0012C6EC /* Main.storyboard */,
 				CE309F732189A89E0012C6EC /* Assets.xcassets */,
 				CE309F752189A89E0012C6EC /* LaunchScreen.storyboard */,
 				CE309F782189A89E0012C6EC /* Info.plist */,
+				CE9BD19621D23B5F0039FBEB /* CBleParser.swift */,
+				CE9BD19421D0F76C0039FBEB /* ReceiveDataCenter.swift */,
+				CE9BD19821D36EF90039FBEB /* MataEvaluator.swift */,
 			);
 			path = MatataCode;
 			sourceTree = "<group>";
@@ -130,17 +112,9 @@
 			children = (
 				CEE16E8221903D1A0080DC62 /* QuartzCore.framework */,
 				CE309F832189AA370012C6EC /* WebKit.framework */,
+				CEAFD8F701FA4D7A35A1FBED /* Pods_MatataCode.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CEC19E4E21C357490043A231 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CEC19E5321C3574A0043A231 /* libCordova.a */,
-				CEC19E5521C3574A0043A231 /* Cordova.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,15 +124,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE309F7B2189A89E0012C6EC /* Build configuration list for PBXNativeTarget "MatataCode" */;
 			buildPhases = (
+				CDE77F7BF860389F2A6B00B2 /* [CP] Check Pods Manifest.lock */,
 				CE309F652189A88C0012C6EC /* Sources */,
 				CE309F662189A88C0012C6EC /* Frameworks */,
 				CE309F672189A88C0012C6EC /* Resources */,
 				CEC19E4C21C354960043A231 /* Copy www directory */,
+				8E1EB08B3A5D629FEB718FB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CEC19E5B21C359770043A231 /* PBXTargetDependency */,
 			);
 			name = MatataCode;
 			productName = MatataCode;
@@ -192,12 +167,6 @@
 			mainGroup = CE309F602189A88C0012C6EC;
 			productRefGroup = CE309F6A2189A88C0012C6EC /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CEC19E4E21C357490043A231 /* Products */;
-					ProjectRef = CEC19E4D21C357490043A231 /* CordovaLib.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CE309F682189A88C0012C6EC /* MatataCode */,
@@ -205,30 +174,11 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		CEC19E5321C3574A0043A231 /* libCordova.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCordova.a;
-			remoteRef = CEC19E5221C3574A0043A231 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CEC19E5521C3574A0043A231 /* Cordova.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Cordova.framework;
-			remoteRef = CEC19E5421C3574A0043A231 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		CE309F672189A88C0012C6EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC19E5721C357690043A231 /* www in Resources */,
-				CEC19E6421C894BC0043A231 /* config.xml in Resources */,
 				CE8D839721D078B800B16C02 /* blockly in Resources */,
 				CE309F772189A89E0012C6EC /* LaunchScreen.storyboard in Resources */,
 				CE309F742189A89E0012C6EC /* Assets.xcassets in Resources */,
@@ -239,6 +189,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8E1EB08B3A5D629FEB718FB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MatataCode/Pods-MatataCode-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CmdBluetooth/CmdBluetooth.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CmdBluetooth.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MatataCode/Pods-MatataCode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDE77F7BF860389F2A6B00B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MatataCode-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CEC19E4C21C354960043A231 /* Copy www directory */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,8 +249,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node cordova/lib/copy-www-build-step.js\n";
-			showEnvVarsInLog = 0;
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -266,24 +260,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEDC88F6219C3C39005BD8DB /* BBSViewController.swift in Sources */,
+				CE9BD19721D23B5F0039FBEB /* CBleParser.swift in Sources */,
 				CE309F6F2189A88C0012C6EC /* ViewController.swift in Sources */,
+				CE850F6421D0C8DE004344A7 /* WeakScriptMessageDelegate.swift in Sources */,
+				CE9BD19921D36EFA0039FBEB /* MataEvaluator.swift in Sources */,
 				CEDC88F2219C23CA005BD8DB /* UserViewController.swift in Sources */,
-				CE80233F21A68941000357E4 /* CustomViewController.swift in Sources */,
-				CE80233E21A68941000357E4 /* HoriViewController.swift in Sources */,
-				CEC19E5E21C359F30043A231 /* MatataCodeViewController.swift in Sources */,
+				CE9BD19521D0F76C0039FBEB /* ReceiveDataCenter.swift in Sources */,
 				CE309F6D2189A88C0012C6EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CEC19E5B21C359770043A231 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CordovaLib;
-			targetProxy = CEC19E5A21C359770043A231 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE309F702189A88C0012C6EC /* Main.storyboard */ = {
@@ -423,6 +410,7 @@
 		};
 		CE309F7C2189A89E0012C6EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3A55C1DC9924F47635DEF1D /* Pods-MatataCode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -442,7 +430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WhiteHoleStudio.GtyFour.MatataCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MatataCode-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -451,6 +439,7 @@
 		};
 		CE309F7D2189A89E0012C6EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3C253B241C7612D3876739 /* Pods-MatataCode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -470,7 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WhiteHoleStudio.GtyFour.MatataCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "MatataCode-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

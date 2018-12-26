@@ -33,7 +33,7 @@ goog.require('Blockly.Python');
 Blockly.Python.addReservedWords('timer');
 
 Blockly.Python['timer_wait'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    var number_second = block.getFieldValue('SECOND');
     // TODO: Assemble Python into code variable.
     var code = '...\n';
     return code;

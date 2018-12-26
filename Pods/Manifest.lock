@@ -1,0 +1,16 @@
+PODS:
+  - CmdBluetooth (4.1.1)
+
+DEPENDENCIES:
+  - CmdBluetooth (~> 4.1.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CmdBluetooth
+
+SPEC CHECKSUMS:
+  CmdBluetooth: fbd452e037644d062ebd554265d805bb136546b8
+
+PODFILE CHECKSUM: 894232508fae493f91c2294ddb0775c7feb30021
+
+COCOAPODS: 1.5.3

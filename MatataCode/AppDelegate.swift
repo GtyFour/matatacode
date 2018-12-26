@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CmdBluetooth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

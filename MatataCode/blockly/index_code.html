@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="google" value="notranslate">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, width=device-width,initial-scale=1.0" />
   <title>MatataCode</title>
   <link rel="stylesheet" href="style_code.css">
   <script src="appengine/storage.js"></script>
@@ -31,11 +32,11 @@
     <tr>
       <td>
         <h1>
-          <span id="title">MatataCode</span>
+          <span style="display:none;" id="title">MatataCode</span>
         </h1>
       </td>
       <td class="farSide">
-        <select id="languageMenu"></select>
+        <select style="display:none;" id="languageMenu"></select>
       </td>
     </tr>
     <tr>
@@ -44,20 +45,21 @@
           <tr id="tabRow" height="1em">
             <td id="tab_blocks" class="tabon">...</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_python" class="taboff">Python</td>
+            <td id="tab_python" class="taboff">MatataCode</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_xml" class="taboff">XML</td>
-            <td class="tabmax">
-              <button id="trashButton" class="notext" title="...">
+            <td id="tab_xml" style="display:none;" class="taboff">XML</td>
+            <td class="tabmin">
+              <button id="trashButton" style="display:none;" class="notext" title="...">
                 <img src='media/1x1.gif' class="trash icon21">
               </button>
-              <button id="linkButton" class="notext" title="...">
+              <button id="linkButton" style="display:none;" class="notext" title="...">
                 <img src='media/1x1.gif' class="link icon21">
               </button>
               <button id="runButton" class="notext primary" title="...">
                 <img src='media/1x1.gif' class="run icon21">
               </button>
             </td>
+            <td class="tabmax">&nbsp;</td>
           </tr>
         </table>
       </td>
@@ -72,71 +74,41 @@
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
-      <category name="MOTION">
+      <category name="MOTION" colour="#FF0000">
           <block type="motion_backward">
-              <value name="STEP">
-                  <block type="math_number">
-                      <field name="NUM">1</field>
-                  </block>
-              </value>
+              <field name="STEP">1</field>
           </block>
           <block type="motion_forward">
-              <value name="STEP">
-                  <block type="math_number">
-                      <field name="NUM">1</field>
-                  </block>
-              </value>
+              <field name="STEP">1</field>
           </block>
           <block type="motion_turnleft">
-              <value name="NAME">
-                  <block type="math_number">
-                      <field name="NUM">90</field>
-                  </block>
-              </value>
+              <field name="ANGLE">90</field>
           </block>
           <block type="motion_turnright">
-              <value name="NAME">
-                  <block type="math_number">
-                      <field name="NUM">90</field>
-                  </block>
-              </value>
+              <field name="ANGLE">90</field>
           </block>
       </category>
-      <category name="LED">
+      <category name="LED" colour="#FFA500">
           <block type="led_left">
-              <value name="NAME">
-              </value>
+              <field name="LED">#ff0000</field>
           </block>
           <block type="led_right">
-              <value name="NAME">
-              </value>
+              <field name="LED">#ff0000</field>
           </block>
-          <block type="colour_picker">
-              <field name="COLOUR">#ff0000</field>
-          </block>
-          <block type="colour_picker">
-              <field name="COLOUR">#3366ff</field>
+          <block type="led">
+              <field name="EYE">EYEPOSITION_LEFT</field>
+              <field name="COLOR">COLOR_RED</field>
           </block>
       </category>
-      <category name="MUSIC">
-          <block type="music_song">
-              <value name="NAME">
-                  <block type="text">
-                      <field name="TEXT">Little Star</field>
-                  </block>
-              </value>
-          </block>
+      <category name="MUSIC" colour="#FFFF00">
+          
           <block type="music_playsong">
-              <field name="Play song">SONG_2</field>
+              <field name="Play song">SONG_1</field>
           </block>
       </category>
-      <category name="LOGIC">
+      <category name="LOGIC" colour="#00FF00">
           <block type="timer_wait">
-              <value name="NAME">
-                  <block type="math_number">
-                      <field name="NUM">10</field>
-                  </block>
-              </value>
+              <field name="SECOND">1</field>
           </block>
           <block type="controls_repeat_ext">
               <value name="TIMES">
@@ -156,7 +128,7 @@
               <field name="OP">EQ</field>
           </block>
       </category>
-      <category name="NUMBER">
+      <category name="NUMBER" colour="#007FFF">
           <block type="math_number">
               <field name="NUM">0</field>
           </block>
@@ -182,6 +154,32 @@
               <value name="TO">
                   <shadow type="math_number">
                       <field name="NUM">10</field>
+                  </shadow>
+              </value>
+          </block>
+      </category>
+      <category name="Optimize" colour="#0000FF">
+      <!--      <category name="Optimize" colour="#5ba55b">-->
+          <block type="motion_right_optimize">
+              <field name="Angle">90</field>
+              <value name="NAME">
+                  <shadow type="logic_boolean">
+                      <field name="BOOL">TRUE</field>
+                  </shadow>
+              </value>
+          </block>
+          <block type="motion_left_optimize">
+              <field name="Angle">90</field>
+              <value name="NAME">
+                  <shadow type="logic_boolean">
+                      <field name="BOOL">TRUE</field>
+                  </shadow>
+              </value>
+          </block>
+          <block type="motion_straight_optimize">
+              <value name="NAME">
+                  <shadow type="logic_boolean">
+                      <field name="BOOL">TRUE</field>
                   </shadow>
               </value>
           </block>

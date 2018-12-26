@@ -9,19 +9,21 @@ goog.require('Blockly');
 //Blockly.Constants.Colour.HUE = 20;
 
 Blockly.defineBlocksWithJsonArray([{
-  "type": "timer_wait",
-  "message0": "Wait for %1",
-  "args0": [
-    {
-      "type": "input_value",
-      "name": "NAME",
-      "check": "Number"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 40,
-  "tooltip": "",
-  "helpUrl": ""
-}]
+                                   "type": "timer_wait",
+                                   "message0": "Wait for %1 second",
+                                   "args0": [
+                                             {
+                                             "type": "field_number",
+                                             "name": "SECOND",
+                                             "value": 1,
+                                             "min": 1,
+                                             "max": 10
+                                             }
+                                             ],
+                                   "previousStatement": null,
+                                   "nextStatement": null,
+                                   "colour": 40,
+                                   "tooltip": "",
+                                   "helpUrl": ""
+                                   }]
 ); 

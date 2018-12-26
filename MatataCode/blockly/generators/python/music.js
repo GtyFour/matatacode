@@ -32,13 +32,6 @@ goog.require('Blockly.Python');
 // If any new block imports any library, add that library name here.
 Blockly.Python.addReservedWords('music');
 
-Blockly.Python['music_song'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = '...\n';
-    return code;
-};
-
 Blockly.Python['music_playsong'] = function(block) {
     var dropdown_play_song = block.getFieldValue('Play song');
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
@@ -47,16 +40,3 @@ Blockly.Python['music_playsong'] = function(block) {
     return code;
 };
 
-Blockly.Python['led_left'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = '...\n';
-    return code;
-};
-
-Blockly.Python['led_right'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = '...\n';
-    return code;
-};
