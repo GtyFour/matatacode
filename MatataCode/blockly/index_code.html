@@ -10,21 +10,27 @@
   <script src="blockly_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
   <script src="javascript_compressed.js"></script>
-  <script src="php_compressed.js"></script>
+<!--  <script src="php_compressed.js"></script>-->
   <script src="python_compressed.js"></script>
-  <script src="lua_compressed.js"></script>
-  <script src="dart_compressed.js"></script>
+<!--  <script src="lua_compressed.js"></script>-->
+<!--  <script src="dart_compressed.js"></script>-->
   <script src="code_code.js"></script>
 <!-- 新增的matata块 -->
   <script src="blocks/led.js"></script>
   <script src="blocks/motion.js"></script>
   <script src="blocks/music.js"></script>
   <script src="blocks/timer.js"></script>
+  <script src="blocks/value.js"></script>
+  <script src="blocks/loop.js"></script>
+  <script src="blocks/function.js"></script>
 <!--  针对新增matata块的编译器-->
   <script src="generators/python/led.js"></script>
   <script src="generators/python/motion.js"></script>
   <script src="generators/python/music.js"></script>
   <script src="generators/python/timer.js"></script>
+  <script src="generators/python/function.js"></script>
+  <script src="generators/python/value.js"></script>
+  <script src="generators/python/loop.js"></script>
   
 </head>
 <body>
@@ -35,9 +41,9 @@
           <span style="display:none;" id="title">MatataCode</span>
         </h1>
       </td>
-      <td class="farSide">
-        <select style="display:none;" id="languageMenu"></select>
-      </td>
+<!--      <td class="farSide">-->
+<!--        <select style="display:none;" id="languageMenu"></select>-->
+<!--      </td>-->
     </tr>
     <tr>
       <td colspan=2>
@@ -48,18 +54,43 @@
             <td id="tab_python" class="taboff">MatataCode</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" style="display:none;" class="taboff">XML</td>
+            <td class="tabmax">&nbsp;</td>
             <td class="tabmin">
-              <button id="trashButton" style="display:none;" class="notext" title="...">
-                <img src='media/1x1.gif' class="trash icon21">
-              </button>
-              <button id="linkButton" style="display:none;" class="notext" title="...">
-                <img src='media/1x1.gif' class="link icon21">
-              </button>
+                <button id="linkButton" style="display:none;" class="notext" title="...">
+                    <img src='media/1x1.gif' class="link icon21">
+                </button>
               <button id="runButton" class="notext primary" title="...">
                 <img src='media/1x1.gif' class="run icon21">
               </button>
             </td>
-            <td class="tabmax">&nbsp;</td>
+            <td class="tabmin">
+                <button id="connectButton" class="notext" title="...">
+                    <img src='media/1x1.gif' class="connect icon21">
+                </button>
+            </td>
+            <td class="tabmin">
+                <button id="sensorButton" class="notext" title="...">
+                    <img src='media/1x1.gif' class="senser icon21_2">
+                </button>
+            </td>
+            <td class="tabmin">
+                <button id="savecodeButton" class="notext" title="...">
+                    <img src='media/1x1.gif' class="savecode icon21_2">
+                </button>
+            </td>
+            <td class="tabmin">
+                <button id="loadcodeButton" class="notext" title="...">
+                    <img src='media/1x1.gif' class="loadcode icon21_2">
+                </button>
+            </td>
+            <td class="tabmin">
+                <button id="trashButton" class="notext" title="...">
+                    <img src='media/1x1.gif' class="trash icon21">
+                </button>
+            </td>
+            <td style="display:none;" class="tabmax">
+                <select id="languageMenu"></select>
+            </td>
           </tr>
         </table>
       </td>
@@ -82,10 +113,10 @@
               <field name="STEP">1</field>
           </block>
           <block type="motion_turnleft">
-              <field name="ANGLE">90</field>
+              <field name="ANGLE">angle90</field>
           </block>
           <block type="motion_turnright">
-              <field name="ANGLE">90</field>
+              <field name="ANGLE">angle90</field>
           </block>
       </category>
       <category name="LED" colour="#FFA500">
@@ -97,13 +128,13 @@
           </block>
           <block type="led">
               <field name="EYE">EYEPOSITION_LEFT</field>
-              <field name="COLOR">COLOR_RED</field>
+              <field name="COLOR">#ff0000</field>
           </block>
       </category>
       <category name="MUSIC" colour="#FFFF00">
           
           <block type="music_playsong">
-              <field name="Play song">SONG_1</field>
+              <field name="SONG_LIST">SONG_1</field>
           </block>
       </category>
       <category name="LOGIC" colour="#00FF00">
@@ -158,10 +189,9 @@
               </value>
           </block>
       </category>
-      <category name="Optimize" colour="#0000FF">
-      <!--      <category name="Optimize" colour="#5ba55b">-->
+      <category name="OPTIMIZE" colour="#0000FF">
           <block type="motion_right_optimize">
-              <field name="Angle">90</field>
+              <field name="ANGLE">angle90</field>
               <value name="NAME">
                   <shadow type="logic_boolean">
                       <field name="BOOL">TRUE</field>
@@ -169,7 +199,7 @@
               </value>
           </block>
           <block type="motion_left_optimize">
-              <field name="Angle">90</field>
+              <field name="ANGLE">angle90</field>
               <value name="NAME">
                   <shadow type="logic_boolean">
                       <field name="BOOL">TRUE</field>
@@ -184,8 +214,55 @@
               </value>
           </block>
       </category>
-      <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
-      <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
+      <!-- <category name="LOOP"colour="#A65C81">
+        <block type="loop_start"></block>
+        <block type="loop_end"></block>
+      </category>
+      <category name="FUNCTION" colour="#9A5CA6">
+        <block type="function_invoke">
+          <value name="FUNC_NAME">
+            <shadow type="function">
+              <field name="FUNC_NAME">myFunc</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="function">
+          <field name="FUNC_NAME">myFunc</field>
+        </block>
+        <block type="function_define">
+          <field name="FUNC_NAME">myFunc</field>
+        </block>
+      </category> -->
+      
+      <!-- <category name="VALUE" colour="#A63C51">
+        <block type="value_define">
+          <field name="VALUE_NAME">myValue</field>
+        </block>
+        <block type="value_type">
+          <field name="TYPE_NAME">TYPE_BOOL</field>
+        </block>
+        <block type="value">
+          <field name="NAME">OPTIONNAME</field>
+        </block>
+        <block type="value_with_type">
+          <field name="NAME">OPTIONNAME</field>
+          <value name="VALUE_TYPE">
+            <shadow type="value_type">
+              <field name="TYPE_NAME">TYPE_BOOL</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="value_define_with_type">
+          <field name="VALUE_NAME">myValue</field>
+          <value name="NAME">
+            <shadow type="value_type">
+              <field name="TYPE_NAME">TYPE_BOOL</field>
+            </shadow>
+          </value>
+        </block>
+      </category> -->
+      <category name="VARIABLES" colour="#A65C81" custom="VARIABLE"></category>
+      <category name="FUNCTIONS" colour="#9A5CA6" custom="PROCEDURE"></category>
   </xml>
   
 </body>

@@ -63,22 +63,9 @@ Blockly.defineBlocksWithJsonArray([{
                                                          ]
                                              },
                                              {
-                                             "type": "field_dropdown",
+                                             "type": "field_colour",
                                              "name": "COLOR",
-                                             "options": [
-                                                         [
-                                                          "Red",
-                                                          "COLOR_RED"
-                                                          ],
-                                                         [
-                                                          "Blue",
-                                                          "COLOR_BLUE"
-                                                          ],
-                                                         [
-                                                          "Green",
-                                                          "COLOR_GREEN"
-                                                          ]
-                                                         ]
+                                             "colour": "#ff0000"
                                              }
                                              ],
                                    "previousStatement": null,

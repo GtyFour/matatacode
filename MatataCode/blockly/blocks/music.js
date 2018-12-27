@@ -14,19 +14,31 @@ Blockly.defineBlocksWithJsonArray([{
                                    "args0": [
                                              {
                                              "type": "field_dropdown",
-                                             "name": "Play song",
+                                             "name": "SONG_LIST",
                                              "options": [
                                                          [
-                                                          "Little Star",
+                                                          "music1",
                                                           "SONG_1"
                                                           ],
                                                          [
-                                                          "Snow Flare",
+                                                          "music2",
                                                           "SONG_2"
                                                           ],
                                                          [
-                                                          "TEST",
+                                                          "music3",
                                                           "SONG_3"
+                                                          ],
+                                                         [
+                                                          "music4",
+                                                          "SONG_4"
+                                                          ],
+                                                         [
+                                                          "music5",
+                                                          "SONG_5"
+                                                          ],
+                                                         [
+                                                          "music6",
+                                                          "SONG_6"
                                                           ]
                                                          ]
                                              }

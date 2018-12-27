@@ -443,6 +443,9 @@ Code.init = function() {
       function() {Code.discard(); Code.renderContent();});
   Code.bindClick('runButton', Code.runJS);
   // Disable the link button if page isn't backed by App Engine storage.
+  Code.bindClick('connectButton',Code.connectbot);
+  Code.bindClick('savecodeButton',Code.savecode);
+  Code.bindClick('loadcodeButton',Code.loadcode);
   var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {
     BlocklyStorage['HTTPREQUEST_ERROR'] = MSG['httpRequestError'];
@@ -509,6 +512,7 @@ Code.initLanguage = function() {
 
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
+  document.getElementById('connectButton').title = MSG['connectTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 };
 
@@ -534,19 +538,57 @@ Code.runJS = function() {
     alert(MSG['badCode'].replace('%1', e));
   }
 };
+//GTY创建于2018年12月27日18:14:41 发送请求：保存当前代码
+Code.sensor = function() {
+  try {
+      window.webkit.messageHandlers.sensor.postMessage('sensor');
+  } catch (e) {
+      alert(MSG['sensor fail'].replace('%1', e));
+  }
+};
 
+//GTY创建于2018年12月27日18:14:41 发送请求：保存当前代码
+Code.savecode = function() {
+  try {
+      window.webkit.messageHandlers.savecode.postMessage('savecode');
+  } catch (e) {
+      alert(MSG['savecode fail'].replace('%1', e));
+  }
+};
+
+//GTY创建于2018年12月27日18:15:08 发送请求：读取保存的代码
+Code.loadcode = function() {
+  try {
+      window.webkit.messageHandlers.loadcode.postMessage('loadcode');
+  } catch (e) {
+      alert(MSG['loadcode fail'].replace('%1', e));
+  }
+};
+
+//GTY创建于2018年12月27日18:04:15 发送请求：通过蓝牙连接小车
+Code.connectbot = function() {
+    try {
+        window.webkit.messageHandlers.connectbot.postMessage('connect');
+    } catch (e) {
+        alert(MSG['connect fail'].replace('%1', e));
+    }
+};
 /**
  * Discard all blocks from the workspace.
  */
 Code.discard = function() {
   var count = Code.workspace.getAllBlocks(false).length;
-  if (count < 2 ||
-      window.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count))) {
-    Code.workspace.clear();
-    if (window.location.hash) {
-      window.location.hash = '';
-    }
-  }
+  
+  Code.workspace.clear();//GTY修改于2018年12月27日18:00:44 全清按钮
+  
+  //原逻辑，2个块以上会询问是否清理
+  // if (count < 2 ||
+  //     window.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count))) {
+  //   Code.workspace.clear();
+  //   if (window.location.hash) {
+  //     window.location.hash = '';
+  //   }
+  // }
 };
 
 // Load the Code demo's language strings.

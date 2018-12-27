@@ -50,9 +50,54 @@ Blockly.defineBlocksWithJsonArray([{
                                    "message0": "Turn left for %1",
                                    "args0": [
                                              {
-                                             "type": "field_angle",
+                                             "type": "field_dropdown",
                                              "name": "ANGLE",
-                                             "angle": 90
+                                             "options": [
+                                                         [
+                                                          "30°",
+                                                          "angle30"
+                                                          ],
+                                                         [
+                                                          "36°",
+                                                          "angle36"
+                                                          ],
+                                                         [
+                                                          "45°",
+                                                          "angle45"
+                                                          ],
+                                                         [
+                                                          "60°",
+                                                          "angle60"
+                                                          ],
+                                                         [
+                                                          "72°",
+                                                          "angle72"
+                                                          ],
+                                                          [
+                                                           "90°",
+                                                           "angle90"
+                                                           ],
+                                                         [
+                                                          "108°",
+                                                          "angle108"
+                                                          ],
+                                                         [
+                                                          "120°",
+                                                          "angle120"
+                                                          ],
+                                                         [
+                                                          "135°",
+                                                          "angle135"
+                                                          ],
+                                                         [
+                                                          "144°",
+                                                          "angle144"
+                                                          ],
+                                                         [
+                                                          "150°",
+                                                          "angle150"
+                                                          ]
+                                                         ]
                                              }
                                              ],
                                    "previousStatement": null,
@@ -66,9 +111,54 @@ Blockly.defineBlocksWithJsonArray([{
                                    "message0": "Turn Right For %1",
                                    "args0": [
                                              {
-                                             "type": "field_angle",
+                                             "type": "field_dropdown",
                                              "name": "ANGLE",
-                                             "angle": 90
+                                             "options": [
+                                                         [
+                                                          "30°",
+                                                          "angle30"
+                                                          ],
+                                                         [
+                                                          "36°",
+                                                          "angle36"
+                                                          ],
+                                                         [
+                                                          "45°",
+                                                          "angle45"
+                                                          ],
+                                                         [
+                                                          "60°",
+                                                          "angle60"
+                                                          ],
+                                                         [
+                                                          "72°",
+                                                          "angle72"
+                                                          ],
+                                                          [
+                                                           "90°",
+                                                           "angle90"
+                                                           ],
+                                                         [
+                                                          "108°",
+                                                          "angle108"
+                                                          ],
+                                                         [
+                                                          "120°",
+                                                          "angle120"
+                                                          ],
+                                                         [
+                                                          "135°",
+                                                          "angle135"
+                                                          ],
+                                                         [
+                                                          "144°",
+                                                          "angle144"
+                                                          ],
+                                                         [
+                                                          "150°",
+                                                          "angle150"
+                                                          ]
+                                                         ]
                                              }
                                              ],
                                    "previousStatement": null,
@@ -78,49 +168,139 @@ Blockly.defineBlocksWithJsonArray([{
                                    "helpUrl": ""
                                    },
                                    {
-                                      "type": "motion_left_optimize",
-                                      "message0": "Turn-left %1 Optimize %2",
-                                      "args0": [
-                                                {
-                                                "type": "field_angle",
-                                                "name": "Angle",
-                                                "angle": 90
-                                                },
-                                                {
-                                                "type": "input_value",
-                                                "name": "NAME",
-                                                "check": "Boolean"
-                                                }
-                                                ],
-                                      "inputsInline": false,
-                                      "previousStatement": null,
-                                      "nextStatement": null,
-                                      "colour": 122,
-                                      "tooltip": "",
-                                      "helpUrl": ""
-                                      },
-                                      {
-                                      "type": "motion_right_optimize",
-                                      "message0": "Turn-right %1 Optimize %2",
-                                      "args0": [
-                                                {
-                                                "type": "field_angle",
-                                                "name": "Angle",
-                                                "angle": 90
-                                                },
-                                                {
-                                                "type": "input_value",
-                                                "name": "NAME",
-                                                "check": "Boolean"
-                                                }
-                                                ],
-                                      "inputsInline": false,
-                                      "previousStatement": null,
-                                      "nextStatement": null,
-                                      "colour": 122,
-                                      "tooltip": "",
-                                      "helpUrl": ""
-                                      },
+                                   "type": "motion_left_optimize",
+                                   "message0": "Turn-left %1 Optimize %2",
+                                   "args0": [
+                                             {
+                                             "type": "field_dropdown",
+                                             "name": "ANGLE",
+                                             "options": [
+                                                         [
+                                                          "30°",
+                                                          "angle30"
+                                                          ],
+                                                         [
+                                                          "36°",
+                                                          "angle36"
+                                                          ],
+                                                         [
+                                                          "45°",
+                                                          "angle45"
+                                                          ],
+                                                         [
+                                                          "60°",
+                                                          "angle60"
+                                                          ],
+                                                         [
+                                                          "72°",
+                                                          "angle72"
+                                                          ],
+                                                          [
+                                                           "90°",
+                                                           "angle90"
+                                                           ],
+                                                         [
+                                                          "108°",
+                                                          "angle108"
+                                                          ],
+                                                         [
+                                                          "120°",
+                                                          "angle120"
+                                                          ],
+                                                         [
+                                                          "135°",
+                                                          "angle135"
+                                                          ],
+                                                         [
+                                                          "144°",
+                                                          "angle144"
+                                                          ],
+                                                         [
+                                                          "150°",
+                                                          "angle150"
+                                                          ]
+                                                         ]
+                                             },
+                                             {
+                                             "type": "input_value",
+                                             "name": "NAME",
+                                             "check": "Boolean"
+                                             }
+                                             ],
+                                   "inputsInline": false,
+                                   "previousStatement": null,
+                                   "nextStatement": null,
+                                   "colour": 165,
+                                   "tooltip": "",
+                                   "helpUrl": ""
+                                   },
+                                   {
+                                   "type": "motion_right_optimize",
+                                   "message0": "Turn-right %1 Optimize %2",
+                                   "args0": [
+                                             {
+                                             "type": "field_dropdown",
+                                             "name": "ANGLE",
+                                             "options": [
+                                                         [
+                                                          "30°",
+                                                          "angle30"
+                                                          ],
+                                                         [
+                                                          "36°",
+                                                          "angle36"
+                                                          ],
+                                                         [
+                                                          "45°",
+                                                          "angle45"
+                                                          ],
+                                                         [
+                                                          "60°",
+                                                          "angle60"
+                                                          ],
+                                                          [
+                                                           "72°",
+                                                           "angle72"
+                                                           ],
+                                                           [
+                                                            "90°",
+                                                            "angle90"
+                                                            ],
+                                                         [
+                                                          "108°",
+                                                          "angle108"
+                                                          ],
+                                                         [
+                                                          "120°",
+                                                          "angle120"
+                                                          ],
+                                                         [
+                                                          "135°",
+                                                          "angle135"
+                                                          ],
+                                                         [
+                                                          "144°",
+                                                          "angle144"
+                                                          ],
+                                                         [
+                                                          "150°",
+                                                          "angle150"
+                                                          ]
+                                                         ]
+                                             },
+                                             {
+                                             "type": "input_value",
+                                             "name": "NAME",
+                                             "check": "Boolean"
+                                             }
+                                             ],
+                                   "inputsInline": false,
+                                   "previousStatement": null,
+                                   "nextStatement": null,
+                                   "colour": 165,
+                                   "tooltip": "",
+                                   "helpUrl": ""
+                                   },
                                       {
                                       "type": "motion_straight_optimize",
                                       "message0": "Straight Optimize %1",
