@@ -41,7 +41,7 @@ Blockly.defineBlocksWithJsonArray([{
                                    "helpUrl": ""
                                    },
                                    {
-                                   "type": "led",
+                                   "type": "led_led",
                                    "message0": "%1 eye show color %2",
                                    "args0": [
                                              {
@@ -50,15 +50,15 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "Left",
-                                                          "EYEPOSITION_LEFT"
+                                                          "left_"
                                                           ],
                                                          [
                                                           "Right",
-                                                          "EYEPOSITION_RIGHT"
+                                                          "right"
                                                           ],
                                                          [
                                                           "Both",
-                                                          "EYEPOSITION_BOTH"
+                                                          "both_"
                                                           ]
                                                          ]
                                              },

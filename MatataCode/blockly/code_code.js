@@ -109,7 +109,8 @@ Code.getLang = function() {
   var lang = Code.getStringParamFromUrl('lang', '');
   if (Code.LANGUAGE_NAME[lang] === undefined) {
     // Default to English.
-    lang = 'zh-hans';
+    // lang = 'zh-hans';
+    lang = 'en';
   }
   return lang;
 };
@@ -239,7 +240,7 @@ Code.LANG = Code.getLang();
  * List of tab names.
  * @private
  */
-Code.TABS_ = ['blocks', 'python',/*'javascript', 'php', 'python', 'dart','lua',*/  'xml'];
+Code.TABS_ = ['blocks', 'python','javascript',/* 'php', 'python', 'dart','lua',*/  'xml'];
 
 Code.selected = 'blocks';
 
@@ -304,8 +305,8 @@ Code.renderContent = function() {
     var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
     xmlTextarea.value = xmlText;
     xmlTextarea.focus();
-//  } else if (content.id == 'content_javascript') {
-//    Code.attemptCodeGeneration(Blockly.JavaScript, 'js');
+  } else if (content.id == 'content_javascript') {
+   Code.attemptCodeGeneration(Blockly.JavaScript, 'js');
   } else if (content.id == 'content_python') {
     Code.attemptCodeGeneration(Blockly.Python, 'py');
 //  } else if (content.id == 'content_php') {
@@ -414,9 +415,10 @@ Code.init = function() {
 
   Code.workspace = Blockly.inject('content_blocks',
       {grid:
-          {spacing: 25,
-           length: 3,
-           colour: '#ccc',
+          {spacing: 20,
+           length: 5,
+                                  colour: '#FF9900',
+//                                  colour: '#ccc',
            snap: true},
        media: 'media/',
        rtl: rtl,
@@ -521,19 +523,19 @@ Code.initLanguage = function() {
  * Just a quick and dirty eval.  Catch infinite loops.
  */
 Code.runJS = function() {
-  Blockly.Python.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
+  Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
   var timeouts = 0;
   var checkTimeout = function() {
     if (timeouts++ > 1000000) {
       throw MSG['timeout'];
     }
   };
-//  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
-  var code = Blockly.Python.workspaceToCode(Code.workspace);
+  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
+//  var code = Blockly.Python.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-//    eval(code);
-    window.webkit.messageHandlers.runcode.postMessage(code);
+    eval(code);
+//    window.webkit.messageHandlers.runcode.postMessage(code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }

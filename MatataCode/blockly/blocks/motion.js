@@ -17,7 +17,8 @@ Blockly.defineBlocksWithJsonArray([{
                                              "name": "STEP",
                                              "value": 1,
                                              "min": 1,
-                                             "max": 10
+                                             "max": 6,
+                                             "precision": 1
                                              }
                                              ],
                                    "previousStatement": null,
@@ -35,7 +36,8 @@ Blockly.defineBlocksWithJsonArray([{
                                              "name": "STEP",
                                              "value": 1,
                                              "min": 1,
-                                             "max": 10
+                                             "max": 6,
+                                             "precision": 1
                                              }
                                              ],
                                    "inputsInline": false,
@@ -55,27 +57,27 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "30°",
-                                                          "angle30"
+                                                          "angle030"
                                                           ],
                                                          [
                                                           "36°",
-                                                          "angle36"
+                                                          "angle036"
                                                           ],
                                                          [
                                                           "45°",
-                                                          "angle45"
+                                                          "angle045"
                                                           ],
                                                          [
                                                           "60°",
-                                                          "angle60"
+                                                          "angle060"
                                                           ],
                                                          [
                                                           "72°",
-                                                          "angle72"
+                                                          "angle072"
                                                           ],
                                                           [
                                                            "90°",
-                                                           "angle90"
+                                                           "angle090"
                                                            ],
                                                          [
                                                           "108°",
@@ -116,27 +118,27 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "30°",
-                                                          "angle30"
+                                                          "angle030"
                                                           ],
                                                          [
                                                           "36°",
-                                                          "angle36"
+                                                          "angle036"
                                                           ],
                                                          [
                                                           "45°",
-                                                          "angle45"
+                                                          "angle045"
                                                           ],
                                                          [
                                                           "60°",
-                                                          "angle60"
+                                                          "angle060"
                                                           ],
                                                          [
                                                           "72°",
-                                                          "angle72"
+                                                          "angle072"
                                                           ],
                                                           [
                                                            "90°",
-                                                           "angle90"
+                                                           "angle090"
                                                            ],
                                                          [
                                                           "108°",
@@ -177,27 +179,27 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "30°",
-                                                          "angle30"
+                                                          "angle030"
                                                           ],
                                                          [
                                                           "36°",
-                                                          "angle36"
+                                                          "angle036"
                                                           ],
                                                          [
                                                           "45°",
-                                                          "angle45"
+                                                          "angle045"
                                                           ],
                                                          [
                                                           "60°",
-                                                          "angle60"
+                                                          "angle060"
                                                           ],
                                                          [
                                                           "72°",
-                                                          "angle72"
+                                                          "angle072"
                                                           ],
                                                           [
                                                            "90°",
-                                                           "angle90"
+                                                           "angle090"
                                                            ],
                                                          [
                                                           "108°",
@@ -230,7 +232,7 @@ Blockly.defineBlocksWithJsonArray([{
                                    "inputsInline": false,
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 165,
+                                   "colour": 122,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -244,27 +246,27 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "30°",
-                                                          "angle30"
+                                                          "angle030"
                                                           ],
                                                          [
                                                           "36°",
-                                                          "angle36"
+                                                          "angle036"
                                                           ],
                                                          [
                                                           "45°",
-                                                          "angle45"
+                                                          "angle045"
                                                           ],
                                                          [
                                                           "60°",
-                                                          "angle60"
+                                                          "angle060"
                                                           ],
                                                           [
                                                            "72°",
-                                                           "angle72"
+                                                           "angle072"
                                                            ],
                                                            [
                                                             "90°",
-                                                            "angle90"
+                                                            "angle090"
                                                             ],
                                                          [
                                                           "108°",
@@ -297,7 +299,7 @@ Blockly.defineBlocksWithJsonArray([{
                                    "inputsInline": false,
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 165,
+                                   "colour": 122,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -317,5 +319,45 @@ Blockly.defineBlocksWithJsonArray([{
                                       "colour": 122,
                                       "tooltip": "",
                                       "helpUrl": ""
-                                      }]
+                                   },{
+                                   "type": "motion_do_action",
+                                   "message0": "Do  %1",
+                                   "args0": [
+                                             {
+                                             "type": "field_dropdown",
+                                             "name": "ACTION_LIST",
+                                             "options": [
+                                                         [
+                                                          "action1",
+                                                          "action_1"
+                                                          ],
+                                                         [
+                                                          "action2",
+                                                          "action_2"
+                                                          ],
+                                                         [
+                                                          "action3",
+                                                          "action_3"
+                                                          ],
+                                                         [
+                                                          "action4",
+                                                          "action_4"
+                                                          ],
+                                                         [
+                                                          "action5",
+                                                          "action_5"
+                                                          ],
+                                                         [
+                                                          "action6",
+                                                          "action_6"
+                                                          ]
+                                                         ]
+                                             }
+                                             ],
+                                   "previousStatement": null,
+                                   "nextStatement": null,
+                                   "colour": 122,
+                                   "tooltip": "",
+                                   "helpUrl": ""
+                                   }]
 ); 

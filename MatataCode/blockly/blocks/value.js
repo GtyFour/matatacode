@@ -45,7 +45,7 @@ Blockly.defineBlocksWithJsonArray([{
     "helpUrl": ""
   },
   {
-    "type": "value",
+    "type": "value_v",
     "message0": "value \" %1 %2 \"",
     "args0": [
       {

@@ -31,6 +31,14 @@
   <script src="generators/python/function.js"></script>
   <script src="generators/python/value.js"></script>
   <script src="generators/python/loop.js"></script>
+
+  <script src="generators/javascript/led.js"></script>
+  <script src="generators/javascript/motion.js"></script>
+  <script src="generators/javascript/music.js"></script>
+  <script src="generators/javascript/timer.js"></script>
+  <script src="generators/javascript/function.js"></script>
+  <script src="generators/javascript/value.js"></script>
+  <script src="generators/javascript/loop.js"></script>
   
 </head>
 <body>
@@ -51,7 +59,9 @@
           <tr id="tabRow" height="1em">
             <td id="tab_blocks" class="tabon">...</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_python" class="taboff">MatataCode</td>
+            <td id="tab_python" style="display:none;" class="taboff">MatataCode</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_javascript" class="taboff">MatataCode</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" style="display:none;" class="taboff">XML</td>
             <td class="tabmax">&nbsp;</td>
@@ -64,7 +74,7 @@
               </button>
             </td>
             <td class="tabmin">
-                <button id="connectButton" class="notext" title="...">
+                <button id="connectButton" class="notext secondary" title="...">
                     <img src='media/1x1.gif' class="connect icon21">
                 </button>
             </td>
@@ -102,9 +112,11 @@
   </table>
   <div id="content_blocks" class="content"></div>
   <pre id="content_python" class="content"></pre>
+  <pre id="content_javascript" class="content"></pre>
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+      
       <category name="MOTION" colour="#FF0000">
           <block type="motion_backward">
               <field name="STEP">1</field>
@@ -113,10 +125,13 @@
               <field name="STEP">1</field>
           </block>
           <block type="motion_turnleft">
-              <field name="ANGLE">angle90</field>
+              <field name="ANGLE">angle090</field>
           </block>
           <block type="motion_turnright">
-              <field name="ANGLE">angle90</field>
+              <field name="ANGLE">angle090</field>
+          </block>
+          <block type="motion_do_action">
+              <field name="ACTION_LIST">action_1</field>
           </block>
       </category>
       <category name="LED" colour="#FFA500">
@@ -126,15 +141,28 @@
           <block type="led_right">
               <field name="LED">#ff0000</field>
           </block>
-          <block type="led">
-              <field name="EYE">EYEPOSITION_LEFT</field>
+          <block type="led_led">
+              <field name="EYE">both_</field>
               <field name="COLOR">#ff0000</field>
           </block>
       </category>
       <category name="MUSIC" colour="#FFFF00">
-          
           <block type="music_playsong">
-              <field name="SONG_LIST">SONG_1</field>
+              <field name="MUSIC_LIST">music_1</field>
+          </block>
+          <block type="music_do_dance">
+              <field name="DANCE_LIST">dance_1</field>
+          </block>
+          <block type="music_alto">
+              <field name="ALTO_LIST">alto_1</field>
+              <field name="METER">meter_1</field>
+          </block>
+          <block type="music_treble">
+              <field name="TREBLE_LIST">treble_1</field>
+              <field name="METER">meter_1</field>
+          </block>
+          <block type="music_playmelody">
+              <field name="MELODY_LIST">melody_01</field>
           </block>
       </category>
       <category name="LOGIC" colour="#00FF00">
@@ -148,20 +176,72 @@
                   </shadow>
               </value>
           </block>
+          <block type="controls_whileUntil"></block>
+          <block type="controls_for">
+              <value name="FROM">
+                  <shadow type="math_number">
+                      <field name="NUM">1</field>
+                  </shadow>
+              </value>
+              <value name="TO">
+                  <shadow type="math_number">
+                      <field name="NUM">10</field>
+                  </shadow>
+              </value>
+              <value name="BY">
+                  <shadow type="math_number">
+                      <field name="NUM">1</field>
+                  </shadow>
+              </value>
+          </block>
+          <block type="controls_flow_statements"></block>
           <block type="controls_if"></block>
+          <block type="logic_operation"></block>
+          <block type="logic_negate"></block>
+          <block type="logic_boolean"></block>
           <block type="logic_compare">
               <field name="OP">LT</field>
-          </block>
-          <block type="logic_compare">
-              <field name="OP">GT</field>
-          </block>
-          <block type="logic_compare">
-              <field name="OP">EQ</field>
           </block>
       </category>
       <category name="NUMBER" colour="#007FFF">
           <block type="math_number">
-              <field name="NUM">0</field>
+              <field name="NUM">1</field>
+          </block>
+          <block type="math_number_property">
+              <value name="NUMBER_TO_CHECK">
+                  <shadow type="math_number">
+                      <field name="NUM">0</field>
+                  </shadow>
+              </value>
+          </block>
+          <block type="math_modulo">
+              <value name="DIVIDEND">
+                  <shadow type="math_number">
+                      <field name="NUM">64</field>
+                  </shadow>
+              </value>
+              <value name="DIVISOR">
+                  <shadow type="math_number">
+                      <field name="NUM">10</field>
+                  </shadow>
+              </value>
+          </block>
+          <block type="math_constrain">
+              <value name="VALUE">
+                  <shadow type="math_number">
+                      <field name="NUM">50</field>
+                  </shadow>
+              </value>
+              <value name="LOW">
+                  <shadow type="math_number">
+                      <field name="NUM">1</field>
+                  </shadow>
+              </value>
+              <value name="HIGH">
+                  <shadow type="math_number">
+                      <field name="NUM">100</field>
+                  </shadow>
+              </value>
           </block>
           <block type="math_arithmetic">
               <field name="OP">ADD</field>
@@ -191,7 +271,7 @@
       </category>
       <category name="OPTIMIZE" colour="#0000FF">
           <block type="motion_right_optimize">
-              <field name="ANGLE">angle90</field>
+              <field name="ANGLE">angle090</field>
               <value name="NAME">
                   <shadow type="logic_boolean">
                       <field name="BOOL">TRUE</field>
@@ -199,7 +279,7 @@
               </value>
           </block>
           <block type="motion_left_optimize">
-              <field name="ANGLE">angle90</field>
+              <field name="ANGLE">angle090</field>
               <value name="NAME">
                   <shadow type="logic_boolean">
                       <field name="BOOL">TRUE</field>
@@ -214,6 +294,8 @@
               </value>
           </block>
       </category>
+      <category name="VARIABLES" colour="#A65C81" custom="VARIABLE"></category>
+      <category name="FUNCTIONS" colour="#9A5CA6" custom="PROCEDURE"></category>
       <!-- <category name="LOOP"colour="#A65C81">
         <block type="loop_start"></block>
         <block type="loop_end"></block>
@@ -226,7 +308,7 @@
             </shadow>
           </value>
         </block>
-        <block type="function">
+        <block type="function_func">
           <field name="FUNC_NAME">myFunc</field>
         </block>
         <block type="function_define">
@@ -241,7 +323,7 @@
         <block type="value_type">
           <field name="TYPE_NAME">TYPE_BOOL</field>
         </block>
-        <block type="value">
+        <block type="value_v">
           <field name="NAME">OPTIONNAME</field>
         </block>
         <block type="value_with_type">
@@ -261,8 +343,7 @@
           </value>
         </block>
       </category> -->
-      <category name="VARIABLES" colour="#A65C81" custom="VARIABLE"></category>
-      <category name="FUNCTIONS" colour="#9A5CA6" custom="PROCEDURE"></category>
+      
   </xml>
   
 </body>

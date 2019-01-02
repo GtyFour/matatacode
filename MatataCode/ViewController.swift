@@ -17,6 +17,8 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var tableView: UITableView!//测试用设备列表，隐藏备用
     @IBOutlet weak var scanBtn: UIButton!//测试用扫描按钮，隐藏备用
+    @IBOutlet weak var waitView: UIView!//等待链接小车，隐藏备用
+    @IBOutlet weak var waitLabel: UILabel!//等待链接小车提示信息，隐藏备用
     
     var code_to_run : String!
     var bleList = [CmdDiscovery]()
@@ -24,10 +26,11 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
     let parser = CBleParser()
     let receiverCenter = ReceiveDataCenter()
     let evaluator = MataEvaluator()
-    
     //MARK: - ViewController自身实现
     override func viewDidLoad() {
         super.viewDidLoad()
+        waitView.isHidden = true
+        waitLabel.isHidden = true
         parser.dataComingMonitor = receiverCenter
         centralManager.parser = parser
         centralManager.cancelConnect(clearAutoConnect: true)
@@ -50,7 +53,7 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
             if discovery.peripheral.name != nil{
                 print(discovery)
                 self.bleList.insert(discovery, at: 0)
-            } 
+            }
         }, completeHandle: {
             self.tableView.reloadData()
             print("scan finish")
@@ -82,6 +85,14 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
     
     //MARK: - wkwebview相关相关响应
     func connectbot() {
+        print("connectbot")
+        if self.centralManager.connectedStatus == true {
+            self.showAlert(title: "MatataBot", message: "Already linked!!")
+            return
+        }
+        //展示一个view
+        waitView.isHidden = false
+        waitLabel.isHidden = false
         //清理记录
         self.bleList.removeAll()
         
@@ -89,22 +100,32 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
         switch centralManager.centralStatus {
             case 0://unknown:
                 print("未获取到蓝牙设备")
+                self.waitView.isHidden = true
+                self.waitLabel.isHidden = true
                 showAlert(title: "Ble Err", message: "Unknown Ble.")
                 return
             case 1://resetting:
                 print("蓝牙功能重置中")
+                self.waitView.isHidden = true
+                self.waitLabel.isHidden = true
                 showAlert(title: "Ble Err", message: "Ble is resetting.")
                 return
             case 2://unsupported:
                 print("本设备不支持蓝牙功能")
+                self.waitView.isHidden = true
+                self.waitLabel.isHidden = true
                 showAlert(title: "Ble Err", message: "Device do NOT supports Ble.")
                 return
             case 3://unauthorized:
                 print("Mata未获得设备的蓝牙授权")
+                self.waitView.isHidden = true
+                self.waitLabel.isHidden = true
                 showAlert(title: "Ble Err", message: "MatataCode is unauthorized for Ble.")
                 return
             case 4://poweredOff:
                 print("设备蓝牙未未启动")
+                self.waitView.isHidden = true
+                self.waitLabel.isHidden = true
                 showAlert(title: "Ble Err", message: "Ble is poweroff.")
                 return
             case 5://poweredOn:
@@ -123,28 +144,36 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
         }, completeHandle: {
             print("scan finish")
             if self.bleList.count == 0{
+                self.waitView.isHidden = true
+                self.waitLabel.isHidden = true
                 self.showAlert(title: "MatataBot", message: "No bot availuable!")
                 return
-            }
-            for bot in self.bleList{
-                if (bot.RSSI >= -45){
-                    self.centralManager.connect(bot, duration: 5, success: { (central, peripheral) in
-                        DispatchQueue.main.async {
-                            print("connect success")
-                            self.showAlert(title: "MatataBot", message: "Link SUCCESS!!")
-                        }
-                        return
-                    }, fail: { (error) in
-                        DispatchQueue.main.async {
-                            print("connect fail")
-                            self.showAlert(title: "MatataBot", message: "Link fail.")
-                        }
-                        return
-                    })
+            }else{
+                for bot in self.bleList{
+                    if (bot.RSSI >= -75){
+                        self.centralManager.connect(bot, duration: 5, success: { (central, peripheral) in
+                            DispatchQueue.main.async {
+                                print("connect success")
+                                self.waitView.isHidden = true
+                                self.waitLabel.isHidden = true
+                                self.showAlert(title: "MatataBot", message: "Link SUCCESS!!")
+                            }
+                            return
+                        }, fail: { (error) in
+                            DispatchQueue.main.async {
+                                print("connect fail")
+                                self.waitView.isHidden = true
+                                self.waitLabel.isHidden = true
+                                self.showAlert(title: "MatataBot", message: "Link fail.")
+                            }
+                            return
+                        })
+                    }
                 }
-                
+                self.waitView.isHidden = true
+                self.waitLabel.isHidden = true
+//                self.showAlert(title: "MatataBot", message: "RSSI Fail...Get the bot closer!")
             }
-            
         })
     }
     

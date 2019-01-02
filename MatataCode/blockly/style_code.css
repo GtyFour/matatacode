@@ -22,15 +22,20 @@ button {
   margin: 5px;
   padding: 5px;
   border-radius: 4px;
-  border: 1px solid rgb(224, 224, 224);
+  border: 1px solid #f5a52e;
   font-size: large;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(255, 255, 255);
   color: #000;
 }
 button.primary {
-  border: 1px solid #f5a52e;
-  background-color: #f5a52e;
-  color: #fff;
+    border: 1px solid #f5a52e;
+    background-color: #f5a52e;
+    color: #fff;
+}
+button.secondary {
+    border: 1px solid #f5a52e;
+    background-color: rgb(244, 244, 244);
+    color: #fff;
 }
 button.primary>img {
   opacity: 1;
@@ -171,7 +176,7 @@ button {
 .icon21_2 {
   height: 21px;
   width: 21px;
-  background-image: url(icons_code.png);
+  background-image: url(icons_code1.png);
 }
 .sensor {
   background-position:  0px 0px;

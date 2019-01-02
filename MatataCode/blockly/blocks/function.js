@@ -25,7 +25,7 @@ Blockly.defineBlocksWithJsonArray([{
     "helpUrl": ""
   },
   {
-    "type": "function",
+    "type": "function_func",
     "message0": "Func: %1",
     "args0": [
       {

@@ -74,22 +74,39 @@
                                 <rect key="frame" x="616" y="366" width="120" height="48"/>
                                 <state key="normal" title="SCAN"/>
                             </button>
+                            <view hidden="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvh-dK-8hC">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting MatataBot..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFo-WG-Hc3">
+                                <rect key="frame" x="174.99999999999997" y="186.33333333333334" width="386.33333333333326" height="41.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="trailing" secondItem="60d-b0-RPX" secondAttribute="trailing" id="1Ms-0n-NcU"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3ac-0f-le1"/>
+                            <constraint firstItem="jvh-dK-8hC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6UK-lb-Tt3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="60d-b0-RPX" secondAttribute="trailing" id="6la-MX-fzn"/>
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="width" secondItem="60d-b0-RPX" secondAttribute="width" id="8oL-O6-ZfP"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="Ad4-7x-m6B"/>
                             <constraint firstItem="60d-b0-RPX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-120" id="B9H-U8-6p0"/>
+                            <constraint firstItem="jFo-WG-Hc3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GL6-6D-e27"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Ge0-h8-1xb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="60d-b0-RPX" secondAttribute="bottom" constant="48" id="LwW-ai-rbJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HaT-Yv-atV" secondAttribute="bottom" id="Me3-gp-xtH"/>
+                            <constraint firstItem="jvh-dK-8hC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UHW-Cx-gMh"/>
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="leading" secondItem="60d-b0-RPX" secondAttribute="leading" id="Uf1-IE-OhX"/>
+                            <constraint firstItem="jFo-WG-Hc3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="j0n-YI-I2W"/>
+                            <constraint firstItem="jvh-dK-8hC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tJt-6Q-TbH"/>
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="top" secondItem="60d-b0-RPX" secondAttribute="bottom" id="uEa-A9-ff2"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ut7-VB-pQI"/>
                             <constraint firstItem="60d-b0-RPX" firstAttribute="top" secondItem="Qod-F5-5vx" secondAttribute="top" id="xRw-oP-Dju"/>
+                            <constraint firstItem="jvh-dK-8hC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="zX5-nW-fQp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -97,12 +114,14 @@
                     <connections>
                         <outlet property="scanBtn" destination="HaT-Yv-atV" id="nBb-rx-cBc"/>
                         <outlet property="tableView" destination="60d-b0-RPX" id="gXQ-cb-kEv"/>
+                        <outlet property="waitLabel" destination="jFo-WG-Hc3" id="qOS-pW-Qkm"/>
+                        <outlet property="waitView" destination="jvh-dK-8hC" id="dVE-FO-Rjh"/>
                         <outlet property="webView" destination="Qod-F5-5vx" id="Wqs-kY-ToT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="-158"/>
+            <point key="canvasLocation" x="76.630434782608702" y="-159.42028985507247"/>
         </scene>
         <!--我-->
         <scene sceneID="x9f-ZQ-ooY">
