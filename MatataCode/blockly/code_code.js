@@ -415,9 +415,9 @@ Code.init = function() {
 
   Code.workspace = Blockly.inject('content_blocks',
       {grid:
-          {spacing: 20,
+          {spacing: 35,
            length: 5,
-                                  colour: '#FF9900',
+           colour: '#cccccc',
 //                                  colour: '#ccc',
            snap: true},
        media: 'media/',
@@ -446,6 +446,7 @@ Code.init = function() {
   Code.bindClick('runButton', Code.runJS);
   // Disable the link button if page isn't backed by App Engine storage.
   Code.bindClick('connectButton',Code.connectbot);
+  Code.bindClick('stopButton',Code.stopcode);
   Code.bindClick('savecodeButton',Code.savecode);
   Code.bindClick('loadcodeButton',Code.loadcode);
   var linkButton = document.getElementById('linkButton');
@@ -514,6 +515,7 @@ Code.initLanguage = function() {
 
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
+  document.getElementById('stopButton').title = MSG['stopTooltip'];
   document.getElementById('connectButton').title = MSG['connectTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 };
@@ -531,11 +533,9 @@ Code.runJS = function() {
     }
   };
   var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
-//  var code = Blockly.Python.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
     eval(code);
-//    window.webkit.messageHandlers.runcode.postMessage(code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }
@@ -551,11 +551,19 @@ Code.sensor = function() {
 
 //GTY创建于2018年12月27日18:14:41 发送请求：保存当前代码
 Code.savecode = function() {
-  try {
-      window.webkit.messageHandlers.savecode.postMessage('savecode');
-  } catch (e) {
-      alert(MSG['savecode fail'].replace('%1', e));
-  }
+    try {
+        window.webkit.messageHandlers.savecode.postMessage('savecode');
+    } catch (e) {
+        alert(MSG['savecode fail'].replace('%1', e));
+    }
+};
+//GTY创建于2019年01月07日12:51:36 发送请求：停止当前代码
+Code.stopcode = function() {
+    try {
+        window.webkit.messageHandlers.stopcode.postMessage('stopcode');
+    } catch (e) {
+        alert(MSG['stopcode fail'].replace('%1', e));
+    }
 };
 
 //GTY创建于2018年12月27日18:15:08 发送请求：读取保存的代码

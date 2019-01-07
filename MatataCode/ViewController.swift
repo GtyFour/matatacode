@@ -19,6 +19,7 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
     @IBOutlet weak var scanBtn: UIButton!//测试用扫描按钮，隐藏备用
     @IBOutlet weak var waitView: UIView!//等待链接小车，隐藏备用
     @IBOutlet weak var waitLabel: UILabel!//等待链接小车提示信息，隐藏备用
+    @IBOutlet weak var stateLabel: UILabel!//等待链接小车提示信息，隐藏备用
     
     var code_to_run : String!
     var bleList = [CmdDiscovery]()
@@ -69,6 +70,7 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "runcode")
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "savecode")
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "connectbot")
+        webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "stopcode")
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "disconectbot")
         
         scanBtn.addTarget(self, action: #selector(scan), for: .touchUpInside)
@@ -137,7 +139,7 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
         
         //链接
         centralManager.scanWithServices(nil, duration: 3, discoveryHandle: { discovery in
-            if (discovery.peripheral.name == "Matalab")&&(discovery.RSSI >= -50){
+            if (discovery.peripheral.name == "Matalab")&&(discovery.RSSI >= -90){
                 print(discovery)
                 self.bleList.insert(discovery, at: 0)
             }
@@ -150,7 +152,7 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
                 return
             }else{
                 for bot in self.bleList{
-                    if (bot.RSSI >= -75){
+                    if (bot.RSSI >= -90){
                         self.centralManager.connect(bot, duration: 5, success: { (central, peripheral) in
                             DispatchQueue.main.async {
                                 print("connect success")
@@ -177,6 +179,17 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
         })
     }
     
+    
+    func stopcode(message: WKScriptMessage) {
+        if self.centralManager.connectedStatus == false{
+            self.showAlert(title: "MatataBot", message: "Please link to MatataBot first!")
+            return
+        }
+        print("stopcode")
+        self.parser.writeDataWithoutResponse(evaluator.stopcode())
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.4){}
+    }
+    
     func disconnectbot() {
         centralManager.cancelConnect(clearAutoConnect: true)
     }
@@ -188,6 +201,7 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
         print("runcode")
 //        showAlert(title: "Runcode", message: "run")
         self.parser.writeDataWithoutResponse(evaluator.evaluate(message: message))
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.4){}
     }
     
     func userContentController(_ userContentController: WKUserContentController,
@@ -200,6 +214,9 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
             break
         case "savecode":
             print("savecode")
+            break
+        case "stopcode":
+            self.stopcode(message: message)
             break
         case "connectbot":
             print("connectbot")

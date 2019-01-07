@@ -57,47 +57,47 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "30°",
-                                                          "angle030"
+                                                          "30degree"
                                                           ],
                                                          [
                                                           "36°",
-                                                          "angle036"
+                                                          "36degree"
                                                           ],
                                                          [
                                                           "45°",
-                                                          "angle045"
+                                                          "45degree"
                                                           ],
                                                          [
                                                           "60°",
-                                                          "angle060"
+                                                          "60degree"
                                                           ],
                                                          [
                                                           "72°",
-                                                          "angle072"
+                                                          "72degree"
                                                           ],
-                                                          [
-                                                           "90°",
-                                                           "angle090"
-                                                           ],
+                                                         [
+                                                          "90°",
+                                                          "90degree"
+                                                          ],
                                                          [
                                                           "108°",
-                                                          "angle108"
+                                                          "108degree"
                                                           ],
                                                          [
                                                           "120°",
-                                                          "angle120"
+                                                          "120degree"
                                                           ],
                                                          [
                                                           "135°",
-                                                          "angle135"
+                                                          "135degree"
                                                           ],
                                                          [
                                                           "144°",
-                                                          "angle144"
+                                                          "144degree"
                                                           ],
                                                          [
                                                           "150°",
-                                                          "angle150"
+                                                          "150degree"
                                                           ]
                                                          ]
                                              }
@@ -118,47 +118,47 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "30°",
-                                                          "angle030"
+                                                          "30degree"
                                                           ],
                                                          [
                                                           "36°",
-                                                          "angle036"
+                                                          "36degree"
                                                           ],
                                                          [
                                                           "45°",
-                                                          "angle045"
+                                                          "45degree"
                                                           ],
                                                          [
                                                           "60°",
-                                                          "angle060"
+                                                          "60degree"
                                                           ],
                                                          [
                                                           "72°",
-                                                          "angle072"
+                                                          "72degree"
                                                           ],
-                                                          [
-                                                           "90°",
-                                                           "angle090"
-                                                           ],
+                                                         [
+                                                          "90°",
+                                                          "90degree"
+                                                          ],
                                                          [
                                                           "108°",
-                                                          "angle108"
+                                                          "108degree"
                                                           ],
                                                          [
                                                           "120°",
-                                                          "angle120"
+                                                          "120degree"
                                                           ],
                                                          [
                                                           "135°",
-                                                          "angle135"
+                                                          "135degree"
                                                           ],
                                                          [
                                                           "144°",
-                                                          "angle144"
+                                                          "144degree"
                                                           ],
                                                          [
                                                           "150°",
-                                                          "angle150"
+                                                          "150degree"
                                                           ]
                                                          ]
                                              }
@@ -179,47 +179,47 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "30°",
-                                                          "angle030"
+                                                          "30degree"
                                                           ],
                                                          [
                                                           "36°",
-                                                          "angle036"
+                                                          "36degree"
                                                           ],
                                                          [
                                                           "45°",
-                                                          "angle045"
+                                                          "45degree"
                                                           ],
                                                          [
                                                           "60°",
-                                                          "angle060"
+                                                          "60degree"
                                                           ],
                                                          [
                                                           "72°",
-                                                          "angle072"
+                                                          "72degree"
                                                           ],
-                                                          [
-                                                           "90°",
-                                                           "angle090"
-                                                           ],
+                                                         [
+                                                          "90°",
+                                                          "90degree"
+                                                          ],
                                                          [
                                                           "108°",
-                                                          "angle108"
+                                                          "108degree"
                                                           ],
                                                          [
                                                           "120°",
-                                                          "angle120"
+                                                          "120degree"
                                                           ],
                                                          [
                                                           "135°",
-                                                          "angle135"
+                                                          "135degree"
                                                           ],
                                                          [
                                                           "144°",
-                                                          "angle144"
+                                                          "144degree"
                                                           ],
                                                          [
                                                           "150°",
-                                                          "angle150"
+                                                          "150degree"
                                                           ]
                                                          ]
                                              },
@@ -246,47 +246,47 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "30°",
-                                                          "angle030"
+                                                          "30degree"
                                                           ],
                                                          [
                                                           "36°",
-                                                          "angle036"
+                                                          "36degree"
                                                           ],
                                                          [
                                                           "45°",
-                                                          "angle045"
+                                                          "45degree"
                                                           ],
                                                          [
                                                           "60°",
-                                                          "angle060"
+                                                          "60degree"
                                                           ],
                                                           [
                                                            "72°",
-                                                           "angle072"
+                                                           "72degree"
                                                            ],
                                                            [
                                                             "90°",
-                                                            "angle090"
+                                                            "90degree"
                                                             ],
                                                          [
                                                           "108°",
-                                                          "angle108"
+                                                          "108degree"
                                                           ],
                                                          [
                                                           "120°",
-                                                          "angle120"
+                                                          "120degree"
                                                           ],
                                                          [
                                                           "135°",
-                                                          "angle135"
+                                                          "135degree"
                                                           ],
                                                          [
                                                           "144°",
-                                                          "angle144"
+                                                          "144degree"
                                                           ],
                                                          [
                                                           "150°",
-                                                          "angle150"
+                                                          "150degree"
                                                           ]
                                                          ]
                                              },
@@ -328,28 +328,28 @@ Blockly.defineBlocksWithJsonArray([{
                                              "name": "ACTION_LIST",
                                              "options": [
                                                          [
-                                                          "action1",
-                                                          "action_1"
+                                                          "Action1",
+                                                          "action1"
                                                           ],
                                                          [
-                                                          "action2",
-                                                          "action_2"
+                                                          "Action2",
+                                                          "action2"
                                                           ],
                                                          [
-                                                          "action3",
-                                                          "action_3"
+                                                          "Action3",
+                                                          "action3"
                                                           ],
                                                          [
-                                                          "action4",
-                                                          "action_4"
+                                                          "Action4",
+                                                          "action4"
                                                           ],
                                                          [
-                                                          "action5",
-                                                          "action_5"
+                                                          "Action5",
+                                                          "action5"
                                                           ],
                                                          [
-                                                          "action6",
-                                                          "action_6"
+                                                          "Action6",
+                                                          "action6"
                                                           ]
                                                          ]
                                              }

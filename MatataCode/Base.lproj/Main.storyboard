@@ -85,16 +85,24 @@
                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waitting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdA-tC-DJI">
+                                <rect key="frame" x="0.0" y="393" width="736" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="trailing" secondItem="60d-b0-RPX" secondAttribute="trailing" id="1Ms-0n-NcU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gdA-tC-DJI" secondAttribute="bottom" id="2vE-fD-Fnd"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3ac-0f-le1"/>
                             <constraint firstItem="jvh-dK-8hC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6UK-lb-Tt3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="60d-b0-RPX" secondAttribute="trailing" id="6la-MX-fzn"/>
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="width" secondItem="60d-b0-RPX" secondAttribute="width" id="8oL-O6-ZfP"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="Ad4-7x-m6B"/>
                             <constraint firstItem="60d-b0-RPX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-120" id="B9H-U8-6p0"/>
+                            <constraint firstItem="gdA-tC-DJI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EhE-tE-fUW"/>
                             <constraint firstItem="jFo-WG-Hc3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GL6-6D-e27"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Ge0-h8-1xb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="60d-b0-RPX" secondAttribute="bottom" constant="48" id="LwW-ai-rbJ"/>
@@ -106,6 +114,7 @@
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="top" secondItem="60d-b0-RPX" secondAttribute="bottom" id="uEa-A9-ff2"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ut7-VB-pQI"/>
                             <constraint firstItem="60d-b0-RPX" firstAttribute="top" secondItem="Qod-F5-5vx" secondAttribute="top" id="xRw-oP-Dju"/>
+                            <constraint firstItem="gdA-tC-DJI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yfI-ld-mXV"/>
                             <constraint firstItem="jvh-dK-8hC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="zX5-nW-fQp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -113,6 +122,7 @@
                     <tabBarItem key="tabBarItem" title="Code" id="Leh-vL-538"/>
                     <connections>
                         <outlet property="scanBtn" destination="HaT-Yv-atV" id="nBb-rx-cBc"/>
+                        <outlet property="stateLabel" destination="gdA-tC-DJI" id="gkE-WT-a3E"/>
                         <outlet property="tableView" destination="60d-b0-RPX" id="gXQ-cb-kEv"/>
                         <outlet property="waitLabel" destination="jFo-WG-Hc3" id="qOS-pW-Qkm"/>
                         <outlet property="waitView" destination="jvh-dK-8hC" id="dVE-FO-Rjh"/>

@@ -116,6 +116,7 @@ open class CmdBaseParser:NSObject, CmdParserSession, CBPeripheralDelegate{
             throw CmdParserError.noPeripheral
         }
         
+
         let flatResults = containCharacteristics.compactMap { (chara) -> CBCharacteristic? in
             if chara.uuid.uuidString.lowercased() == UUIDStr.lowercased() {
                 return chara
@@ -125,7 +126,7 @@ open class CmdBaseParser:NSObject, CmdParserSession, CBPeripheralDelegate{
         if flatResults.count == 0 {
             throw CmdParserError.wrongCharacterUUIDStr
         }
-        
+
         return (curPeripheral, flatResults.first!)
     }
     

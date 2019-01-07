@@ -23,6 +23,13 @@ Blockly.Python['led_right'] = function(block) {
     return code;
 };
 
+Blockly.Python['led_both'] = function(block) {
+    var colour_color = block.getFieldValue('LED');
+    // TODO: Assemble JavaScript into code variable.
+    var code = 'eyeshowscolor_' + colour_color';
+    var code_run = 'window.webkit.messageHandlers.runcode.postMessage(\'' + code + '\');\n'
+    return code_run;
+};
 Blockly.Python['led'] = function(block) {
     var dropdown_eye = block.getFieldValue('EYE');
     var colour_color = block.getFieldValue('COLOR');

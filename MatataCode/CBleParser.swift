@@ -13,10 +13,7 @@ class CBleParser: CmdBaseParser {
     
     static let notifyCharacterUUIDStr = "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
     static let writeCharacterUUIDStr = "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
-    
-    /**
-     define types for writing data to BLE device, like this
-     */
+
     func writeDataWithResponse(_ data: Data) {
         do {
             try super.writeData(data, characterUUIDStr: CBleParser.writeCharacterUUIDStr, withResponse: true)
@@ -24,9 +21,7 @@ class CBleParser: CmdBaseParser {
             print("[Error: ]__Write Data Error    " + "\(error)")
         }
     }
-    /**
-     write data to BLE without Response
-     */
+    
     func writeDataWithoutResponse(_ data: Data) {
         do {
             try super.writeData(data, characterUUIDStr: CBleParser.writeCharacterUUIDStr, withResponse: false)
@@ -34,9 +29,7 @@ class CBleParser: CmdBaseParser {
             print("[Error: ]__Write Data Error    " + "\(error)")
         }
     }
-    /**
-     read data, such as read battery/ read heart rate
-     */
+    
     func readData(_ characterUUIDStr: String) {
         do {
             try super.readCharacteristic(characterUUIDStr)
@@ -45,5 +38,4 @@ class CBleParser: CmdBaseParser {
             print("[Error: ]__Read Data Error    " + "\(error)")
         }
     }
-    //......Many....many ^_^!
 }

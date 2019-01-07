@@ -45,8 +45,8 @@
   <table width="100%" height="100%">
     <tr>
       <td>
-        <h1>
-          <span style="display:none;" id="title">MatataCode</span>
+        <h1 style="display:none;">
+          <span id="title">MatataCode</span>
         </h1>
       </td>
 <!--      <td class="farSide">-->
@@ -57,47 +57,53 @@
       <td colspan=2>
         <table width="100%">
           <tr id="tabRow" height="1em">
-            <td id="tab_blocks" class="tabon">...</td>
+            <td id="tab_blocks"  class="tabon">Blocks</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_python" style="display:none;" class="taboff">MatataCode</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_javascript" class="taboff">MatataCode</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" style="display:none;" class="taboff">XML</td>
-            <td class="tabmax">&nbsp;</td>
+<!--            <td class="tabmax">&nbsp;</td>-->
             <td class="tabmin">
                 <button id="linkButton" style="display:none;" class="notext" title="...">
                     <img src='media/1x1.gif' class="link icon21">
                 </button>
-              <button id="runButton" class="notext primary" title="...">
+              <button id="runButton" class="notext primary" title="RunCode">
                 <img src='media/1x1.gif' class="run icon21">
               </button>
             </td>
             <td class="tabmin">
-                <button id="connectButton" class="notext secondary" title="...">
-                    <img src='media/1x1.gif' class="connect icon21">
+                <button id="stopButton" class="notext" title="Stop">
+                    <img src='media/1x1.gif' class="trash icon21_3">
                 </button>
             </td>
             <td class="tabmin">
-                <button id="sensorButton" class="notext" title="...">
-                    <img src='media/1x1.gif' class="senser icon21_2">
+                <button id="connectButton" class="notext secondary" title="Connect">
+                    <img src='media/1x1.gif' class="sensor icon21_2">
                 </button>
             </td>
+<!--            <td class="tabmin">-->
+<!--                <button id="sensorButton" class="notext" title="Sensor">-->
+<!--                    <img src='media/1x1.gif' class="sensor icon21_2">-->
+<!--                </button>-->
+<!--            </td>-->
             <td class="tabmin">
-                <button id="savecodeButton" class="notext" title="...">
+                <button id="savecodeButton" class="notext" title="SaveCode">
                     <img src='media/1x1.gif' class="savecode icon21_2">
                 </button>
             </td>
             <td class="tabmin">
-                <button id="loadcodeButton" class="notext" title="...">
+                <button id="loadcodeButton" class="notext" title="LoadCode">
                     <img src='media/1x1.gif' class="loadcode icon21_2">
                 </button>
             </td>
             <td class="tabmin">
-                <button id="trashButton" class="notext" title="...">
+                <button id="trashButton" class="notext" title="CleanUp">
                     <img src='media/1x1.gif' class="trash icon21">
-                </button>
+                        </button>
             </td>
+            <td class="tabmax"></td>
             <td style="display:none;" class="tabmax">
                 <select id="languageMenu"></select>
             </td>
@@ -117,7 +123,7 @@
 
   <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
       
-      <category name="MOTION" colour="#FF0000">
+      <category name="MOTION" colour="#FF0000" style="color: #FF0000;">
           <block type="motion_backward">
               <field name="STEP">1</field>
           </block>
@@ -125,44 +131,52 @@
               <field name="STEP">1</field>
           </block>
           <block type="motion_turnleft">
-              <field name="ANGLE">angle090</field>
+              <field name="ANGLE">90degree</field>
           </block>
           <block type="motion_turnright">
-              <field name="ANGLE">angle090</field>
+              <field name="ANGLE">90degree</field>
           </block>
           <block type="motion_do_action">
-              <field name="ACTION_LIST">action_1</field>
+              <field name="ACTION_LIST">action1</field>
           </block>
       </category>
       <category name="LED" colour="#FFA500">
-          <block type="led_left">
-              <field name="LED">#ff0000</field>
+<!--          <block type="led_left">-->
+<!--              <field name="LED">#ff0000</field>-->
+<!--          </block>-->
+<!--          <block type="led_right">-->
+<!--              <field name="LED">#ff0000</field>-->
+<!--          </block>-->
+<!--          <block type="led_both">-->
+<!--              <field name="LED">#ff0000</field>-->
+<!--          </block>-->
+          <block type="led_position_color_level">
+              <field name="EYE">0</field>
+              <field name="COLOR">1</field>
+              <field name="LEVEL">1</field>
           </block>
-          <block type="led_right">
-              <field name="LED">#ff0000</field>
-          </block>
-          <block type="led_led">
-              <field name="EYE">both_</field>
-              <field name="COLOR">#ff0000</field>
-          </block>
+<!--          <block type="led_led">-->
+<!--              <field name="EYE">both</field>-->
+<!--              <field name="COLOR">#ff0000</field>-->
+<!--          </block>-->
       </category>
       <category name="MUSIC" colour="#FFFF00">
           <block type="music_playsong">
-              <field name="MUSIC_LIST">music_1</field>
+              <field name="MUSIC_LIST">music1</field>
           </block>
           <block type="music_do_dance">
-              <field name="DANCE_LIST">dance_1</field>
+              <field name="DANCE_LIST">dance1</field>
           </block>
           <block type="music_alto">
-              <field name="ALTO_LIST">alto_1</field>
-              <field name="METER">meter_1</field>
+              <field name="TONE_LIST">do</field>
+              <field name="METER">meter1</field>
           </block>
           <block type="music_treble">
-              <field name="TREBLE_LIST">treble_1</field>
-              <field name="METER">meter_1</field>
+              <field name="TONE_LIST">do</field>
+              <field name="METER">meter1</field>
           </block>
           <block type="music_playmelody">
-              <field name="MELODY_LIST">melody_01</field>
+              <field name="MELODY_LIST">melody1</field>
           </block>
       </category>
       <category name="LOGIC" colour="#00FF00">
@@ -271,7 +285,7 @@
       </category>
       <category name="OPTIMIZE" colour="#0000FF">
           <block type="motion_right_optimize">
-              <field name="ANGLE">angle090</field>
+              <field name="ANGLE">90degree</field>
               <value name="NAME">
                   <shadow type="logic_boolean">
                       <field name="BOOL">TRUE</field>
@@ -279,7 +293,7 @@
               </value>
           </block>
           <block type="motion_left_optimize">
-              <field name="ANGLE">angle090</field>
+              <field name="ANGLE">90degree</field>
               <value name="NAME">
                   <shadow type="logic_boolean">
                       <field name="BOOL">TRUE</field>

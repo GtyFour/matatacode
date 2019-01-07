@@ -17,28 +17,28 @@ Blockly.defineBlocksWithJsonArray([{
                                              "name": "MUSIC_LIST",
                                              "options": [
                                                          [
-                                                          "music1",
-                                                          "music_1"
+                                                          "Music1",
+                                                          "music1"
                                                           ],
                                                          [
-                                                          "music2",
-                                                          "music_2"
+                                                          "Music2",
+                                                          "music2"
                                                           ],
                                                          [
-                                                          "music3",
-                                                          "music_3"
+                                                          "Music3",
+                                                          "music3"
                                                           ],
                                                          [
-                                                          "music4",
-                                                          "music_4"
+                                                          "Music4",
+                                                          "music4"
                                                           ],
                                                          [
-                                                          "music5",
-                                                          "music_5"
+                                                          "Music5",
+                                                          "music5"
                                                           ],
                                                          [
-                                                          "music6",
-                                                          "music_6"
+                                                          "Music6",
+                                                          "music6"
                                                           ]
                                                          ]
                                              }
@@ -57,28 +57,28 @@ Blockly.defineBlocksWithJsonArray([{
                                              "name": "DANCE_LIST",
                                              "options": [
                                                          [
-                                                          "dance1",
-                                                          "dance_1"
+                                                          "Dance1",
+                                                          "dance1"
                                                           ],
                                                          [
-                                                          "dance2",
-                                                          "dance_2"
+                                                          "Dance2",
+                                                          "dance2"
                                                           ],
                                                          [
-                                                          "dance3",
-                                                          "dance_3"
+                                                          "Dance3",
+                                                          "dance3"
                                                           ],
                                                          [
-                                                          "dance4",
-                                                          "dance_4"
+                                                          "Dance4",
+                                                          "dance4"
                                                           ],
                                                          [
-                                                          "dance5",
-                                                          "dance_5"
+                                                          "Dance5",
+                                                          "dance5"
                                                           ],
                                                          [
-                                                          "dance6",
-                                                          "dance_6"
+                                                          "Dance6",
+                                                          "dance6"
                                                           ]
                                                          ]
                                              }
@@ -98,44 +98,44 @@ Blockly.defineBlocksWithJsonArray([{
                                              "name": "MELODY_LIST",
                                              "options": [
                                                          [
-                                                          "melody1",
-                                                          "melody_01"
+                                                          "Melody1",
+                                                          "melody1"
                                                           ],
                                                          [
-                                                          "melody2",
-                                                          "melody_02"
+                                                          "Melody2",
+                                                          "melody2"
                                                           ],
                                                          [
-                                                          "melody3",
-                                                          "melody_03"
+                                                          "Melody3",
+                                                          "melody3"
                                                           ],
                                                          [
-                                                          "melody4",
-                                                          "melody_04"
+                                                          "Melody4",
+                                                          "melody4"
                                                           ],
                                                          [
-                                                          "melody5",
-                                                          "melody_05"
+                                                          "Melody5",
+                                                          "melody5"
                                                           ],
                                                          [
-                                                          "melody6",
-                                                          "melody_06"
+                                                          "Melody6",
+                                                          "melody6"
                                                           ],
                                                          [
-                                                          "melody7",
-                                                          "melody_07"
+                                                          "Melody7",
+                                                          "melody7"
                                                           ],
                                                          [
-                                                          "melody8",
-                                                          "melody_08"
+                                                          "Melody8",
+                                                          "melody8"
                                                           ],
                                                          [
-                                                          "melody9",
-                                                          "melody_09"
+                                                          "Melody9",
+                                                          "melody9"
                                                           ],
                                                          [
-                                                          "melody10",
-                                                          "melody_10"
+                                                          "Melody10",
+                                                          "melody10"
                                                           ]
                                                          ]
                                              }
@@ -152,35 +152,35 @@ Blockly.defineBlocksWithJsonArray([{
                                    "args0": [
                                              {
                                              "type": "field_dropdown",
-                                             "name": "ALTO_LIST",
+                                             "name": "TONE_LIST",
                                              "options": [
                                                          [
-                                                          "do",
-                                                          "alto_1"
+                                                          "Do",
+                                                          "do"
                                                           ],
                                                          [
-                                                          "re",
-                                                          "alto_2"
+                                                          "Re",
+                                                          "re"
                                                           ],
                                                          [
-                                                          "mi",
-                                                          "alto_3"
+                                                          "Mi",
+                                                          "mi"
                                                           ],
                                                          [
-                                                          "fa",
-                                                          "alto_4"
+                                                          "Fa",
+                                                          "fa"
                                                           ],
                                                          [
-                                                          "sol",
-                                                          "alto_5"
+                                                          "Sol",
+                                                          "sol"
                                                           ],
                                                          [
-                                                          "la",
-                                                          "alto_6"
+                                                          "La",
+                                                          "la"
                                                           ],
                                                          [
-                                                          "ti",
-                                                          "alto_7"
+                                                          "Ti",
+                                                          "ti"
                                                           ]
                                                          ]
                                              },
@@ -190,27 +190,27 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "1/4",
-                                                          "meter_1"
+                                                          "meter1"
                                                           ],
                                                          [
                                                           "2/4",
-                                                          "meter_2"
+                                                          "meter2"
                                                           ],
                                                          [
                                                           "3/4",
-                                                          "meter_3"
+                                                          "meter3"
                                                           ],
                                                          [
                                                           "4/4",
-                                                          "meter_4"
+                                                          "meter4"
                                                           ],
                                                          [
                                                           "5/4",
-                                                          "meter_5"
+                                                          "meter5"
                                                           ],
                                                          [
                                                           "6/4",
-                                                          "meter_6"
+                                                          "meter6"
                                                           ]
                                                          ]
                                              }
@@ -227,35 +227,35 @@ Blockly.defineBlocksWithJsonArray([{
                                    "args0": [
                                              {
                                              "type": "field_dropdown",
-                                             "name": "TREBLE_LIST",
+                                             "name": "TONE_LIST",
                                              "options": [
                                                          [
-                                                          "do",
-                                                          "treble_1"
+                                                          "Do",
+                                                          "do"
                                                           ],
                                                          [
-                                                          "re",
-                                                          "treble_2"
+                                                          "Re",
+                                                          "re"
                                                           ],
                                                          [
-                                                          "mi",
-                                                          "treble_3"
+                                                          "Mi",
+                                                          "mi"
                                                           ],
                                                          [
-                                                          "fa",
-                                                          "treble_4"
+                                                          "Fa",
+                                                          "fa"
                                                           ],
                                                          [
-                                                          "sol",
-                                                          "treble_5"
+                                                          "Sol",
+                                                          "sol"
                                                           ],
                                                          [
-                                                          "la",
-                                                          "treble_6"
+                                                          "La",
+                                                          "la"
                                                           ],
                                                          [
-                                                          "ti",
-                                                          "treble_7"
+                                                          "Ti",
+                                                          "ti"
                                                           ]
                                                          ]
                                              },
@@ -265,27 +265,27 @@ Blockly.defineBlocksWithJsonArray([{
                                              "options": [
                                                          [
                                                           "1/4",
-                                                          "meter_1"
+                                                          "meter1"
                                                           ],
                                                          [
                                                           "2/4",
-                                                          "meter_2"
+                                                          "meter2"
                                                           ],
                                                          [
                                                           "3/4",
-                                                          "meter_3"
+                                                          "meter3"
                                                           ],
                                                          [
                                                           "4/4",
-                                                          "meter_4"
+                                                          "meter4"
                                                           ],
                                                          [
                                                           "5/4",
-                                                          "meter_5"
+                                                          "meter5"
                                                           ],
                                                          [
                                                           "6/4",
-                                                          "meter_6"
+                                                          "meter6"
                                                           ]
                                                          ]
                                              }
