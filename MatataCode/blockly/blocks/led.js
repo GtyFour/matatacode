@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.Led');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-//Blockly.Constants.Colour.HUE = 20;
+Blockly.Constants.Led.HUE = 195;
 
 Blockly.defineBlocksWithJsonArray([{
                                    "type": "led_left",
@@ -120,7 +120,7 @@ Blockly.defineBlocksWithJsonArray([{
                                                           {
                                                           "src": "http://193.112.211.120/download/color/white.png",
                                                           "width": 16,
-                                                          "height": 9,
+                                                          "height": 16,
                                                           "alt": "White"
                                                           },
                                                           "1"
@@ -129,7 +129,7 @@ Blockly.defineBlocksWithJsonArray([{
                                                           {
                                                           "src": "http://193.112.211.120/download/color/red.png",
                                                           "width": 16,
-                                                          "height": 9,
+                                                          "height": 16,
                                                           "alt": "Red"
                                                           },
                                                           "2"
@@ -138,7 +138,7 @@ Blockly.defineBlocksWithJsonArray([{
                                                           {
                                                           "src": "http://193.112.211.120/download/color/yellow.png",
                                                           "width": 16,
-                                                          "height": 9,
+                                                          "height": 16,
                                                           "alt": "Yellow"
                                                           },
                                                           "3"
@@ -147,7 +147,7 @@ Blockly.defineBlocksWithJsonArray([{
                                                           {
                                                           "src": "http://193.112.211.120/download/color/green.png",
                                                           "width": 16,
-                                                          "height": 9,
+                                                          "height": 16,
                                                           "alt": "Green"
                                                           },
                                                           "4"
@@ -156,7 +156,7 @@ Blockly.defineBlocksWithJsonArray([{
                                                           {
                                                           "src": "http://193.112.211.120/download/color/blue.png",
                                                           "width": 16,
-                                                          "height": 9,
+                                                          "height": 16,
                                                           "alt": "Blue"
                                                           },
                                                           "5"
@@ -165,7 +165,7 @@ Blockly.defineBlocksWithJsonArray([{
                                                           {
                                                           "src": "http://193.112.211.120/download/color/purple.png",
                                                           "width": 16,
-                                                          "height": 9,
+                                                          "height": 16,
                                                           "alt": "Purple"
                                                           },
                                                           "6"
@@ -174,7 +174,7 @@ Blockly.defineBlocksWithJsonArray([{
                                                           {
                                                           "src": "http://193.112.211.120/download/color/black.png",
                                                           "width": 16,
-                                                          "height": 9,
+                                                          "height": 16,
                                                           "alt": "Black"
                                                           },
                                                           "7"

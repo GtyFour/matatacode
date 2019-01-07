@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.Music');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-//Blockly.Constants.Colour.HUE = 20;
+Blockly.Constants.Music.HUE = 300;
 
 Blockly.defineBlocksWithJsonArray([{
                                    "type": "music_playsong",

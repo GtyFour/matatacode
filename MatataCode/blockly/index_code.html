@@ -63,7 +63,7 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tab_javascript" class="taboff">MatataCode</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_xml" style="display:none;" class="taboff">XML</td>
+            <td id="tab_xml"  class="taboff">XML</td>
 <!--            <td class="tabmax">&nbsp;</td>-->
             <td class="tabmin">
                 <button id="linkButton" style="display:none;" class="notext" title="...">
@@ -310,55 +310,17 @@
       </category>
       <category name="VARIABLES" colour="#A65C81" custom="VARIABLE"></category>
       <category name="FUNCTIONS" colour="#9A5CA6" custom="PROCEDURE"></category>
-      <!-- <category name="LOOP"colour="#A65C81">
-        <block type="loop_start"></block>
-        <block type="loop_end"></block>
-      </category>
-      <category name="FUNCTION" colour="#9A5CA6">
-        <block type="function_invoke">
-          <value name="FUNC_NAME">
-            <shadow type="function">
-              <field name="FUNC_NAME">myFunc</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="function_func">
-          <field name="FUNC_NAME">myFunc</field>
-        </block>
-        <block type="function_define">
-          <field name="FUNC_NAME">myFunc</field>
-        </block>
-      </category> -->
-      
-      <!-- <category name="VALUE" colour="#A63C51">
-        <block type="value_define">
-          <field name="VALUE_NAME">myValue</field>
-        </block>
-        <block type="value_type">
-          <field name="TYPE_NAME">TYPE_BOOL</field>
-        </block>
-        <block type="value_v">
-          <field name="NAME">OPTIONNAME</field>
-        </block>
-        <block type="value_with_type">
-          <field name="NAME">OPTIONNAME</field>
-          <value name="VALUE_TYPE">
-            <shadow type="value_type">
-              <field name="TYPE_NAME">TYPE_BOOL</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="value_define_with_type">
-          <field name="VALUE_NAME">myValue</field>
-          <value name="NAME">
-            <shadow type="value_type">
-              <field name="TYPE_NAME">TYPE_BOOL</field>
-            </shadow>
-          </value>
-        </block>
-      </category> -->
       
   </xml>
   
 </body>
 </html>
+<!--备份自制compress
+ 
+ Blockly.Blocks.motion={};Blockly.Constants.Motion={};Blockly.Constants.Motion.HUE=195;
+ 
+ Blockly.Blocks.led={};Blockly.Constants.Led={};Blockly.Constants.Led.HUE=122;
+ Blockly.defineBlocksWithJsonArray([{type:"led_left",message0:"Left eye show color %1",args0:[{type:"field_colour",name:"LED",colour:"#ff0000"}],previousStatement: null,nextStatement:null,colour:"%{BKY_LED_HUE}",tooltip:"",helpUrl:""},{type:"led_right",message0:"Right eye show color %1",args0:[{type:"field_colour",name:"LED",colour:"#ff0000"}],previousStatement:null,nextStatement:null,colour:"%{BKY_LED_HUE}",tooltip:"",helpUrl:""},{type:"led_both",message0:"[!!THIS BLOCK ONLY RUN SOLO!!]Both eye show color %1",args0:[{type:"field_colour",name:"LED",colour:"#ff0000"}],previousStatement:null,nextStatement:null,colour:"%{BKY_LED_HUE}",tooltip:"",helpUrl:""},{type:"led_led",message0:"%1 eye show color %2",args0:[{type:"field_dropdown",name:"EYE",options:[["Left","left"],["Right","right"],["Both","both"]]},{type:"field_colour",name:"COLOR",colour:"#ff0000"}],previousStatement:null,nextStatement:null,colour:"%{BKY_LED_HUE}",tooltip:"",helpUrl:""},
+ {type:"led_position_color_level",message0:"%1 eye show color %2 at level %3",args0:[{type:"field_dropdown",name:"EYE",options:[["Left","1"],["Right","2"],["Both","0"]]},{type:"field_dropdown",name:"COLOR",options:[[{src:"http://193.112.211.120/download/color/white.png",width:16,height:16,alt:"White"},"1"],[{src:"http://193.112.211.120/download/color/red.png",width:16,height:16,alt:"Red"},"2"],[{src:"http://193.112.211.120/download/color/yellow.png",width:16,height:16,alt:"Yellow"},"3"],[{src:"http://193.112.211.120/download/color/green.png",width:16,height:16,alt:"Green"},"4"],[{src:"http://193.112.211.120/download/color/blue.png",width:16,height:16,alt:"Blue"},"5"],[{src:"http://193.112.211.120/download/color/purple.png",width:16,height:16,alt:"Purple"},"6"],[{src:"http://193.112.211.120/download/color/black.png",width:16,height:16,alt:"Black"},"7"]},{type:"field_dropdown",name:"LEVEL",options:[["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]]}],previousStatement:null,nextStatement:null,colour:"%{BKY_LED_HUE}",tooltip:"",helpUrl:""}]);
+ Blockly.Blocks.music={};Blockly.Constants.Music={};Blockly.Constants.Music.HUE=300;
+ Blockly.Blocks.timer={};Blockly.Constants.Timer={};Blockly.Constants.Timer.HUE=40;-->

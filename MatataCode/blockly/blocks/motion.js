@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.Motion');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-//Blockly.Constants.Colour.HUE = 20;
+Blockly.Constants.Motion.HUE = 122;
 
 Blockly.defineBlocksWithJsonArray([{
                                    "type": "motion_backward",
