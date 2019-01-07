@@ -6,6 +6,13 @@
   <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, width=device-width,initial-scale=1.0" />
   <title>MatataCode</title>
   <link rel="stylesheet" href="style_code.css">
+<!--      <script type="text/javascript">-->
+<!--          function jsHandlerLoadcode(message) {-->
+<!--              var xml = Blockly.Xml.textToDom(message);-->
+<!--              Blockly.Xml.domToWorkspace(xml, Code.workspace);-->
+<!--              return "load finished"-->
+<!--          };-->
+<!--      </script>-->
   <script src="appengine/storage.js"></script>
   <script src="blockly_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
@@ -57,13 +64,13 @@
       <td colspan=2>
         <table width="100%">
           <tr id="tabRow" height="1em">
-            <td id="tab_blocks"  class="tabon">Blocks</td>
+            <td id="tab_blocks" style="display:none;"  class="tabon">Blocks</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_python" style="display:none;" class="taboff">MatataCode</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_javascript" class="taboff">MatataCode</td>
+            <td id="tab_javascript" style="display:none;" class="taboff">MatataCode</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_xml"  class="taboff">XML</td>
+            <td id="tab_xml"  style="display:none;" class="taboff">XML</td>
 <!--            <td class="tabmax">&nbsp;</td>-->
             <td class="tabmin">
                 <button id="linkButton" style="display:none;" class="notext" title="...">
@@ -96,6 +103,16 @@
             <td class="tabmin">
                 <button id="loadcodeButton" class="notext" title="LoadCode">
                     <img src='media/1x1.gif' class="loadcode icon21_2">
+                        </button>
+            </td>
+            <td class="tabmin">
+                <button id="deletecodeButton" class="notext" title="DeleteCode">
+                    <img src='media/1x1.gif' class="delete icon21_4">
+                        </button>
+            </td>
+            <td class="tabmin">
+                <button id="checkcodeButton" class="notext" title="CheckCode">
+                    <img src='media/1x1.gif' class="check icon21_4">
                 </button>
             </td>
             <td class="tabmin">
@@ -315,6 +332,7 @@
   
 </body>
 </html>
+
 <!--备份自制compress
  
  Blockly.Blocks.motion={};Blockly.Constants.Motion={};Blockly.Constants.Motion.HUE=195;

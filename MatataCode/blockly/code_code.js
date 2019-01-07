@@ -448,7 +448,9 @@ Code.init = function() {
   Code.bindClick('connectButton',Code.connectbot);
   Code.bindClick('stopButton',Code.stopcode);
   Code.bindClick('savecodeButton',Code.savecode);
-  Code.bindClick('loadcodeButton',Code.loadcode);
+    Code.bindClick('loadcodeButton',Code.loadcode);
+    Code.bindClick('checkcodeButton',Code.checkcode);
+    Code.bindClick('deletecodeButton',Code.deletecode);
   var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {
     BlocklyStorage['HTTPREQUEST_ERROR'] = MSG['httpRequestError'];
@@ -515,7 +517,11 @@ Code.initLanguage = function() {
 
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
-  document.getElementById('stopButton').title = MSG['stopTooltip'];
+    document.getElementById('stopButton').title = MSG['stopTooltip'];
+    document.getElementById('savecodeButton').title = MSG['savecodeTooltip'];
+    document.getElementById('loadcodeButton').title = MSG['loadcodeTooltip'];
+    document.getElementById('checkcodeButton').title = MSG['checkcodeTooltip'];
+    document.getElementById('deletecodeButton').title = MSG['deletecodeTooltip'];
   document.getElementById('connectButton').title = MSG['connectTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 };
@@ -549,10 +555,13 @@ Code.sensor = function() {
   }
 };
 
-//GTY创建于2018年12月27日18:14:41 发送请求：保存当前代码
+//GTY创建于2019年01月07日22:21:24 发送请求：保存当前代码
 Code.savecode = function() {
+//    let xml = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
+    var xml = Blockly.Xml.workspaceToDom(Code.workspace);
+    var text = Blockly.Xml.domToText(xml);
     try {
-        window.webkit.messageHandlers.savecode.postMessage('savecode');
+        window.webkit.messageHandlers.savecode.postMessage(text);
     } catch (e) {
         alert(MSG['savecode fail'].replace('%1', e));
     }
@@ -565,11 +574,33 @@ Code.stopcode = function() {
         alert(MSG['stopcode fail'].replace('%1', e));
     }
 };
+//GTY创建于2019年01月07日23:36:18 发送请求：读取保存的代码文件
+Code.checkcode = function() {
+    try {
+        window.webkit.messageHandlers.checkcode.postMessage('checkcode');
+    } catch (e) {
+        alert(MSG['stopcode fail'].replace('%1', e));
+    }
+};
+//GTY创建于2019年01月08日01:10:39 发送请求：删除保存的代码文件
+Code.deletecode = function() {
+    try {
+        window.webkit.messageHandlers.deletecode.postMessage('deletecode');
+    } catch (e) {
+        alert(MSG['stopcode fail'].replace('%1', e));
+    }
+};
 
 //GTY创建于2018年12月27日18:15:08 发送请求：读取保存的代码
 Code.loadcode = function() {
+    let workspace = Blockly.getMainWorkspace();
+    workspace.clear();
+//    if (button.blocklyXml) {
+//        Blockly.Xml.domToWorkspace(button.blocklyXml, workspace);
+//    }
   try {
       window.webkit.messageHandlers.loadcode.postMessage('loadcode');
+      //发出请求，调出picker页面，点击返回后，对Xml进行封装，并调动js执行
   } catch (e) {
       alert(MSG['loadcode fail'].replace('%1', e));
   }

@@ -203,3 +203,18 @@ button {
 .backup {
     background-position: -42px 0px;
 }
+/* Sprited icons. */
+.icon21_4 {
+    height: 21px;
+    width: 21px;
+    background-image: url(icons_code4.png);
+}
+.check2 {
+    background-position:  0px 0px;
+}
+.delete {
+    background-position: -21px 0px;
+}
+.check {
+    background-position: -42px 0px;
+}
