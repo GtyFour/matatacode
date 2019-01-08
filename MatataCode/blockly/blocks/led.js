@@ -117,66 +117,31 @@ Blockly.defineBlocksWithJsonArray([{
                                              "name": "COLOR",
                                              "options": [
                                                          [
-                                                          {
-                                                          "src": "http://193.112.211.120/download/color/white.png",
-                                                          "width": 16,
-                                                          "height": 16,
-                                                          "alt": "White"
-                                                          },
+                                                          "White",
                                                           "1"
                                                           ],
                                                          [
-                                                          {
-                                                          "src": "http://193.112.211.120/download/color/red.png",
-                                                          "width": 16,
-                                                          "height": 16,
-                                                          "alt": "Red"
-                                                          },
+                                                          "Red",
                                                           "2"
                                                           ],
                                                          [
-                                                          {
-                                                          "src": "http://193.112.211.120/download/color/yellow.png",
-                                                          "width": 16,
-                                                          "height": 16,
-                                                          "alt": "Yellow"
-                                                          },
+                                                          "Yellow",
                                                           "3"
                                                           ],
                                                          [
-                                                          {
-                                                          "src": "http://193.112.211.120/download/color/green.png",
-                                                          "width": 16,
-                                                          "height": 16,
-                                                          "alt": "Green"
-                                                          },
+                                                          "Green",
                                                           "4"
                                                           ],
                                                          [
-                                                          {
-                                                          "src": "http://193.112.211.120/download/color/blue.png",
-                                                          "width": 16,
-                                                          "height": 16,
-                                                          "alt": "Blue"
-                                                          },
+                                                          "Blue",
                                                           "5"
                                                           ],
                                                          [
-                                                          {
-                                                          "src": "http://193.112.211.120/download/color/purple.png",
-                                                          "width": 16,
-                                                          "height": 16,
-                                                          "alt": "Purple"
-                                                          },
+                                                          "Purple",
                                                           "6"
                                                           ],
                                                          [
-                                                          {
-                                                          "src": "http://193.112.211.120/download/color/black.png",
-                                                          "width": 16,
-                                                          "height": 16,
-                                                          "alt": "Black"
-                                                          },
+                                                          "Black",
                                                           "7"
                                                           ]
                                                          ]

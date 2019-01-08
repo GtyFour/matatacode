@@ -13,12 +13,34 @@ Blockly.defineBlocksWithJsonArray([{
                                    "message0": "Backward %1",
                                    "args0": [
                                              {
-                                             "type": "field_number",
+                                             "type": "field_dropdown",
                                              "name": "STEP",
-                                             "value": 1,
-                                             "min": 1,
-                                             "max": 6,
-                                             "precision": 1
+                                             "options": [
+                                                         [
+                                                          "1",
+                                                          "1"
+                                                          ],
+                                                         [
+                                                          "2",
+                                                          "2"
+                                                          ],
+                                                         [
+                                                          "3",
+                                                          "3"
+                                                          ],
+                                                         [
+                                                          "4",
+                                                          "4"
+                                                          ],
+                                                         [
+                                                          "5",
+                                                          "5"
+                                                          ],
+                                                         [
+                                                          "6",
+                                                          "6"
+                                                          ]
+                                                         ]
                                              }
                                              ],
                                    "previousStatement": null,
@@ -32,12 +54,34 @@ Blockly.defineBlocksWithJsonArray([{
                                    "message0": "Forward %1",
                                    "args0": [
                                              {
-                                             "type": "field_number",
+                                             "type": "field_dropdown",
                                              "name": "STEP",
-                                             "value": 1,
-                                             "min": 1,
-                                             "max": 6,
-                                             "precision": 1
+                                             "options": [
+                                                         [
+                                                          "1",
+                                                          "1"
+                                                          ],
+                                                         [
+                                                          "2",
+                                                          "2"
+                                                          ],
+                                                         [
+                                                          "3",
+                                                          "3"
+                                                          ],
+                                                         [
+                                                          "4",
+                                                          "4"
+                                                          ],
+                                                         [
+                                                          "5",
+                                                          "5"
+                                                          ],
+                                                         [
+                                                          "6",
+                                                          "6"
+                                                          ]
+                                                         ]
                                              }
                                              ],
                                    "inputsInline": false,
