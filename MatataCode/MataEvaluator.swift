@@ -81,6 +81,23 @@ public class MataEvaluator: NSObject {
             }
             break
             
+            
+        case "wait":
+            switch array.last{
+            case "1":wait(1);break
+            case "2":wait(2);break
+            case "3":wait(3);break
+            case "4":wait(4);break
+            case "5":wait(5);break
+            case "6":wait(6);break
+            case "7":wait(7);break
+            case "8":wait(8);break
+            case "9":wait(9);break
+            case "10":wait(10);break
+            default:wait(1);break
+            }
+            break
+            
         case "turnleft":
             switch array.last{
             case "30degree":turnLeft(30);break
@@ -397,6 +414,10 @@ public class MataEvaluator: NSObject {
     }
     public func start(){
         expression.append(133)
+    }
+    public func wait(_ second:Int){
+        expression.append(62)
+        expression.append(UInt8(second))
     }
 //        public func setLeftEye(r: Int, g: Int, b: Int){
 //            expression.append(132)
