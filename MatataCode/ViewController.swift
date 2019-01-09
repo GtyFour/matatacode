@@ -18,7 +18,7 @@ public let STATEMENT_IDLE : String! = "Idling"
 public let STATEMENT_OFFLINE : String! = "Offline-Mode"
 public let STATEMENT_DEBUG : String! = "Debug"
 
-class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHandler, UIScrollViewDelegate,UITableViewDelegate, UITableViewDataSource{
+class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScriptMessageHandler, UIScrollViewDelegate,UITableViewDelegate, UITableViewDataSource{
     //MARK: - 成员变量
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var tableView: UITableView!//测试用设备列表，隐藏备用
@@ -92,7 +92,7 @@ class ViewController: UIViewController, WKNavigationDelegate,WKScriptMessageHand
         //读取主页面
         webView.navigationDelegate = self
         webView.scrollView.delegate = self
-//        webView.uiDelegate = (self as! WKUIDelegate)
+        webView.uiDelegate = (self as WKUIDelegate)
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "runcode")
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "savecode")
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "loadcode")
@@ -622,4 +622,9 @@ extension ViewController{
     @objc func connect(){
         setState(STATEMENT_CONNECTED)
     }
+}
+
+//MARK:blockly新的版本使用了js的弹框进行输入，增加支持
+extension ViewController {
+  
 }
