@@ -196,10 +196,7 @@
               <field name="MELODY_LIST">melody1</field>
           </block>
       </category>
-      <category name="LOGIC" colour="#00FF00">
-          <block type="timer_wait">
-              <field name="SECOND">1</field>
-          </block>
+      <category name="LOOPS" colour="#99FF00">
           <block type="controls_repeat_ext">
               <value name="TIMES">
                   <shadow type="math_number">
@@ -226,6 +223,11 @@
               </value>
           </block>
           <block type="controls_flow_statements"></block>
+      </category>
+      <category name="LOGIC" colour="#00FF00">
+          <block type="timer_wait">
+              <field name="SECOND">1</field>
+          </block>
           <block type="controls_if"></block>
           <block type="logic_operation"></block>
           <block type="logic_negate"></block>
@@ -234,10 +236,30 @@
               <field name="OP">LT</field>
           </block>
       </category>
-      <category name="NUMBER" colour="#007FFF">
+      <category name="INTEGER" colour="#00FFFF">
           <block type="math_number">
               <field name="NUM">1</field>
           </block>
+          <block type="math_number">
+              <field name="NUM">2</field>
+          </block>
+          <block type="math_number">
+              <field name="NUM">3</field>
+          </block>
+          <block type="math_number">
+              <field name="NUM">5</field>
+          </block>
+          <block type="math_number">
+              <field name="NUM">7</field>
+          </block>
+          <block type="math_number">
+              <field name="NUM">10</field>
+          </block>
+          <block type="math_number">
+              <field name="NUM">12</field>
+          </block>
+      </category>
+      <category name="MATHMATIC" colour="#00AAFF">
           <block type="math_number_property">
               <value name="NUMBER_TO_CHECK">
                   <shadow type="math_number">
@@ -300,7 +322,7 @@
               </value>
           </block>
       </category>
-      <category name="OPTIMIZE" colour="#0000FF">
+      <category name="OPTIMIZE" colour="#007FFF">
           <block type="motion_right_optimize">
               <field name="ANGLE">90degree</field>
               <value name="NAME">
@@ -325,8 +347,8 @@
               </value>
           </block>
       </category>
-      <category name="VARIABLES" colour="#A65C81" custom="VARIABLE"></category>
-      <category name="FUNCTIONS" colour="#9A5CA6" custom="PROCEDURE"></category>
+      <category name="VARIABLES" colour="#0033FF" custom="VARIABLE"></category>
+      <category name="FUNCTIONS" colour="#0000FF" custom="PROCEDURE"></category>
       
   </xml>
   
