@@ -447,7 +447,8 @@ Code.init = function() {
   // Disable the link button if page isn't backed by App Engine storage.
   Code.bindClick('connectButton',Code.connectbot);
   Code.bindClick('stopButton',Code.stopcode);
-  Code.bindClick('savecodeButton',Code.savecode);
+    Code.bindClick('helpButton',Code.helpbtn);
+    Code.bindClick('savecodeButton',Code.savecode);
     Code.bindClick('loadcodeButton',Code.loadcode);
     Code.bindClick('checkcodeButton',Code.checkcode);
     Code.bindClick('deletecodeButton',Code.deletecode);
@@ -515,13 +516,14 @@ Code.initLanguage = function() {
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
 
+  document.getElementById('helpButton').title = MSG['helpTooltip'];
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
-    document.getElementById('stopButton').title = MSG['stopTooltip'];
-    document.getElementById('savecodeButton').title = MSG['savecodeTooltip'];
-    document.getElementById('loadcodeButton').title = MSG['loadcodeTooltip'];
-    document.getElementById('checkcodeButton').title = MSG['checkcodeTooltip'];
-    document.getElementById('deletecodeButton').title = MSG['deletecodeTooltip'];
+  document.getElementById('stopButton').title = MSG['stopTooltip'];
+  document.getElementById('savecodeButton').title = MSG['savecodeTooltip'];
+  document.getElementById('loadcodeButton').title = MSG['loadcodeTooltip'];
+  document.getElementById('checkcodeButton').title = MSG['checkcodeTooltip'];
+  document.getElementById('deletecodeButton').title = MSG['deletecodeTooltip'];
   document.getElementById('connectButton').title = MSG['connectTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 };
@@ -606,6 +608,14 @@ Code.loadcode = function() {
   }
 };
 
+//GTY创建于2018年12月27日18:04:15 发送请求：通过蓝牙连接小车
+Code.helpbtn = function() {
+    try {
+        window.webkit.messageHandlers.helpbtn.postMessage('helpbtn');
+    } catch (e) {
+        alert(MSG['connect fail'].replace('%1', e));
+    }
+};
 //GTY创建于2018年12月27日18:04:15 发送请求：通过蓝牙连接小车
 Code.connectbot = function() {
     try {

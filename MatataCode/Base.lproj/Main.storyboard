@@ -95,6 +95,12 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="PpL-eP-e2V">
+                                <rect key="frame" x="140.66666666666666" y="56.666666666666657" width="454.66666666666674" height="300.66666666666674"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PpL-eP-e2V" secondAttribute="height" multiplier="319:211" id="fBh-eF-So9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -106,6 +112,7 @@
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="width" secondItem="60d-b0-RPX" secondAttribute="width" id="8oL-O6-ZfP"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="Ad4-7x-m6B"/>
                             <constraint firstItem="60d-b0-RPX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-120" id="B9H-U8-6p0"/>
+                            <constraint firstItem="PpL-eP-e2V" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BWj-WM-72a"/>
                             <constraint firstItem="gdA-tC-DJI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="EhE-tE-fUW"/>
                             <constraint firstItem="jFo-WG-Hc3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GL6-6D-e27"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Ge0-h8-1xb"/>
@@ -113,8 +120,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HaT-Yv-atV" secondAttribute="bottom" id="Me3-gp-xtH"/>
                             <constraint firstItem="jvh-dK-8hC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UHW-Cx-gMh"/>
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="leading" secondItem="60d-b0-RPX" secondAttribute="leading" id="Uf1-IE-OhX"/>
+                            <constraint firstItem="PpL-eP-e2V" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.618" id="fHL-wh-PmI"/>
                             <constraint firstItem="jFo-WG-Hc3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="j0n-YI-I2W"/>
                             <constraint firstItem="jvh-dK-8hC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tJt-6Q-TbH"/>
+                            <constraint firstItem="PpL-eP-e2V" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tQm-63-Qlw"/>
                             <constraint firstItem="HaT-Yv-atV" firstAttribute="top" secondItem="60d-b0-RPX" secondAttribute="bottom" id="uEa-A9-ff2"/>
                             <constraint firstItem="Qod-F5-5vx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ut7-VB-pQI"/>
                             <constraint firstItem="60d-b0-RPX" firstAttribute="top" secondItem="Qod-F5-5vx" secondAttribute="top" id="xRw-oP-Dju"/>
@@ -124,6 +133,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Code" id="Leh-vL-538"/>
                     <connections>
+                        <outlet property="helpImg" destination="PpL-eP-e2V" id="R9b-nf-Cfh"/>
                         <outlet property="scanBtn" destination="HaT-Yv-atV" id="nBb-rx-cBc"/>
                         <outlet property="stateLabel" destination="gdA-tC-DJI" id="gkE-WT-a3E"/>
                         <outlet property="tableView" destination="60d-b0-RPX" id="gXQ-cb-kEv"/>
@@ -198,5 +208,6 @@
     </scenes>
     <resources>
         <image name="default" width="60" height="60"/>
+        <image name="help" width="698.4000244140625" height="455"/>
     </resources>
 </document>

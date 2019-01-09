@@ -26,6 +26,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     @IBOutlet weak var waitView: UIView!//等待链接小车，隐藏备用
     @IBOutlet weak var waitLabel: UILabel!//等待链接小车提示信息，隐藏备用
     @IBOutlet weak var stateLabel: UILabel!//等待链接小车提示信息，隐藏备用
+    @IBOutlet weak var helpImg: UIImageView!//等待链接小车提示信息，隐藏备用
     
     var code_to_run : String!
     var code_to_save : String!
@@ -46,8 +47,9 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
 //        NotificationCenter.default.addObserver(self, selector: #selector(connect), name: Notification.Name(rawValue: CmdCentralStateNotify), object: true)
 
         
-        stateLabel.backgroundColor = UIColor(red: 1.0, green: 0.6, blue: 0, alpha: 1)
+        stateLabel.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
         setState(STATEMENT_DISCONNECTED)
+        helpImg.isHidden = true
         waitView.isHidden = true
         waitLabel.isHidden = true
         parser.dataComingMonitor = receiverCenter
@@ -58,6 +60,10 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     }
     
     override func viewDidAppear(_ animated: Bool){
+        
+        helpImg.isHidden = true
+        waitView.isHidden = true
+        waitLabel.isHidden = true
         super.viewDidAppear(animated)
     }
     
@@ -101,7 +107,12 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "connectbot")
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "stopcode")
         webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "disconectbot")
+        webView.configuration.userContentController.add(WeakScriptMessageDelegate(self), name: "helpbtn")
         
+        let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissHelp))
+        self.helpImg?.addGestureRecognizer(singleTapGesture)
+        self.helpImg?.isUserInteractionEnabled = true
+
         scanBtn.addTarget(self, action: #selector(scan), for: .touchUpInside)
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -128,6 +139,24 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
         }
     }
     
+    func disconnectbot(){
+        
+        let alertController = UIAlertController(title: "MatataBot", message: "Already linked!!Do you want to Dis-connect?", preferredStyle: UIAlertController.Style.alert)
+
+        let saveAction = UIAlertAction(title: "Dis-Con", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            self.centralManager.cancelConnect(clearAutoConnect: true)
+            self.setState(STATEMENT_DISCONNECTED)
+            self.showAlert(title: "MatataBot", message: "Dis-connected!!")
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     
     func connectbot() {
         print("connectbot")
@@ -137,7 +166,8 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
 //        }
         
         if self.stateLabel.text == STATEMENT_CONNECTED{
-            self.showAlert(title: "MatataBot", message: "Already linked!!")
+            self.disconnectbot()
+           
             return
         }
         //展示一个view
@@ -237,18 +267,29 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
         })
     }
     
+    
+    func helpbtn() {
+        self.helpImg.isHidden = false
+    }
+    @objc func dismissHelp() {
+        self.helpImg.isHidden = true
+    }
+    
     func savecode(code_xml: WKScriptMessage) {
+        self.helpImg.isHidden = true
         self.code_to_save = code_xml.body as? String
         //暂存，等待用户输入文件名
         saveButtonClicked()
     }
     
     func loadcode(message: WKScriptMessage) {
+        self.helpImg.isHidden = true
         print("loadcode")
         loadButtonClicked()
     }
     
     func stopcode(message: WKScriptMessage) {
+        self.helpImg.isHidden = true
         if self.stateLabel.text == STATEMENT_DISCONNECTED{
             self.showAlert(title: "MatataBot", message: "Please link to MatataBot first!")
             return
@@ -300,10 +341,9 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.4){}
     }
     
-    func disconnectbot() {
-        centralManager.cancelConnect(clearAutoConnect: true)
-    }
+
     func runcode(message: WKScriptMessage){
+        self.helpImg.isHidden = true
 //        if self.centralManager.connectedStatus == false{
 //            self.showAlert(title: "MatataBot", message: "Please link to MatataBot first!")
 //            return
@@ -392,6 +432,10 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
             print("disconectbot")
             self.disconnectbot()
             break
+        case "helpbtn":
+            print("help")//helpbtn
+            self.helpbtn()
+            break
         default:
             break
         }
@@ -445,6 +489,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     }
     //Alert弹框
     func saveButtonClicked(){
+        self.helpImg.isHidden = true
         let alertController = UIAlertController(title: "Save your codes!", message: "Input codes' name:", preferredStyle: UIAlertController.Style.alert)
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "YourProgramName"
@@ -465,6 +510,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     
     
     func loadButtonClicked(){
+        self.helpImg.isHidden = true
         let alertController = UIAlertController(title: "Choose your codes!", message: nil, preferredStyle: UIAlertController.Style.alert)
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "YourProgramName"
@@ -491,6 +537,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     }
     
     func deleteButtonClicked(){
+        self.helpImg.isHidden = true
         let alertController = UIAlertController(title: "Choose your codes!", message: nil, preferredStyle: UIAlertController.Style.alert)
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "YourProgramName"
@@ -576,6 +623,7 @@ extension ViewController{
     }
     
     func checkcode(){
+        self.helpImg.isHidden = true
         let DocumentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,FileManager.SearchPathDomainMask.allDomainsMask, true)
         print(DocumentPath)
         let manager = FileManager.default
@@ -598,6 +646,7 @@ extension ViewController{
     
     
     func setState(_ statement:String){
+        self.helpImg.isHidden = true
         switch statement {
         case STATEMENT_CONNECTED:
             self.stateLabel.textColor = UIColor(red: 0.2, green: 1.0, blue: 0.2, alpha: 1)
