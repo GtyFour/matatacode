@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VYd-GR-v2V">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,23 +15,23 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MatataCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9u-PE-xA7">
-                                <rect key="frame" x="304.5" y="328" width="423" height="140"/>
+                                <rect key="frame" x="-0.5" y="387" width="423" height="140"/>
                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="120"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MatataCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-rx-cse">
-                                <rect key="frame" x="300.5" y="324" width="423" height="140"/>
+                                <rect key="frame" x="-4.5" y="383" width="423" height="140"/>
                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="120"/>
                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matata" translatesAutoresizingMaskIntoConstraints="NO" id="By0-d8-aeI">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="49"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="49"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -61,28 +61,28 @@
             <objects>
                 <viewController id="VYd-GR-v2V" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="28m-ly-Hm5">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_img" translatesAutoresizingMaskIntoConstraints="NO" id="yta-a3-zJJ">
-                                <rect key="frame" x="0.0" y="10" width="1024" height="768"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_img2" translatesAutoresizingMaskIntoConstraints="NO" id="yta-a3-zJJ">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matatacode_beta" translatesAutoresizingMaskIntoConstraints="NO" id="O6g-nU-V7X">
-                                <rect key="frame" x="215" y="206" width="594" height="266"/>
+                                <rect key="frame" x="93" y="366" width="228" height="101.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="O6g-nU-V7X" secondAttribute="height" multiplier="507:227" id="sSb-xX-1Vt"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matatalab" translatesAutoresizingMaskIntoConstraints="NO" id="Cdl-mA-7eW">
-                                <rect key="frame" x="452.5" y="122" width="119" height="63.5"/>
+                                <rect key="frame" x="189" y="310" width="36" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cdl-mA-7eW" secondAttribute="height" multiplier="15:8" id="Cfr-a1-QPE"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="treebot" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-lb-n6K">
-                                <rect key="frame" x="308" y="547.5" width="356.5" height="101"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bot2" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-lb-n6K">
+                                <rect key="frame" x="155.5" y="491" width="82" height="38.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="kjx-lb-n6K" secondAttribute="height" multiplier="524:149" id="aEz-Fa-a06"/>
+                                    <constraint firstAttribute="width" secondItem="kjx-lb-n6K" secondAttribute="height" multiplier="513:241" id="WzR-Xv-tR4"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -90,12 +90,12 @@
                         <constraints>
                             <constraint firstItem="Cdl-mA-7eW" firstAttribute="centerX" secondItem="O6g-nU-V7X" secondAttribute="centerX" id="7nT-2d-rME"/>
                             <constraint firstItem="yta-a3-zJJ" firstAttribute="height" secondItem="28m-ly-Hm5" secondAttribute="height" id="9bd-gi-2bA"/>
-                            <constraint firstItem="kjx-lb-n6K" firstAttribute="top" secondItem="O6g-nU-V7X" secondAttribute="bottom" multiplier="1.16" id="FN4-5y-INI"/>
-                            <constraint firstItem="O6g-nU-V7X" firstAttribute="width" secondItem="28m-ly-Hm5" secondAttribute="width" multiplier="0.58" id="PIK-8v-ejI"/>
-                            <constraint firstItem="O6g-nU-V7X" firstAttribute="centerY" secondItem="AZp-jf-BdM" secondAttribute="centerY" multiplier="0.86" id="Sia-xG-gWa"/>
+                            <constraint firstItem="kjx-lb-n6K" firstAttribute="top" secondItem="O6g-nU-V7X" secondAttribute="bottom" multiplier="1.05" id="FN4-5y-INI"/>
+                            <constraint firstItem="O6g-nU-V7X" firstAttribute="width" secondItem="28m-ly-Hm5" secondAttribute="width" multiplier="0.55" id="PIK-8v-ejI"/>
+                            <constraint firstItem="O6g-nU-V7X" firstAttribute="centerY" secondItem="AZp-jf-BdM" secondAttribute="centerY" multiplier="0.92" id="Sia-xG-gWa"/>
                             <constraint firstItem="O6g-nU-V7X" firstAttribute="centerX" secondItem="AZp-jf-BdM" secondAttribute="centerX" id="Sr2-OZ-D5V"/>
-                            <constraint firstItem="Cdl-mA-7eW" firstAttribute="width" secondItem="O6g-nU-V7X" secondAttribute="width" multiplier="0.2" id="d1g-sB-TN3"/>
-                            <constraint firstItem="kjx-lb-n6K" firstAttribute="width" secondItem="O6g-nU-V7X" secondAttribute="width" multiplier="0.6" id="eo6-js-pMA"/>
+                            <constraint firstItem="kjx-lb-n6K" firstAttribute="width" secondItem="O6g-nU-V7X" secondAttribute="width" multiplier="0.36" id="Xro-Hr-ogB"/>
+                            <constraint firstItem="Cdl-mA-7eW" firstAttribute="width" secondItem="O6g-nU-V7X" secondAttribute="width" multiplier="0.16" id="d1g-sB-TN3"/>
                             <constraint firstItem="kjx-lb-n6K" firstAttribute="centerX" secondItem="O6g-nU-V7X" secondAttribute="centerX" multiplier="0.95" id="gJH-3M-f1f"/>
                             <constraint firstItem="yta-a3-zJJ" firstAttribute="centerX" secondItem="AZp-jf-BdM" secondAttribute="centerX" id="k1O-K2-vY4"/>
                             <constraint firstItem="yta-a3-zJJ" firstAttribute="centerY" secondItem="AZp-jf-BdM" secondAttribute="centerY" id="kpw-qI-HXB"/>
@@ -107,14 +107,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gf-dG-mIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="365" y="720"/>
+            <point key="canvasLocation" x="364.453125" y="719.53125"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bg_img" width="5443" height="3062"/>
+        <image name="bg_img2" width="1921" height="1441"/>
+        <image name="bot2" width="711" height="447"/>
         <image name="matata" width="300" height="49"/>
-        <image name="matatacode_beta" width="1025" height="461"/>
-        <image name="matatalab" width="257" height="130"/>
-        <image name="treebot" width="512" height="141"/>
+        <image name="matatacode_beta" width="1025" height="346"/>
+        <image name="matatalab" width="513" height="259"/>
     </resources>
 </document>
