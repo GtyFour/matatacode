@@ -220,9 +220,9 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
                 break
         }
         
-        //链接
+        //链接 Matalab--MatataBot--MatataCon
         centralManager.scanWithServices(nil, duration: 3, discoveryHandle: { discovery in
-            if (discovery.peripheral.name == "Matalab")&&(discovery.RSSI >= -90){
+            if ((discovery.peripheral.name == "Matalab")||(discovery.peripheral.name == "MatataBot")||(discovery.peripheral.name == "MatataCon"))&&(discovery.RSSI >= -90){
                 print(discovery)
                 self.bleList.insert(discovery, at: 0)
             }
