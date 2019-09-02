@@ -416,9 +416,8 @@ Code.init = function() {
   Code.workspace = Blockly.inject('content_blocks',
       {grid:
           {spacing: 35,
-           length: 5,
-           colour: '#cccccc',
-//                                  colour: '#ccc',
+           length: 0,
+           colour: '#FFF9F2',
            snap: true},
        media: 'media/',
        rtl: rtl,
