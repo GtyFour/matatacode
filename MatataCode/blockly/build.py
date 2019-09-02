@@ -67,6 +67,13 @@ for arg in sys.argv[1:len(sys.argv)]:
 
 import errno, glob, httplib, json, os, re, subprocess, threading, urllib
 
+if sys.version_info[0] == 2:
+  import httplib
+  from urllib import urlencode
+else:
+  import http.client as httplib
+  from urllib.parse import urlencode
+  from importlib import reload
 
 def import_path(fullpath):
   """Import a file with full path specification.
@@ -329,8 +336,11 @@ class Gen_compressed(threading.Thread):
   def do_compile(self, params, target_filename, filenames, remove):
     # Send the request to Google.
     headers = {"Content-type": "application/x-www-form-urlencoded"}
-    conn = httplib.HTTPSConnection("closure-compiler.appspot.com")
-    conn.request("POST", "/compile", urllib.urlencode(params), headers)
+    # conn = httplib.HTTPSConnection("closure-compiler.appspot.com")
+    # conn.request("POST", "/compile", urlencode(params), headers)
+    conn = httplib.HTTPSConnection("localhost",1087)#177.68.251.217
+    conn.set_tunnel("closure-compiler.appspot.com")
+    conn.request("POST", "/compile", urlencode(params), headers)
     response = conn.getresponse()
     json_str = response.read()
     conn.close()
