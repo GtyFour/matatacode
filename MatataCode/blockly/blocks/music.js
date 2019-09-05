@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.Music');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Constants.Music.HUE = 300;
+Blockly.Constants.Music.HUE = 307;
 
 Blockly.defineBlocksWithJsonArray([{
                                    "type": "music_playsong",
@@ -45,7 +45,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 300,
+                                   "colour": Blockly.Constants.Music.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },{
@@ -85,7 +85,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 300,
+                                   "colour": Blockly.Constants.Music.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -142,7 +142,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 300,
+                                   "colour": Blockly.Constants.Music.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -217,7 +217,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 300,
+                                   "colour": Blockly.Constants.Music.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -292,7 +292,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 300,
+                                   "colour": Blockly.Constants.Music.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    }]

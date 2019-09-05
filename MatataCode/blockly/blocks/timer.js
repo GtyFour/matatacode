@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.Timer');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Constants.Timer.HUE = 40;
+Blockly.Constants.Timer.HUE = 83;
 
 Blockly.defineBlocksWithJsonArray([{
                                    "type": "timer_wait",
@@ -61,7 +61,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 40,
+                                   "colour": Blockly.Constants.Timer.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    }]

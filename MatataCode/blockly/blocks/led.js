@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.Led');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Constants.Led.HUE = 195;
+Blockly.Constants.Led.HUE = 308;
 
 Blockly.defineBlocksWithJsonArray([{
                                    "type": "led_left",
@@ -20,7 +20,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 195,
+                                   "colour": Blockly.Constants.Led.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -36,7 +36,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 195,
+                                   "colour": Blockly.Constants.Led.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -52,7 +52,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 195,
+                                   "colour": Blockly.Constants.Led.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -86,7 +86,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 195,
+                                   "colour": Blockly.Constants.Led.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -179,7 +179,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 195,
+                                   "colour": Blockly.Constants.Led.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    }]

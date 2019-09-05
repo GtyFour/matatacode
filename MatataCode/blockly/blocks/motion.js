@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.Motion');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Constants.Motion.HUE = 122;
+Blockly.Constants.Motion.HUE = 83;
 
 Blockly.defineBlocksWithJsonArray([{
                                    "type": "motion_backward",
@@ -45,7 +45,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 122,
+                                   "colour": Blockly.Constants.Motion.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -87,7 +87,7 @@ Blockly.defineBlocksWithJsonArray([{
                                    "inputsInline": false,
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 122,
+                                   "colour": Blockly.Constants.Motion.HUE,
                                    "tooltip": "Move forward some steps",
                                    "helpUrl": ""
                                    },
@@ -148,7 +148,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 122,
+                                   "colour": Blockly.Constants.Motion.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -209,7 +209,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 122,
+                                   "colour": Blockly.Constants.Motion.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -276,7 +276,7 @@ Blockly.defineBlocksWithJsonArray([{
                                    "inputsInline": false,
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 122,
+                                   "colour": Blockly.Constants.Motion.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -343,7 +343,7 @@ Blockly.defineBlocksWithJsonArray([{
                                    "inputsInline": false,
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 122,
+                                   "colour": Blockly.Constants.Motion.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    },
@@ -360,7 +360,7 @@ Blockly.defineBlocksWithJsonArray([{
                                       "inputsInline": false,
                                       "previousStatement": null,
                                       "nextStatement": null,
-                                      "colour": 122,
+                                      "colour": Blockly.Constants.Motion.HUE,
                                       "tooltip": "",
                                       "helpUrl": ""
                                    },{
@@ -400,7 +400,7 @@ Blockly.defineBlocksWithJsonArray([{
                                              ],
                                    "previousStatement": null,
                                    "nextStatement": null,
-                                   "colour": 122,
+                                   "colour": Blockly.Constants.Motion.HUE,
                                    "tooltip": "",
                                    "helpUrl": ""
                                    }]
