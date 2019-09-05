@@ -1,364 +1,373 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta name="google" value="notranslate">
-  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, width=device-width,initial-scale=1.0" />
-  <title>MatataCode</title>
-  <link rel="stylesheet" href="style_code.css">
-<!--      <script type="text/javascript">-->
-<!--          function jsHandlerLoadcode(message) {-->
-<!--              var xml = Blockly.Xml.textToDom(message);-->
-<!--              Blockly.Xml.domToWorkspace(xml, Code.workspace);-->
-<!--              return "load finished"-->
-<!--          };-->
-<!--      </script>-->
-  <script src="appengine/storage.js"></script>
-  <!-- <script src="blockly_compressed.js"></script>
-  <script src="blocks_compressed.js"></script> -->
-  <script src="./local_build/local_blockly_compressed.js"></script>
-  <script src="./local_build/local_blocks_compressed.js"></script>
-  <script src="javascript_compressed.js"></script>
-<!--  <script src="php_compressed.js"></script>-->
-  <script src="python_compressed.js"></script>
-<!--  <script src="lua_compressed.js"></script>-->
-<!--  <script src="dart_compressed.js"></script>-->
-  <script src="code_code.js"></script>
-<!-- 新增的matata块 -->
-  <script src="blocks/led.js"></script>
-  <script src="blocks/motion.js"></script>
-  <script src="blocks/music.js"></script>
-  <script src="blocks/timer.js"></script>
-  <script src="blocks/value.js"></script>
-  <script src="blocks/loop.js"></script>
-  <script src="blocks/function.js"></script>
-<!--  针对新增matata块的编译器-->
-  <script src="generators/python/led.js"></script>
-  <script src="generators/python/motion.js"></script>
-  <script src="generators/python/music.js"></script>
-  <script src="generators/python/timer.js"></script>
-  <script src="generators/python/function.js"></script>
-  <script src="generators/python/value.js"></script>
-  <script src="generators/python/loop.js"></script>
+    <meta charset="utf-8">
+    <meta name="google" value="notranslate">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, width=device-width,initial-scale=1.0" />
+    <title>MatataCode</title>
+    <link rel="stylesheet" href="style_code.css">
+    <!--      <script type="text/javascript">-->
+    <!--          function jsHandlerLoadcode(message) {-->
+    <!--              var xml = Blockly.Xml.textToDom(message);-->
+    <!--              Blockly.Xml.domToWorkspace(xml, Code.workspace);-->
+    <!--              return "load finished"-->
+    <!--          };-->
+    <!--      </script>-->
+    <script src="appengine/storage.js"></script>
+    <script src="blockly_compressed.js"></script>
+    <script src="blocks_compressed.js"></script>
+    <!-- <script src="./local_build/local_blockly_compressed.js"></script> -->
+    <!-- <script src="./local_build/local_blocks_compressed.js"></script> -->
+    <script src="javascript_compressed.js"></script>
+    <!--  <script src="php_compressed.js"></script>-->
+    <script src="python_compressed.js"></script>
+    <!--  <script src="lua_compressed.js"></script>-->
+    <!--  <script src="dart_compressed.js"></script>-->
+    <script src="code_code.js"></script>
+    <!-- 新增的matata块 -->
+    <script src="blocks/led.js"></script>
+    <script src="blocks/motion.js"></script>
+    <script src="blocks/music.js"></script>
+    <script src="blocks/timer.js"></script>
+    <script src="blocks/value.js"></script>
+    <script src="blocks/loop.js"></script>
+    <script src="blocks/function.js"></script>
+    <script src="blocks/led_new.js"></script>
+    <script src="blocks/sensor.js"></script>
+    <script src="blocks/wheel_control.js"></script>
+    <!--  针对新增matata块的编译器-->
+    <script src="generators/python/led.js"></script>
+    <script src="generators/python/motion.js"></script>
+    <script src="generators/python/music.js"></script>
+    <script src="generators/python/timer.js"></script>
+    <script src="generators/python/function.js"></script>
+    <script src="generators/python/value.js"></script>
+    <script src="generators/python/loop.js"></script>
+    <script src="generators/python/led_new.js"></script>
+    <script src="generators/python/sensor.js"></script>
+    <script src="generators/python/wheel_control.js"></script>
 
-  <script src="generators/javascript/led.js"></script>
-  <script src="generators/javascript/motion.js"></script>
-  <script src="generators/javascript/music.js"></script>
-  <script src="generators/javascript/timer.js"></script>
-  <script src="generators/javascript/function.js"></script>
-  <script src="generators/javascript/value.js"></script>
-  <script src="generators/javascript/loop.js"></script>
-  
+    <script src="generators/javascript/led.js"></script>
+    <script src="generators/javascript/motion.js"></script>
+    <script src="generators/javascript/music.js"></script>
+    <script src="generators/javascript/timer.js"></script>
+    <script src="generators/javascript/function.js"></script>
+    <script src="generators/javascript/value.js"></script>
+    <script src="generators/javascript/loop.js"></script>
+    <script src="generators/javascript/led_new.js"></script>
+    <script src="generators/javascript/sensor.js"></script>
+    <script src="generators/javascript/wheel_control.js"></script>
+
 </head>
-<body>
-  <table width="100%" height="100%">
-    <tr>
-      <td>
-        <h1 style="display:none;">
-          <span id="title">MatataCode</span>
-        </h1>
-      </td>
-<!--      <td class="farSide">-->
-<!--        <select style="display:none;" id="languageMenu"></select>-->
-<!--      </td>-->
-    </tr>
-    <tr>
-      <td colspan=2>
-        <table width="100%">
-          <tr id="tabRow" height="1em">
-            <td id="tab_blocks" style="display:none;"  class="tabon">Blocks</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tab_python" style="display:none;" class="taboff">MatataCode</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tab_javascript" style="display:none;" class="taboff">MatataCode</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tab_xml"  style="display:none;" class="taboff">XML</td>
-<!--            <td class="tabmax">&nbsp;</td>-->
-            <td class="tabmin">
-                <button id="linkButton" style="display:none;" class="notext" title="...">
-                    <img src='media/1x1.gif' class="link icon21">
-                </button>
-              <button id="runButton" class="notext primary" title="RunCode">
-                <img src='media/1x1.gif' class="run icon21">
-              </button>
-            </td>
-            <td class="tabmin">
-                <button id="stopButton" class="notext" title="Stop">
-                    <img src='media/1x1.gif' class="trash icon21_3">
-                </button>
-            </td>
-            <td class="tabmin">
-                <button id="connectButton" class="notext secondary" title="Connect">
-                    <img src='media/1x1.gif' class="connect icon21">
-                </button>
-            </td>
-<!--            <td class="tabmin">-->
-<!--                <button id="sensorButton" class="notext" title="Sensor">-->
-<!--                    <img src='media/1x1.gif' class="sensor icon21_2">-->
-<!--                </button>-->
-<!--            </td>-->
-            <td class="tabmin">
-                <button id="savecodeButton" class="notext" title="SaveCode">
-                    <img src='media/1x1.gif' class="savecode icon21_2">
-                </button>
-            </td>
-            <td class="tabmin">
-                <button id="loadcodeButton" class="notext" title="LoadCode">
-                    <img src='media/1x1.gif' class="loadcode icon21_2">
-                        </button>
-            </td>
-            <td class="tabmin">
-                <button id="deletecodeButton" class="notext" title="DeleteCode">
-                    <img src='media/1x1.gif' class="delete icon21_4">
-                        </button>
-            </td>
-            <td class="tabmin">
-                <button id="checkcodeButton" class="notext" title="CheckCode">
-                    <img src='media/1x1.gif' class="check icon21_4">
-                </button>
-            </td>
-            <td class="tabmin">
-                <button id="trashButton" class="notext" title="CleanUp">
-                    <img src='media/1x1.gif' class="trash icon21">
-                        </button>
-            </td>
-            <td class="tabmin">
-                <button id="helpButton" class="notext" title="Help">
-                    <img src='media/1x1.gif' class="helpbutton icon21_4">
-                        </button>
-            </td>
-            <td class="tabmax"></td>
-            <td style="display:none;" class="tabmax">
-                <select id="languageMenu"></select>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td height="99%" colspan=2 id="content_area">
-      </td>
-    </tr>
-  </table>
-  <div id="content_blocks" class="content"></div>
-  <pre id="content_python" class="content"></pre>
-  <pre id="content_javascript" class="content"></pre>
-  <textarea id="content_xml" class="content" wrap="off"></textarea>
 
-  <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
-      
-      <category name="MOTION" colour="#FF0000" style="color: #FF0000;">
-          <block type="motion_forward">
-              <field name="STEP">1</field>
-          </block>
-          <block type="motion_backward">
-              <field name="STEP">1</field>
-          </block>
-          <block type="motion_turnleft">
-              <field name="ANGLE">90degree</field>
-          </block>
-          <block type="motion_turnright">
-              <field name="ANGLE">90degree</field>
-          </block>
-          <block type="motion_do_action">
-              <field name="ACTION_LIST">action1</field>
-          </block>
-      </category>
-      <category name="LED" colour="#FFA500">
-<!--          <block type="led_left">-->
-<!--              <field name="LED">#ff0000</field>-->
-<!--          </block>-->
-<!--          <block type="led_right">-->
-<!--              <field name="LED">#ff0000</field>-->
-<!--          </block>-->
-<!--          <block type="led_both">-->
-<!--              <field name="LED">#ff0000</field>-->
-<!--          </block>-->
-          <block type="led_position_color_level">
-              <field name="EYE">0</field>
-              <field name="COLOR">1</field>
-              <field name="LEVEL">1</field>
-          </block>
-<!--          <block type="led_led">-->
-<!--              <field name="EYE">both</field>-->
-<!--              <field name="COLOR">#ff0000</field>-->
-<!--          </block>-->
-      </category>
-      <category name="MUSIC" colour="#FFFF00">
-          <block type="music_playsong">
-              <field name="MUSIC_LIST">music1</field>
-          </block>
-          <block type="music_do_dance">
-              <field name="DANCE_LIST">dance1</field>
-          </block>
-          <block type="music_alto">
-              <field name="TONE_LIST">do</field>
-              <field name="METER">meter1</field>
-          </block>
-          <block type="music_treble">
-              <field name="TONE_LIST">do</field>
-              <field name="METER">meter1</field>
-          </block>
-          <block type="music_playmelody">
-              <field name="MELODY_LIST">melody1</field>
-          </block>
-      </category>
-      <category name="LOOPS" colour="#99FF00">
-          <block type="controls_repeat_ext">
-              <value name="TIMES">
-                  <shadow type="math_number">
-                      <field name="NUM">10</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="controls_whileUntil"></block>
-          <block type="controls_for">
-              <value name="FROM">
-                  <shadow type="math_number">
-                      <field name="NUM">1</field>
-                  </shadow>
-              </value>
-              <value name="TO">
-                  <shadow type="math_number">
-                      <field name="NUM">10</field>
-                  </shadow>
-              </value>
-              <value name="BY">
-                  <shadow type="math_number">
-                      <field name="NUM">1</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="controls_flow_statements"></block>
-      </category>
-      <category name="LOGIC" colour="#00FF00">
-          <block type="timer_wait">
-              <field name="SECOND">1</field>
-          </block>
-          <block type="controls_if"></block>
-          <block type="logic_operation"></block>
-          <block type="logic_negate"></block>
-          <block type="logic_boolean"></block>
-          <block type="logic_compare">
-              <field name="OP">LT</field>
-          </block>
-      </category>
-      <category name="INTEGER" colour="#00FFFF">
-          <block type="math_number">
-              <field name="NUM">1</field>
-          </block>
-          <block type="math_number">
-              <field name="NUM">2</field>
-          </block>
-          <block type="math_number">
-              <field name="NUM">3</field>
-          </block>
-          <block type="math_number">
-              <field name="NUM">5</field>
-          </block>
-          <block type="math_number">
-              <field name="NUM">7</field>
-          </block>
-          <block type="math_number">
-              <field name="NUM">10</field>
-          </block>
-          <block type="math_number">
-              <field name="NUM">12</field>
-          </block>
-      </category>
-      <category name="MATHMATIC" colour="#00AAFF">
-          <block type="math_number_property">
-              <value name="NUMBER_TO_CHECK">
-                  <shadow type="math_number">
-                      <field name="NUM">0</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="math_modulo">
-              <value name="DIVIDEND">
-                  <shadow type="math_number">
-                      <field name="NUM">64</field>
-                  </shadow>
-              </value>
-              <value name="DIVISOR">
-                  <shadow type="math_number">
-                      <field name="NUM">10</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="math_constrain">
-              <value name="VALUE">
-                  <shadow type="math_number">
-                      <field name="NUM">50</field>
-                  </shadow>
-              </value>
-              <value name="LOW">
-                  <shadow type="math_number">
-                      <field name="NUM">1</field>
-                  </shadow>
-              </value>
-              <value name="HIGH">
-                  <shadow type="math_number">
-                      <field name="NUM">100</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="math_arithmetic">
-              <field name="OP">ADD</field>
-              <value name="A">
-                  <shadow type="math_number">
-                      <field name="NUM">1</field>
-                  </shadow>
-              </value>
-              <value name="B">
-                  <shadow type="math_number">
-                      <field name="NUM">1</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="math_random_int">
-              <value name="FROM">
-                  <shadow type="math_number">
-                      <field name="NUM">1</field>
-                  </shadow>
-              </value>
-              <value name="TO">
-                  <shadow type="math_number">
-                      <field name="NUM">10</field>
-                  </shadow>
-              </value>
-          </block>
-      </category>
-      <category name="OPTIMIZE" colour="#007FFF">
-          <block type="motion_right_optimize">
-              <field name="ANGLE">90degree</field>
-              <value name="NAME">
-                  <shadow type="logic_boolean">
-                      <field name="BOOL">TRUE</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="motion_left_optimize">
-              <field name="ANGLE">90degree</field>
-              <value name="NAME">
-                  <shadow type="logic_boolean">
-                      <field name="BOOL">TRUE</field>
-                  </shadow>
-              </value>
-          </block>
-          <block type="motion_straight_optimize">
-              <value name="NAME">
-                  <shadow type="logic_boolean">
-                      <field name="BOOL">TRUE</field>
-                  </shadow>
-              </value>
-          </block>
-      </category>
-      <category name="VARIABLES" colour="#0033FF" custom="VARIABLE"></category>
-      <category name="FUNCTIONS" colour="#0000FF" custom="PROCEDURE"></category>
-      
-  </xml>
-  
+<body>
+    <table width="100%" height="100%">
+        <tr>
+            <td>
+                <h1 style="display:none;">
+                    <span id="title">MatataCode</span>
+                </h1>
+            </td>
+            <!--      <td class="farSide">-->
+            <!--        <select style="display:none;" id="languageMenu"></select>-->
+            <!--      </td>-->
+        </tr>
+        <tr>
+            <td colspan=2>
+                <table width="100%">
+                    <tr id="tabRow" height="1em">
+                        <td id="tab_blocks" style="display:none;" class="tabon">Blocks</td>
+                        <td id="tab_python" style="display:none;" class="taboff">MatataCode</td>
+                        <td id="tab_javascript" style="display:none;" class="taboff">MatataCode</td>
+                        <td id="tab_xml" style="display:none;" class="taboff">XML</td>
+                        <td class="tabmax">
+                            <button id="matataButton" class="notext" title="MatataCode">
+                                <img src='media/1x1.gif' class="icon_logo">
+                            </button>
+                            <input id="textInput" type="text" value="" class="matata_code_textinput">
+                            <select id="codesMenu" style="display:none;"></select>
+                            <button id="savecodeButton" class="notext" title="SaveCode">
+                                <img src='media/1x1.gif' class="icon_open">
+                            </button>
+                            <button id="connectButton" class="notext secondary" title="Connect">
+                                <img src='media/1x1.gif' class="icon_ble_linked">
+                            </button>
+                            <button id="trashButton" class="notext" title="CleanUp">
+                                <img src='media/1x1.gif' class="icon_clean">
+                            </button>
+                            <button id="runButton" class="notext primary" title="RunCode">
+                                <img src='media/1x1.gif' class="icon_play">
+                            </button>
+                        </td>
+                        <td class="tabmin"></td>
+                        <td class="tabmin" style="display:none;">
+                            <button id="linkButton" style="display:none;" class="notext" title="...">
+                                <img src='media/1x1.gif' class="icon_ble">
+                            </button>
+                            <button id="stopButton" style="display:none;" class="notext" title="Stop">
+                                <img src='media/1x1.gif' class="trash icon21_3">
+                            </button>
+                            <button id="loadcodeButton" style="display:none;" class="notext" title="LoadCode">
+                                <img src='media/1x1.gif' class="loadcode icon21_2">
+                            </button>
+                            <button id="deletecodeButton" style="display:none;" class="notext" title="DeleteCode">
+                                <img src='media/1x1.gif' class="delete icon21_4">
+                            </button>
+                            <button id="checkcodeButton" style="display:none;" class="notext" title="CheckCode">
+                                <img src='media/1x1.gif' class="check icon21_4">
+                            </button>
+                            <button id="helpButton" style="display:none;" class="notext" title="Help">
+                                <img src='media/1x1.gif' class="helpbutton icon21_4">
+                            </button>
+                        </td>
+                        <td style="display:none;" class="tabmax">
+                            <select id="languageMenu"></select>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="99%" colspan=2 id="content_area">
+            </td>
+        </tr>
+    </table>
+    <div id="content_blocks" class="content"></div>
+    <pre id="content_python" class="content"></pre>
+    <pre id="content_javascript" class="content"></pre>
+    <textarea id="content_xml" class="content" wrap="off"></textarea>
+
+    <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+
+        <category name="MOVE" colour="#8bc333">
+            <block type="motion_forward">
+                <field name="STEP">1</field>
+            </block>
+            <block type="motion_backward">
+                <field name="STEP">1</field>
+            </block>
+            <block type="motion_turnleft">
+                <field name="ANGLE">90degree</field>
+            </block>
+            <block type="motion_turnright">
+                <field name="ANGLE">90degree</field>
+            </block>
+            <block type="motion_do_action">
+                <field name="ACTION_LIST">action1</field>
+            </block>
+
+            <block type="timer_wait">
+                <field name="SECOND">1</field>
+            </block>
+            <block type="motion_right_optimize">
+                <field name="ANGLE">90degree</field>
+                <value name="NAME">
+                    <shadow type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="motion_left_optimize">
+                <field name="ANGLE">90degree</field>
+                <value name="NAME">
+                    <shadow type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="motion_straight_optimize">
+                <value name="NAME">
+                    <shadow type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="LOOP" colour="#23b435">
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_whileUntil"></block>
+            <block type="controls_for">
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+                <value name="BY">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_flow_statements"></block>
+        </category>
+        <category name="WHEEL" colour="#ec3949">
+
+            <block type="wheel_control">
+                <field name="WHEEL">OPTION_LEFT</field>
+                <field name="DIRECTION">OPTION_FORWARD</field>
+                <field name="NAME">OPTION_1</field>
+            </block>
+            <block type="both_wheel_control">
+                <field name="DIRECTION">OPTION_FORWARD</field>
+                <field name="SPEED">OPTION_1</field>
+            </block>
+            <block type="wheel_stop">
+                <field name="WHEEL">OPTION_LEFT</field>
+            </block>
+        </category>
+        <category name="SENSOR" colour="#65c7c8">
+            <block type="sensor">
+                <field name="CONDITION">OPTION_YELLOW</field>
+            </block>
+            <block type="sensor_send_data">
+                <field name="NUMBER">OPTION_1</field>
+            </block>
+            <block type="sensor_wait_data">
+                <field name="NUMBER">OPTION_1</field>
+            </block>
+        </category>
+        <category name="LOGIC" colour="#306cb0">
+            <block type="controls_if"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_negate"></block>
+            <block type="logic_boolean"></block>
+            <block type="logic_compare">
+                <field name="OP">LT</field>
+            </block>
+        </category>
+        <category name="MATH" colour="#303CAF">
+            <block type="math_number">
+                <field name="NUM">1</field>
+            </block>
+            <block type="math_number">
+                <field name="NUM">2</field>
+            </block>
+            <block type="math_number">
+                <field name="NUM">5</field>
+            </block>
+            <block type="math_number">
+                <field name="NUM">10</field>
+            </block>
+            <block type="math_number_property">
+                <value name="NUMBER_TO_CHECK">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_modulo">
+                <value name="DIVIDEND">
+                    <shadow type="math_number">
+                        <field name="NUM">64</field>
+                    </shadow>
+                </value>
+                <value name="DIVISOR">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_constrain">
+                <value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">50</field>
+                    </shadow>
+                </value>
+                <value name="LOW">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="HIGH">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_arithmetic">
+                <field name="OP">ADD</field>
+                <value name="A">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="B">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_random_int">
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="ART" colour="#b31baf">
+            <block type="music_playsong">
+                <field name="MUSIC_LIST">music1</field>
+            </block>
+            <block type="music_do_dance">
+                <field name="DANCE_LIST">dance1</field>
+            </block>
+            <block type="music_alto">
+                <field name="TONE_LIST">do</field>
+                <field name="METER">meter1</field>
+            </block>
+            <block type="music_treble">
+                <field name="TONE_LIST">do</field>
+                <field name="METER">meter1</field>
+            </block>
+            <block type="music_playmelody">
+                <field name="MELODY_LIST">melody1</field>
+            </block>
+            <block type="sensor_led">
+                <field name="LED">OPTION_ALL</field>
+                <field name="COLOR">OPTION_WHITE</field>
+                <field name="LEVEL">OPTION_1</field>
+            </block>
+            <block type="bot_led">
+                <field name="LED">OPTION_BOTH</field>
+                <field name="COLOR">OPTION_WHITE</field>
+                <field name="LEVEL">OPTION_1</field>
+            </block>
+            <!-- <block type="led_left">
+                <field name="LED">#ff0000</field>
+            </block>
+            <block type="led_right">
+                <field name="LED">#ff0000</field>
+            </block>
+            <block type="led_position_color_level">
+                <field name="EYE">0</field>
+                <field name="COLOR">1</field>
+                <field name="LEVEL">1</field>
+            </block> -->
+        </category>
+        <category name="FUNC" colour="#9C1DAF" custom="PROCEDURE"></category>
+        <category name="VAR" colour="#B11F6A" custom="VARIABLE"></category>
+
+    </xml>
+
 </body>
 </html>
 
