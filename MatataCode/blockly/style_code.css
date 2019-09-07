@@ -4,7 +4,7 @@ html, body {
 
 body {
   background-color: #FFF9F2;
-  font-family: 'Franklin Gothic Medium';
+  font-family: Arial, 'Franklin Gothic Medium';
   margin: 0;
   overflow: hidden;
 }
@@ -18,47 +18,51 @@ html[dir="RTL"] .farSide {
 }
 /* Buttons */
 button {
-  margin: 5px;
-  padding: 5px;
-  border-radius: 8px;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  background-color: #FFF9F2;
+}
+button.primary {
   border: 1px solid #FFF9F2;
-  font-size: large;
   background-color: #FFF9F2;
   color: #FFF9F2;
 }
-button.primary {
-    border: 1px solid #FFF9F2;
-    background-color: #FFF9F2;
-    color: #FFF9F2;
-}
 button.secondary {
-    border: 1px solid #FFF9F2;
-    background-color: #FFF9F2;
-    color: #FFF9F2;
+  border: 1px solid #FFF9F2;
+  background-color: #FFF9F2;
+  color: #FFF9F2;
+}
+button.notext {
+  width: 10%;
+}
+button.logo {
+  width: 20%;
+  height: calc(50% * width);
 }
 button.primary>img {
   opacity: 1;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 button>img {
   opacity: 0.6;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 button:hover>img {
   opacity: 1;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
-/* button:active {
-  border: 1px solid #888 !important;
-} */
-/* button:hover { 
-   box-shadow: 2px 2px 5px #888; 
-}*/
 button.disabled:hover>img {
   opacity: 0.6;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 button.disabled {
   display: none;
-}
-button.notext {
-  font-size: 10%;
 }
 
 h1 {
@@ -95,10 +99,11 @@ td.tabmax {
   border-top-style: none !important;
   border-left-style: none !important;
   border-right-style: none !important;
-  width: 99%;
+  width: 100%;
+  padding-top: 5px;
   padding-left: 1px;
   padding-right: 1px;
-  text-align: right;
+  text-align: left;
 }
 html[dir=rtl] td.tabmax {
   text-align: left;
@@ -112,7 +117,7 @@ table {
 }
 td {
   padding: 0;
-  vertical-align: top;
+  vertical-align: 0%;
 }
 .content {
   visibility: hidden;
@@ -144,12 +149,6 @@ pre.content {
   margin-right: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
-}
-
-/* Buttons */
-button {
-  padding: 1px 1px;
-  margin: 1px 1px;
 }
 
 /* Sprited icons. */
@@ -216,46 +215,62 @@ button {
 .check {
     background-position: -160px 0px;
 }
-/* Sprited icons. */
-.icon_play {
-  height: 80px;
-  width: 80px;
-  background-image: url(media/play_80.png);
+/* matata btn icons. */
+.matata_btn{
+ margin-top: 4%;
+ margin-left: 4%;
+ margin-right: 4%;
+ margin-bottom: 4%;
+ height: 80px;
+ width: 80px;
 }
-
+.icon_play {
+  background-image: url(media/play.png);
+}
+.icon_delete{
+ background-image: url(media/delete.png);
+}
+.icon_save{
+    background-image: url(media/save.png);
+}
+.icon_update{
+    background-image: url(media/update.png);
+}
 .icon_ble {
-  height: 80px;
-  width: 80px;
-  background-image: url(media/ble_70.png);
+ background-image: url(media/ble.png);
 }
 .icon_ble_linked {
-  height: 80px;
-  width: 80px;
-  background-image: url(media/ble_linked_70.png);
+ background-image: url(media/ble_linked.png);
 }
-
+.icon_help{
+ background-image: url(media/help.png);
+}
 .icon_open {
-  height: 80px;
-  width: 80px;
-  background-image: url(media/open_70.png);
+ background-image: url(media/open.png);
 }
 
 .icon_clean {
-  height: 80px;
-  width: 80px;
-  background-image: url(media/clean_70.png);
+ background-image: url(media/clean.png);
 }
 
 .icon_logo {
-  height: 80px;
-  width: 153px;
+  max-height: 80px;
+  max-width: 153px;
+  height: 100%;
+  width: 100%;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 4%;
   background-image: url(media/matata_logo.png);
 }
 
 .matata_code_textinput {
-  width:50%; 
-  height:24px;
-  vertical-align: 50%;
+  width: 32%;
+  min-width: 100px;
+  max-width: 160px;
+  height: 24px;
+  vertical-align: 100%;
   color:#F39800;
   line-height: normal ;
   font-family:"Microsoft YaHei",Tahoma,Verdana,SimSun;
@@ -264,22 +279,15 @@ button {
   font-size-adjust:none;
   font-stretch:normal;
   font-weight:normal;
-  margin-right:20px;
-  margin-top:28px;
-  margin-bottom:28px;
-  margin-left:20px;
-  padding-top:4px;
-  padding-right:4px;
-  padding-bottom:4px;
-  padding-left:4px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 4px;
   font-size:24px;
   outline-width:medium;
   outline-style:none;
   outline-color:invert;
-  border-top-left-radius:3px;
-  border-top-right-radius:3px;
-  border-bottom-left-radius:3px;
-  border-bottom-right-radius:3px;
   text-shadow:0px 1px 2px #555;
   background-attachment:scroll;
   background-repeat:repeat-x;
@@ -290,18 +298,9 @@ button {
   background-clip:border-box;
   background-color:#fff;
   border-radius: 24px;
-  border-top-color:#fff9f2;
-  border-right-color:#fff9f2;
-  border-bottom-color:#fff9f2;
-  border-left-color:#fff9f2;
-  border-top-width:3px;
-  border-right-width:3px;
-  border-bottom-width:3px;
-  border-left-width:3px;
-  border-top-style:solid;
-  border-right-style:solid;
-  border-bottom-style:solid;
-  border-left-style:solid;
+  border-color: #fff9f2;
+  border-width: 3px;
+  border-style:solid;
 }
 
 /*----------blockly------------*/
@@ -355,7 +354,7 @@ border: 1px solid #ddc;
 box-shadow: 4px 4px 20px 1px rgba(0,0,0,.15);
 color: #000;
 display: none;
-font-family: 'Franklin Gothic Medium';
+font-family: Arial, 'Franklin Gothic Medium';
 font-size: 9pt;
 opacity: .9;
 padding: 2px;
@@ -441,7 +440,7 @@ display: none;
 .blocklyText {
 cursor: default;
 fill: #fff;
-font-family: 'Franklin Gothic Medium';
+font-family: Arial, 'Franklin Gothic Medium';
 font-size: 11pt;
 }
 .blocklyNonEditableText>text {
@@ -577,7 +576,7 @@ stroke: #fc3;
 .blocklyHtmlInput {
 border: none;
 border-radius: 4px;
-font-family: 'Franklin Gothic Medium';
+font-family: Arial, 'Franklin Gothic Medium';
 height: 100%;
 margin: 0;
 outline: none;
@@ -755,7 +754,7 @@ background-position: -96px -1px;
 }
 .blocklyTreeLabel {
 cursor: default;
-font-family: 'Franklin Gothic Medium';
+font-family: Arial, 'Franklin Gothic Medium';
 color: #8b8683;
 font-size: 24px;
 padding: 0px;
