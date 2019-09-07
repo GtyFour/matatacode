@@ -12,8 +12,8 @@ import CoreBluetooth
 import CmdBluetooth
 
 
-public let STATEMENT_DISCONNECTED : String! = "Dis-connected"
-public let STATEMENT_CONNECTED : String! = "  Connected  "
+public let STATEMENT_DISCONNECTED : String! = "✘"
+public let STATEMENT_CONNECTED : String! = "✔︎"
 public let STATEMENT_IDLE : String! = "Idling"
 public let STATEMENT_OFFLINE : String! = "Offline-Mode"
 public let STATEMENT_DEBUG : String! = "Debug"
@@ -37,6 +37,9 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     let parser = CBleParser()
     let receiverCenter = ReceiveDataCenter()
     let evaluator = MataEvaluator()
+    var isCodeRunningOnBot : Bool!
+    
+    
     //MARK: - ViewController自身实现
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +58,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
         parser.dataComingMonitor = receiverCenter
         centralManager.parser = parser
         centralManager.cancelConnect(clearAutoConnect: true)
-        
+        isCodeRunningOnBot = false
         loadWebView()
     }
     
@@ -128,6 +131,8 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
         self.setState(STATEMENT_DISCONNECTED)
     }
+    
+    //增加处理心跳包 2019-09-07 16:21:48 GTY
     
     
     //MARK: - wkwebview相关相关响应
@@ -407,7 +412,11 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
         print(message)
         switch message.name {
         case "runcode":
-            self.runcode(message: message)
+            if(isCodeRunningOnBot){
+                self.stopcode(message: message)
+            }else{
+                self.runcode(message: message)
+            }
             break
         case "stopcode":
             self.stopcode(message: message)
@@ -644,7 +653,6 @@ extension ViewController{
         return str
     }
     
-    
     func setState(_ statement:String){
         self.helpImg.isHidden = true
         switch statement {
@@ -671,6 +679,7 @@ extension ViewController{
     @objc func connect(){
         setState(STATEMENT_CONNECTED)
     }
+    
 }
 
 //MARK:blockly新的版本使用了js的弹框进行输入，增加支持
