@@ -35,11 +35,11 @@ button.secondary {
   color: #FFF9F2;
 }
 button.notext {
-  width: 10%;
+  width: 12%;
 }
 button.logo {
-  width: 20%;
-  height: calc(50% * width);
+  width: 24%;
+  height: calc(47% * width);
 }
 button.primary>img {
   opacity: 1;
@@ -267,8 +267,8 @@ pre.content {
 
 .matata_code_textinput {
   width: 32%;
-  min-width: 100px;
-  max-width: 160px;
+  min-width: 160px;
+  max-width: 240px;
   height: 24px;
   vertical-align: 100%;
   color:#F39800;
