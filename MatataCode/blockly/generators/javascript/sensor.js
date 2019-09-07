@@ -10,20 +10,24 @@ Blockly.JavaScript.addReservedWords('sensor');
 Blockly.JavaScript['sensor'] = function(block) {
   var dropdown_condition = block.getFieldValue('CONDITION');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
+
+  var code = 'sensorwait_' + dropdown_condition;
+  var code_run = 'window.webkit.messageHandlers.runcode.postMessage(\'' + code + '\');\n'
+  return code_run;
 };
 
 Blockly.JavaScript['sensor_send_data'] = function(block) {
   var dropdown_number = block.getFieldValue('NUMBER');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
+  var code = 'sensorsenddata_' + dropdown_number;
+  var code_run = 'window.webkit.messageHandlers.runcode.postMessage(\'' + code + '\');\n'
+  return code_run;
 };
 
 Blockly.JavaScript['sensor_wait_data'] = function(block) {
   var dropdown_number = block.getFieldValue('NUMBER');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
+  var code = 'sensorwaitdata_' + dropdown_number;
+  var code_run = 'window.webkit.messageHandlers.runcode.postMessage(\'' + code + '\');\n'
+  return code_run;
 };

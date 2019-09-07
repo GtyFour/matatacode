@@ -10,51 +10,51 @@ Blockly.Constants.Sensor.HUE = 181;
 
 Blockly.defineBlocksWithJsonArray([{
   "type": "sensor",
-  "message0": "Wait until Sensor detect %1",
+  "message0": "Sensor wait until detect %1",
   "args0": [
     {
       "type": "field_dropdown",
       "name": "CONDITION",
       "options": [
         [
-          "coloryellow",
-          "OPTION_YELLOW"
+          "color yellow",
+          "1"
         ],
         [
           "color red",
-          "OPTION_RED"
+          "2"
         ],
         [
           "color green",
-          "OPTION_GREEN"
+          "3"
         ],
         [
           "getting near",
-          "OPTION_NEAR"
+          "4"
         ],
         [
           "Play-button pressed",
-          "OPTION_BTN"
+          "5"
         ],
         [
-          "brightness",
-          "OPTION_BRIGHT"
+          "bright",
+          "6"
         ],
         [
-          "darkness",
-          "OPTION_DARK"
+          "dark",
+          "7"
         ],
         [
           "a sound",
-          "OPTION_SOUND"
+          "8"
         ],
         [
           "shake",
-          "OPTION_SHAKE"
+          "9"
         ],
         [
           "getting away",
-          "OPTION_AWAY"
+          "10"
         ]
       ]
     }
@@ -67,7 +67,7 @@ Blockly.defineBlocksWithJsonArray([{
 },
 {
   "type": "sensor_send_data",
-  "message0": "Sensor send number %1 away",
+  "message0": "Sensor send number %1",
   "args0": [
     {
       "type": "field_dropdown",
@@ -75,27 +75,27 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "1",
-          "OPTION_1"
+          "1"
         ],
         [
           "2",
-          "OPTION_2"
+          "2"
         ],
         [
           "3",
-          "OPTION_3"
+          "3"
         ],
         [
           "4",
-          "OPTION_4"
+          "4"
         ],
         [
           "5",
-          "OPTION_5"
+          "5"
         ],
         [
           "6",
-          "OPTION_6"
+          "6"
         ]
       ]
     }
@@ -116,27 +116,27 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "1",
-          "OPTION_1"
+          "1"
         ],
         [
           "2",
-          "OPTION_2"
+          "2"
         ],
         [
           "3",
-          "OPTION_3"
+          "3"
         ],
         [
           "4",
-          "OPTION_4"
+          "4"
         ],
         [
           "5",
-          "OPTION_5"
+          "5"
         ],
         [
           "6",
-          "OPTION_6"
+          "6"
         ]
       ]
     }

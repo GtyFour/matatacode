@@ -31,3 +31,11 @@ Blockly.Python['wheel_stop'] = function(block) {
   var code = '...\n';
   return code;
 };
+
+Blockly.Python['wheel_control_new'] = function(block) {
+  var dropdown_lspeed = block.getFieldValue('lspeed');
+  var dropdown_rspeed = block.getFieldValue('rspeed');
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};

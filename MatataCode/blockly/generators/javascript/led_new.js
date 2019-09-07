@@ -13,8 +13,10 @@ Blockly.JavaScript['sensor_led'] = function(block) {
   var dropdown_color = block.getFieldValue('COLOR');
   var dropdown_level = block.getFieldValue('LEVEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
+
+  var code = 'sensorled_' + dropdown_led + '_'+ dropdown_color +'_' + dropdown_level;
+  var code_run = 'window.webkit.messageHandlers.runcode.postMessage(\'' + code + '\');\n';
+  return code_run;
 };
 
 Blockly.JavaScript['bot_led'] = function(block) {
@@ -22,6 +24,7 @@ Blockly.JavaScript['bot_led'] = function(block) {
   var dropdown_color = block.getFieldValue('COLOR');
   var dropdown_level = block.getFieldValue('LEVEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
+  var code = 'matataboteye_' + dropdown_led + '_'+ dropdown_color +'_' + dropdown_level;
+  var code_run = 'window.webkit.messageHandlers.runcode.postMessage(\'' + code + '\');\n';
+  return code_run;
 };

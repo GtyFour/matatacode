@@ -18,15 +18,15 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "all",
-          "OPTION_ALL"
+          "all"
         ],
         [
-          "next",
-          "OPTION_NEXT"
+          "plus",
+          "plus"
         ],
         [
-          "previous",
-          "OPTION_PREVIOUS"
+          "minus",
+          "minus"
         ]
       ]
     },
@@ -36,31 +36,31 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "white",
-          "OPTION_WHITE"
+          "white"
         ],
         [
           "red",
-          "OPTION_RED"
+          "red"
         ],
         [
           "yellow",
-          "OPTION_YELLOW"
+          "yellow"
         ],
         [
           "green",
-          "OPTION_GREEN"
+          "green"
         ],
         [
           "blue",
-          "OPTION_BLUE"
+          "blue"
         ],
         [
           "purple",
-          "OPTION_PURPLE"
+          "purple"
         ],
         [
           "black",
-          "OPTION_BLACK"
+          "black"
         ]
       ]
     },
@@ -70,27 +70,27 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "1",
-          "OPTION_1"
+          "1"
         ],
         [
           "2",
-          "OPTION_2"
+          "2"
         ],
         [
           "3",
-          "OPTION_3"
+          "3"
         ],
         [
           "4",
-          "OPTION_4"
+          "4"
         ],
         [
           "5",
-          "OPTION_5"
+          "5"
         ],
         [
           "6",
-          "OPTION_6"
+          "6"
         ]
       ]
     }
@@ -111,15 +111,15 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "both",
-          "OPTION_BOTH"
+          "both"
         ],
         [
           "left",
-          "OPTION_LEFT"
+          "left"
         ],
         [
           "right",
-          "OPTION_RIGHT"
+          "right"
         ]
       ]
     },
@@ -129,31 +129,31 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "white",
-          "OPTION_WHITE"
+          "white"
         ],
         [
           "red",
-          "OPTION_RED"
+          "red"
         ],
         [
           "yellow",
-          "OPTION_YELLOW"
+          "yellow"
         ],
         [
           "green",
-          "OPTION_GREEN"
+          "green"
         ],
         [
           "blue",
-          "OPTION_BLUE"
+          "blue"
         ],
         [
           "purple",
-          "OPTION_PURPLE"
+          "purple"
         ],
         [
           "black",
-          "OPTION_BLACK"
+          "black"
         ]
       ]
     },
@@ -163,27 +163,27 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "1",
-          "OPTION_1"
+          "1"
         ],
         [
           "2",
-          "OPTION_2"
+          "2"
         ],
         [
           "3",
-          "OPTION_3"
+          "3"
         ],
         [
           "4",
-          "OPTION_4"
+          "4"
         ],
         [
           "5",
-          "OPTION_5"
+          "5"
         ],
         [
           "6",
-          "OPTION_6"
+          "6"
         ]
       ]
     }
