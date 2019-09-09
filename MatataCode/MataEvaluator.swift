@@ -307,6 +307,159 @@ public class MataEvaluator: NSObject {
             break
             
             
+            
+        //--------2019年09月06日16:02:17 新增协议 sensor add on
+            
+        case "wheel":
+            var lspeed:Int = 15
+            var rspeed:Int = 15
+            switch array[1]{
+            case "0":lspeed = 0;break
+            case "1":lspeed = 1;break
+            case "2":lspeed = 2;break
+            case "3":lspeed = 3;break
+            case "4":lspeed = 4;break
+            case "5":lspeed = 5;break
+            case "6":lspeed = 6;break
+            case "7":lspeed = 7;break
+            case "8":lspeed = 8;break
+            case "9":lspeed = 9;break
+            case "10":lspeed = 10;break
+            case "11":lspeed = 11;break
+            case "12":lspeed = 12;break
+            default:lspeed = 15;break
+            }
+            switch array[2]{
+            case "0":rspeed = 0;break
+            case "1":rspeed = 1;break
+            case "2":rspeed = 2;break
+            case "3":rspeed = 3;break
+            case "4":rspeed = 4;break
+            case "5":rspeed = 5;break
+            case "6":rspeed = 6;break
+            case "7":rspeed = 7;break
+            case "8":rspeed = 8;break
+            case "9":rspeed = 9;break
+            case "10":rspeed = 10;break
+            case "11":rspeed = 11;break
+            case "12":rspeed = 12;break
+            default:rspeed = 15;break
+            }
+            setWheels(lspeed, rspeed);
+            break
+            
+        case "sensorwaitdata":
+            var data:Int = 1
+            switch array[1]{
+            case "1":data = 1;break
+            case "2":data = 2;break
+            case "3":data = 3;break
+            case "4":data = 4;break
+            case "5":data = 5;break
+            case "6":data = 6;break
+            default:data = 1;break
+            }
+            setSensorWaitData(data);
+            break
+            
+        case "sensorsenddata":
+            var data:Int = 1
+            switch array[1]{
+            case "1":data = 1;break
+            case "2":data = 2;break
+            case "3":data = 3;break
+            case "4":data = 4;break
+            case "5":data = 5;break
+            case "6":data = 6;break
+            default:data = 1;break
+            }
+            setSensorSendData(data);
+            break
+            
+        case "sensorwait":
+            var condition:Int = 1
+            switch array[1]{
+            case "1":condition = 1;break
+            case "2":condition = 2;break
+            case "3":condition = 3;break
+            case "4":condition = 4;break
+            case "5":condition = 5;break
+            case "6":condition = 6;break
+            case "7":condition = 7;break
+            case "8":condition = 8;break
+            case "9":condition = 9;break
+            case "10":condition = 10;break
+            default:condition = 1;break
+            }
+            setSensorWaitCondition(condition);
+            break
+            
+        //sensorled matataboteye
+        case "sensorled":
+            var metho:Int = 1 //1-all 2-plus 3-minus
+            var color:Int = 1
+            var level:Int = 1
+            switch array[1]{
+            case "1":metho = 1;break
+            case "2":metho = 2;break
+            case "3":metho = 3;break
+            default:metho = 1;break
+            }
+            switch array[2]{
+            case "1":color = 1;break
+            case "2":color = 2;break
+            case "3":color = 3;break
+            case "4":color = 4;break
+            case "5":color = 5;break
+            case "6":color = 6;break
+            case "7":color = 7;break
+            default:color = 1;break
+            }
+            switch array[3]{
+            case "1":level = 1;break
+            case "2":level = 2;break
+            case "3":level = 3;break
+            case "4":level = 4;break
+            case "5":level = 5;break
+            case "6":level = 6;break
+            default:level = 1;break
+            }
+            setSensorLed(metho,color,level);
+            break
+            
+        case "matataboteye":
+            var eye:Int = 1 //1-both 2-left 3-right
+            var color:Int = 1
+            var level:Int = 1
+            switch array[1]{
+            case "1":eye = 1;break
+            case "2":eye = 2;break
+            case "3":eye = 3;break
+            default:eye = 1;break
+            }
+            switch array[2]{
+            case "1":color = 1;break
+            case "2":color = 2;break
+            case "3":color = 3;break
+            case "4":color = 4;break
+            case "5":color = 5;break
+            case "6":color = 6;break
+            case "7":color = 7;break
+            default:color = 1;break
+            }
+            switch array[3]{
+            case "1":level = 1;break
+            case "2":level = 2;break
+            case "3":level = 3;break
+            case "4":level = 4;break
+            case "5":level = 5;break
+            case "6":level = 6;break
+            default:level = 1;break
+            }
+            setBotEye(eye,color,level);
+            break
+
+            
         default:break
         }
         return Data(bytes: expression)
@@ -471,6 +624,56 @@ public class MataEvaluator: NSObject {
             expression.append(1)
         }
     }
+    //-------2019年09月06日10:29:20 sensor add on新增协议--gty--重做左右眼
+    
+    public func setBotEye(_ which: Int,_ color: Int,_ level: Int){
+        expression.append(100)
+        var data_color:Int
+        data_color = color * 15 + level
+        expression.append(UInt8(data_color))
+        switch which {
+        case 1:
+            expression.append(11)
+        case 2:
+            expression.append(5)
+        case 3:
+            expression.append(6)
+        default:
+            expression.append(100)
+        }
+    }
+    public func setSensorLed(_ metho: Int,_ color: Int,_ level: Int){
+        expression.append(104)
+        expression.append(UInt8(metho))
+        var data_color:Int
+        data_color = color * 15 + level
+        expression.append(UInt8(data_color))
+    }
+    public func setWheels(_ lspeed: Int,_ rspeed: Int){
+        expression.append(100)
+        var data_speed:Int
+        data_speed = lspeed * 16 + rspeed
+        expression.append(UInt8(data_speed))
+        expression.append(1)
+    }
+    public func setSensorWaitCondition(_ condition: Int){
+        expression.append(102)
+        expression.append(16)
+        expression.append(UInt8(condition))
+    }
+    public func setSensorSendData(_ data: Int){
+        expression.append(103)
+        expression.append(1)
+        expression.append(UInt8(data))
+    }
+    public func setSensorWaitData(_ data: Int){
+        expression.append(102)
+        expression.append(16)
+        var data_send:Int
+        data_send = data + 10
+        expression.append(UInt8(data_send))
+    }
+
 }
 
 extension String {
