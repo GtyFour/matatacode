@@ -400,9 +400,9 @@ public class MataEvaluator: NSObject {
             var color:Int = 1
             var level:Int = 1
             switch array[1]{
-            case "1":metho = 1;break
-            case "2":metho = 2;break
-            case "3":metho = 3;break
+            case "all":metho = 1;break
+            case "plus":metho = 2;break
+            case "minus":metho = 3;break
             default:metho = 1;break
             }
             switch array[2]{
@@ -432,9 +432,9 @@ public class MataEvaluator: NSObject {
             var color:Int = 1
             var level:Int = 1
             switch array[1]{
-            case "1":eye = 1;break
-            case "2":eye = 2;break
-            case "3":eye = 3;break
+            case "both":eye = 1;break
+            case "left":eye = 2;break
+            case "right":eye = 3;break
             default:eye = 1;break
             }
             switch array[2]{
@@ -629,7 +629,7 @@ public class MataEvaluator: NSObject {
     public func setBotEye(_ which: Int,_ color: Int,_ level: Int){
         expression.append(100)
         var data_color:Int
-        data_color = color * 15 + level
+        data_color = ( color - 1 ) * 16 + level
         expression.append(UInt8(data_color))
         switch which {
         case 1:
@@ -639,14 +639,14 @@ public class MataEvaluator: NSObject {
         case 3:
             expression.append(6)
         default:
-            expression.append(100)
+            expression.append(11)
         }
     }
     public func setSensorLed(_ metho: Int,_ color: Int,_ level: Int){
         expression.append(104)
         expression.append(UInt8(metho))
         var data_color:Int
-        data_color = color * 15 + level
+        data_color = ( color - 1 ) * 16 + level
         expression.append(UInt8(data_color))
     }
     public func setWheels(_ lspeed: Int,_ rspeed: Int){
@@ -673,6 +673,7 @@ public class MataEvaluator: NSObject {
         data_send = data + 10
         expression.append(UInt8(data_send))
     }
+    
 
 }
 
