@@ -47,6 +47,16 @@
   <script src="generators/javascript/value.js"></script>
   <script src="generators/javascript/loop.js"></script>
   
+  <script src="generators/javascript/led_new.js"></script>
+  <script src="generators/javascript/sensor.js"></script>
+  <script src="generators/javascript/wheel.js"></script>
+  <script src="blocks/led_new.js"></script>
+  <script src="blocks/sensor.js"></script>
+  <script src="blocks/wheel.js"></script>
+  <script src="generators/python/led_new.js"></script>
+  <script src="generators/python/sensor.js"></script>
+  <script src="generators/python/wheel.js"></script>
+  
 </head>
 <body>
   <table width="100%" height="100%">
@@ -145,7 +155,7 @@
 
   <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
       
-      <category name="MOTION" colour="#FF0000" style="color: #FF0000;">
+      <category name="MOVE" colour="#8bc333">
           <block type="motion_forward">
               <field name="STEP">1</field>
           </block>
@@ -161,47 +171,35 @@
           <block type="motion_do_action">
               <field name="ACTION_LIST">action1</field>
           </block>
-      </category>
-      <category name="LED" colour="#FFA500">
-<!--          <block type="led_left">-->
-<!--              <field name="LED">#ff0000</field>-->
-<!--          </block>-->
-<!--          <block type="led_right">-->
-<!--              <field name="LED">#ff0000</field>-->
-<!--          </block>-->
-<!--          <block type="led_both">-->
-<!--              <field name="LED">#ff0000</field>-->
-<!--          </block>-->
-          <block type="led_position_color_level">
-              <field name="EYE">0</field>
-              <field name="COLOR">1</field>
-              <field name="LEVEL">1</field>
+          
+          <block type="timer_wait">
+              <field name="SECOND">1</field>
           </block>
-<!--          <block type="led_led">-->
-<!--              <field name="EYE">both</field>-->
-<!--              <field name="COLOR">#ff0000</field>-->
-<!--          </block>-->
-      </category>
-      <category name="MUSIC" colour="#FFFF00">
-          <block type="music_playsong">
-              <field name="MUSIC_LIST">music1</field>
+          <block type="motion_right_optimize">
+              <field name="ANGLE">90degree</field>
+              <value name="NAME">
+                  <shadow type="logic_boolean">
+                      <field name="BOOL">TRUE</field>
+                  </shadow>
+              </value>
           </block>
-          <block type="music_do_dance">
-              <field name="DANCE_LIST">dance1</field>
+          <block type="motion_left_optimize">
+              <field name="ANGLE">90degree</field>
+              <value name="NAME">
+                  <shadow type="logic_boolean">
+                      <field name="BOOL">TRUE</field>
+                  </shadow>
+              </value>
           </block>
-          <block type="music_alto">
-              <field name="TONE_LIST">do</field>
-              <field name="METER">meter1</field>
-          </block>
-          <block type="music_treble">
-              <field name="TONE_LIST">do</field>
-              <field name="METER">meter1</field>
-          </block>
-          <block type="music_playmelody">
-              <field name="MELODY_LIST">melody1</field>
+          <block type="motion_straight_optimize">
+              <value name="NAME">
+                  <shadow type="logic_boolean">
+                      <field name="BOOL">TRUE</field>
+                  </shadow>
+              </value>
           </block>
       </category>
-      <category name="LOOPS" colour="#99FF00">
+      <category name="LOOP" colour="#23b435">
           <block type="controls_repeat_ext">
               <value name="TIMES">
                   <shadow type="math_number">
@@ -229,10 +227,36 @@
           </block>
           <block type="controls_flow_statements"></block>
       </category>
-      <category name="LOGIC" colour="#00FF00">
-          <block type="timer_wait">
-              <field name="SECOND">1</field>
+      <category name="WHEEL" colour="#ec3949">
+          <block type="wheel_control_new">
+              <field name="lspeed">15</field>
+              <field name="rspeed">15</field>
           </block>
+          <!--            <block type="wheel_control">-->
+          <!--                <field name="WHEEL">left</field>-->
+          <!--                <field name="DIRECTION">forward</field>-->
+          <!--                <field name="NAME">1</field>-->
+          <!--            </block>-->
+          <!-- <block type="both_wheel_control">
+           <field name="DIRECTION">forward</field>
+           <field name="SPEED">1</field>
+           </block>
+           <block type="wheel_stop">
+           <field name="WHEEL">left</field>
+           </block> -->
+      </category>
+      <category name="SENSOR" colour="#65c7c8">
+          <block type="sensor">
+              <field name="CONDITION">1</field>
+          </block>
+          <block type="sensor_send_data">
+              <field name="NUMBER">1</field>
+          </block>
+          <block type="sensor_wait_data">
+              <field name="NUMBER">1</field>
+          </block>
+      </category>
+      <category name="LOGIC" colour="#306cb0">
           <block type="controls_if"></block>
           <block type="logic_operation"></block>
           <block type="logic_negate"></block>
@@ -241,7 +265,7 @@
               <field name="OP">LT</field>
           </block>
       </category>
-      <category name="INTEGER" colour="#00FFFF">
+      <category name="MATH" colour="#303CAF">
           <block type="math_number">
               <field name="NUM">1</field>
           </block>
@@ -249,22 +273,8 @@
               <field name="NUM">2</field>
           </block>
           <block type="math_number">
-              <field name="NUM">3</field>
-          </block>
-          <block type="math_number">
               <field name="NUM">5</field>
           </block>
-          <block type="math_number">
-              <field name="NUM">7</field>
-          </block>
-          <block type="math_number">
-              <field name="NUM">10</field>
-          </block>
-          <block type="math_number">
-              <field name="NUM">12</field>
-          </block>
-      </category>
-      <category name="MATHMATIC" colour="#00AAFF">
           <block type="math_number_property">
               <value name="NUMBER_TO_CHECK">
                   <shadow type="math_number">
@@ -327,33 +337,48 @@
               </value>
           </block>
       </category>
-      <category name="OPTIMIZE" colour="#007FFF">
-          <block type="motion_right_optimize">
-              <field name="ANGLE">90degree</field>
-              <value name="NAME">
-                  <shadow type="logic_boolean">
-                      <field name="BOOL">TRUE</field>
-                  </shadow>
-              </value>
+      <category name="ART" colour="#b31baf">
+          <block type="music_playsong">
+              <field name="MUSIC_LIST">music1</field>
           </block>
-          <block type="motion_left_optimize">
-              <field name="ANGLE">90degree</field>
-              <value name="NAME">
-                  <shadow type="logic_boolean">
-                      <field name="BOOL">TRUE</field>
-                  </shadow>
-              </value>
+          <block type="music_do_dance">
+              <field name="DANCE_LIST">dance1</field>
           </block>
-          <block type="motion_straight_optimize">
-              <value name="NAME">
-                  <shadow type="logic_boolean">
-                      <field name="BOOL">TRUE</field>
-                  </shadow>
-              </value>
+          <block type="music_alto">
+              <field name="TONE_LIST">do</field>
+              <field name="METER">meter1</field>
           </block>
+          <block type="music_treble">
+              <field name="TONE_LIST">do</field>
+              <field name="METER">meter1</field>
+          </block>
+          <block type="music_playmelody">
+              <field name="MELODY_LIST">melody1</field>
+          </block>
+          <block type="sensor_led">
+              <field name="LED">all</field>
+              <field name="COLOR">white</field>
+              <field name="LEVEL">1</field>
+          </block>
+          <block type="bot_led">
+              <field name="LED">both</field>
+              <field name="COLOR">white</field>
+              <field name="LEVEL">1</field>
+          </block>
+          <!-- <block type="led_left">
+           <field name="LED">#ff0000</field>
+           </block>
+           <block type="led_right">
+           <field name="LED">#ff0000</field>
+           </block>
+           <block type="led_position_color_level">
+           <field name="EYE">0</field>
+           <field name="COLOR">1</field>
+           <field name="LEVEL">1</field>
+           </block> -->
       </category>
-      <category name="VARIABLES" colour="#0033FF" custom="VARIABLE"></category>
-      <category name="FUNCTIONS" colour="#0000FF" custom="PROCEDURE"></category>
+      <category name="FUNC" colour="#9C1DAF" custom="PROCEDURE"></category>
+      <category name="VAR" colour="#B11F6A" custom="VARIABLE"></category>
       
   </xml>
   
