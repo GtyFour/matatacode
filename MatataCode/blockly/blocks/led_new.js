@@ -36,31 +36,31 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "white",
-          "white"
+          "1"
         ],
         [
           "red",
-          "red"
+          "2"
         ],
         [
           "yellow",
-          "yellow"
+          "3"
         ],
         [
           "green",
-          "green"
+          "4"
         ],
         [
           "blue",
-          "blue"
+          "5"
         ],
         [
           "purple",
-          "purple"
+          "6"
         ],
         [
           "black",
-          "black"
+          "7"
         ]
       ]
     },
@@ -110,10 +110,6 @@ Blockly.defineBlocksWithJsonArray([{
       "name": "LED",
       "options": [
         [
-          "both",
-          "both"
-        ],
-        [
           "left",
           "left"
         ],
@@ -129,31 +125,31 @@ Blockly.defineBlocksWithJsonArray([{
       "options": [
         [
           "white",
-          "white"
+          "1"
         ],
         [
           "red",
-          "red"
+          "2"
         ],
         [
           "yellow",
-          "yellow"
+          "3"
         ],
         [
           "green",
-          "green"
+          "4"
         ],
         [
           "blue",
-          "blue"
+          "5"
         ],
         [
           "purple",
-          "purple"
+          "6"
         ],
         [
           "black",
-          "black"
+          "7"
         ]
       ]
     },
