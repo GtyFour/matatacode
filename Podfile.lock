@@ -1,16 +1,24 @@
 PODS:
   - CmdBluetooth (4.1.1)
+  - iOSDFULibrary (4.5.1):
+    - ZIPFoundation (= 0.9.9)
+  - ZIPFoundation (0.9.9)
 
 DEPENDENCIES:
   - CmdBluetooth (~> 4.1.1)
+  - iOSDFULibrary
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CmdBluetooth
+    - iOSDFULibrary
+    - ZIPFoundation
 
 SPEC CHECKSUMS:
   CmdBluetooth: fbd452e037644d062ebd554265d805bb136546b8
+  iOSDFULibrary: 87c6a088cf7172e3694dfaa8305e7ded5eda2547
+  ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef
 
-PODFILE CHECKSUM: 894232508fae493f91c2294ddb0775c7feb30021
+PODFILE CHECKSUM: 8895fa7a45747c10acaf60675b55bba47638b6bb
 
 COCOAPODS: 1.5.3
