@@ -294,7 +294,7 @@ public class MataEvaluator: NSObject {
             adjustmentTurn(Dircetion.left,angle,step)
             break
             
-        case "eyeshowscolor":
+        case "eyeshowscolor"://不再使用 2019年09月23日14:21:27 GTY
             /*下位机未实现*/
             if array.count == 4{
                 setBothEye(Int(array[2])!,

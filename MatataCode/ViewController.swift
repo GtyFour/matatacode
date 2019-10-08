@@ -33,6 +33,8 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     var code_to_retrive : String!
     var alertview_input : String!
     var bleList = [CmdDiscovery]()
+
+    var bleBestRssi:CmdDiscovery!
     let centralManager = CmdCentralManager.manager
     let parser = CBleParser()
     let receiverCenter = ReceiveDataCenter()
@@ -236,30 +238,38 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
                 self.showAlert(title: "MatataBot", message: "No bot availuable!")
                 return
             }else{
-                for bot in self.bleList{
-                    if (bot.RSSI >= -90){
-                        self.centralManager.connect(bot, duration: 5, success: { (central, peripheral) in
-                            DispatchQueue.main.async {
-                                print("connect success")
-                                self.waitView.isHidden = true
-                                self.waitLabel.isHidden = true
-                                self.setState(STATEMENT_CONNECTED)
-                                self.showAlert(title: "MatataBot", message: "Link SUCCESS!!")
-                            }
-                            return
-                        }, fail: { (error) in
-                            DispatchQueue.main.async {
-                                print("connect fail")
-                                self.waitView.isHidden = true
-                                self.waitLabel.isHidden = true
-                                self.setState(STATEMENT_DISCONNECTED)
-                                self.showAlert(title: "MatataBot", message: "Link fail.")
-                            }
-                            return
-                        })
-                    }else{
-                        self.setState(STATEMENT_DISCONNECTED)
+                self.bleList.sort { (CmdDiscovery1, CmdDiscovery2) -> Bool in
+                    if CmdDiscovery1.RSSI >= CmdDiscovery2.RSSI {
+                        return true
+                    }else
+                    {
+                        return false
                     }
+                }
+                self.bleBestRssi = self.bleList.first!
+                if (self.bleBestRssi.RSSI <= -70){
+                    self.setState(STATEMENT_DISCONNECTED)
+                    return
+                }else{
+                    self.centralManager.connect(self.bleBestRssi, duration: 5, success: { (central, peripheral) in
+                        DispatchQueue.main.async {
+                            print("connect success")
+                            self.waitView.isHidden = true
+                            self.waitLabel.isHidden = true
+                            self.setState(STATEMENT_CONNECTED)
+                            self.showAlert(title: "MatataBot", message: "Link SUCCESS!!")
+                        }
+                        return
+                    }, fail: { (error) in
+                        DispatchQueue.main.async {
+                            print("connect fail")
+                            self.waitView.isHidden = true
+                            self.waitLabel.isHidden = true
+                            self.setState(STATEMENT_DISCONNECTED)
+                            self.showAlert(title: "MatataBot", message: "Link fail.")
+                        }
+                        return
+                    })
                 }
                 self.waitView.isHidden = true
                 self.waitLabel.isHidden = true
@@ -398,6 +408,10 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
         }
         print("runcode")
 //        showAlert(title: "Runcode", message: "run")
+//        var data_send:Data = evaluator.evaluate(message: message)
+//        print("--------------------")
+//        print(data_send)
+//        self.parser.writeDataWithoutResponse(data_send)
         self.parser.writeDataWithoutResponse(evaluator.evaluate(message: message))
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.4){}
     }
@@ -647,19 +661,21 @@ extension ViewController{
     
     
     func setState(_ statement:String){
-        self.helpImg.isHidden = true
-        switch statement {
-        case STATEMENT_CONNECTED:
-            self.stateLabel.textColor = UIColor(red: 0.2, green: 1.0, blue: 0.2, alpha: 1)
-            self.stateLabel.text = statement
-            break
-        case STATEMENT_DISCONNECTED:
-            self.stateLabel.textColor = UIColor(red: 1.0, green: 0.2, blue: 0.2, alpha: 1)
-            self.stateLabel.text = statement
-            break
-        default:
-            break
-        }
+        DispatchQueue.main.async {
+               self.helpImg.isHidden = true
+               switch statement {
+               case STATEMENT_CONNECTED:
+                   self.stateLabel.textColor = UIColor(red: 0.2, green: 1.0, blue: 0.2, alpha: 1)
+                   self.stateLabel.text = statement
+                   break
+               case STATEMENT_DISCONNECTED:
+                   self.stateLabel.textColor = UIColor(red: 1.0, green: 0.2, blue: 0.2, alpha: 1)
+                   self.stateLabel.text = statement
+                   break
+               default:
+                   break
+               }
+           }
     }
 }
 

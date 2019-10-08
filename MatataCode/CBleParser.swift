@@ -16,7 +16,9 @@ class CBleParser: CmdBaseParser {
 
     func writeDataWithResponse(_ data: Data) {
         do {
+            print(data)
             try super.writeData(data, characterUUIDStr: CBleParser.writeCharacterUUIDStr, withResponse: true)
+            usleep(15000)
         } catch let error {
             print("[Error: ]__Write Data Error    " + "\(error)")
         }
@@ -25,6 +27,7 @@ class CBleParser: CmdBaseParser {
     func writeDataWithoutResponse(_ data: Data) {
         do {
             try super.writeData(data, characterUUIDStr: CBleParser.writeCharacterUUIDStr, withResponse: false)
+            usleep(15000)
         } catch let error {
             print("[Error: ]__Write Data Error    " + "\(error)")
         }
