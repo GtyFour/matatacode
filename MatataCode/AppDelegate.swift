@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.updateUserDefaults(withDefaults: UserDefaults.standard)
         Thread .sleep(forTimeInterval: 2.0)
         return true
     }
@@ -43,6 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
 
+    fileprivate func updateUserDefaults(withDefaults defaults : UserDefaults) {
+        let dict = [ "key_diameter" : 2.4,
+                     "dfu_number_of_packets" : 12,
+                     "dfu_force_dfu" : false] as [String : Any]
+        defaults.register(defaults: dict)
+        //defaults.synchronize()
+    }
 }
 

@@ -13,6 +13,17 @@
 		CE309F742189A89E0012C6EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE309F732189A89E0012C6EC /* Assets.xcassets */; };
 		CE309F772189A89E0012C6EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE309F752189A89E0012C6EC /* LaunchScreen.storyboard */; };
 		CE309F842189AA370012C6EC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE309F832189AA370012C6EC /* WebKit.framework */; };
+		CE75331B2327B13E00DA88D6 /* DFUUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75331A2327B13E00DA88D6 /* DFUUpdateViewController.swift */; };
+		CE7533222328A69B00DA88D6 /* DFUConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7533212328A69B00DA88D6 /* DFUConstants.swift */; };
+		CE7533242328C6BA00DA88D6 /* firmware in Resources */ = {isa = PBXBuildFile; fileRef = CE7533232328C6BA00DA88D6 /* firmware */; };
+		CE7533282328D51D00DA88D6 /* NORBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7533262328D51D00DA88D6 /* NORBaseViewController.swift */; };
+		CE7533322328D5AB00DA88D6 /* NORScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75332F2328D5AA00DA88D6 /* NORScannerViewController.swift */; };
+		CE7533332328D5AB00DA88D6 /* NORScannedPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7533302328D5AA00DA88D6 /* NORScannedPeripheral.swift */; };
+		CE7533342328D5AB00DA88D6 /* NORScannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7533312328D5AB00DA88D6 /* NORScannerDelegate.swift */; };
+		CE7533362328E46100DA88D6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7533352328E46100DA88D6 /* Accelerate.framework */; };
+		CE7533382328E47C00DA88D6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7533372328E47C00DA88D6 /* CoreBluetooth.framework */; };
+		CE75333A2328E48300DA88D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7533392328E48300DA88D6 /* CoreData.framework */; };
+		CE75333E2328E4A700DA88D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE75333D2328E4A700DA88D6 /* CoreGraphics.framework */; };
 		CE850F6421D0C8DE004344A7 /* WeakScriptMessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE850F6321D0C8DE004344A7 /* WeakScriptMessageDelegate.swift */; };
 		CE8D839721D078B800B16C02 /* blockly in Resources */ = {isa = PBXBuildFile; fileRef = CE8D839621D078B800B16C02 /* blockly */; };
 		CE9BD19521D0F76C0039FBEB /* ReceiveDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BD19421D0F76C0039FBEB /* ReceiveDataCenter.swift */; };
@@ -25,6 +36,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9443C4AF233A710C000121AC /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		9443C4B0233A710C000121AC /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9443C4B1233A7117000121AC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		9443C4B2233A7117000121AC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9443C4B3233A7123000121AC /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
+		9443C4B4233A7123000121AC /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9443C4B5233A7132000121AC /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Main.strings"; sourceTree = "<group>"; };
+		9443C4B6233A7132000121AC /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9443C4B7233A7137000121AC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		9443C4B8233A7137000121AC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9443C4B9233A713E000121AC /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		9443C4BA233A713E000121AC /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9443C4BB233A7151000121AC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		9443C4BC233A7151000121AC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		AF3C253B241C7612D3876739 /* Pods-MatataCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatataCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatataCode/Pods-MatataCode.release.xcconfig"; sourceTree = "<group>"; };
 		B3A55C1DC9924F47635DEF1D /* Pods-MatataCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatataCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatataCode/Pods-MatataCode.debug.xcconfig"; sourceTree = "<group>"; };
 		CE309F692189A88C0012C6EC /* MatataCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatataCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +60,17 @@
 		CE309F762189A89E0012C6EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE309F782189A89E0012C6EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE309F832189AA370012C6EC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CE75331A2327B13E00DA88D6 /* DFUUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFUUpdateViewController.swift; sourceTree = "<group>"; };
+		CE7533212328A69B00DA88D6 /* DFUConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFUConstants.swift; sourceTree = "<group>"; };
+		CE7533232328C6BA00DA88D6 /* firmware */ = {isa = PBXFileReference; lastKnownFileType = folder; path = firmware; sourceTree = "<group>"; };
+		CE7533262328D51D00DA88D6 /* NORBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NORBaseViewController.swift; sourceTree = "<group>"; };
+		CE75332F2328D5AA00DA88D6 /* NORScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NORScannerViewController.swift; sourceTree = "<group>"; };
+		CE7533302328D5AA00DA88D6 /* NORScannedPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NORScannedPeripheral.swift; sourceTree = "<group>"; };
+		CE7533312328D5AB00DA88D6 /* NORScannerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NORScannerDelegate.swift; sourceTree = "<group>"; };
+		CE7533352328E46100DA88D6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		CE7533372328E47C00DA88D6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CE7533392328E48300DA88D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CE75333D2328E4A700DA88D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CE850F6321D0C8DE004344A7 /* WeakScriptMessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakScriptMessageDelegate.swift; sourceTree = "<group>"; };
 		CE8D839621D078B800B16C02 /* blockly */ = {isa = PBXFileReference; lastKnownFileType = folder; path = blockly; sourceTree = "<group>"; };
 		CE9BD19421D0F76C0039FBEB /* ReceiveDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveDataCenter.swift; sourceTree = "<group>"; };
@@ -51,7 +87,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE75333E2328E4A700DA88D6 /* CoreGraphics.framework in Frameworks */,
+				CE75333A2328E48300DA88D6 /* CoreData.framework in Frameworks */,
+				CE7533382328E47C00DA88D6 /* CoreBluetooth.framework in Frameworks */,
 				CEE16E8321903D1A0080DC62 /* QuartzCore.framework in Frameworks */,
+				CE7533362328E46100DA88D6 /* Accelerate.framework in Frameworks */,
 				CE309F842189AA370012C6EC /* WebKit.framework in Frameworks */,
 				D3678BD704096ADA092F3968 /* Pods_MatataCode.framework in Frameworks */,
 			);
@@ -90,6 +130,11 @@
 		CE309F6B2189A88C0012C6EC /* MatataCode */ = {
 			isa = PBXGroup;
 			children = (
+				CE7533302328D5AA00DA88D6 /* NORScannedPeripheral.swift */,
+				CE7533312328D5AB00DA88D6 /* NORScannerDelegate.swift */,
+				CE75332F2328D5AA00DA88D6 /* NORScannerViewController.swift */,
+				CE7533262328D51D00DA88D6 /* NORBaseViewController.swift */,
+				CE7533232328C6BA00DA88D6 /* firmware */,
 				CE8D839621D078B800B16C02 /* blockly */,
 				CE309F6C2189A88C0012C6EC /* AppDelegate.swift */,
 				CE309F6E2189A88C0012C6EC /* ViewController.swift */,
@@ -103,6 +148,8 @@
 				CE9BD19621D23B5F0039FBEB /* CBleParser.swift */,
 				CE9BD19421D0F76C0039FBEB /* ReceiveDataCenter.swift */,
 				CE9BD19821D36EF90039FBEB /* MataEvaluator.swift */,
+				CE75331A2327B13E00DA88D6 /* DFUUpdateViewController.swift */,
+				CE7533212328A69B00DA88D6 /* DFUConstants.swift */,
 			);
 			path = MatataCode;
 			sourceTree = "<group>";
@@ -110,6 +157,10 @@
 		CE309F822189AA370012C6EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE75333D2328E4A700DA88D6 /* CoreGraphics.framework */,
+				CE7533392328E48300DA88D6 /* CoreData.framework */,
+				CE7533372328E47C00DA88D6 /* CoreBluetooth.framework */,
+				CE7533352328E46100DA88D6 /* Accelerate.framework */,
 				CEE16E8221903D1A0080DC62 /* QuartzCore.framework */,
 				CE309F832189AA370012C6EC /* WebKit.framework */,
 				CEAFD8F701FA4D7A35A1FBED /* Pods_MatataCode.framework */,
@@ -163,6 +214,13 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-HK",
+				"zh-Hans",
+				"en-GB",
+				"en-AU",
+				de,
+				"en-IN",
+				"zh-Hant",
 			);
 			mainGroup = CE309F602189A88C0012C6EC;
 			productRefGroup = CE309F6A2189A88C0012C6EC /* Products */;
@@ -180,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8D839721D078B800B16C02 /* blockly in Resources */,
+				CE7533242328C6BA00DA88D6 /* firmware in Resources */,
 				CE309F772189A89E0012C6EC /* LaunchScreen.storyboard in Resources */,
 				CE309F742189A89E0012C6EC /* Assets.xcassets in Resources */,
 				CE309F722189A88C0012C6EC /* Main.storyboard in Resources */,
@@ -199,12 +258,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MatataCode/Pods-MatataCode-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CmdBluetooth/CmdBluetooth.framework",
+				"${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDFULibrary/iOSDFULibrary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CmdBluetooth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZIPFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDFULibrary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -259,14 +322,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7533332328D5AB00DA88D6 /* NORScannedPeripheral.swift in Sources */,
 				CEDC88F6219C3C39005BD8DB /* BBSViewController.swift in Sources */,
 				CE9BD19721D23B5F0039FBEB /* CBleParser.swift in Sources */,
+				CE7533282328D51D00DA88D6 /* NORBaseViewController.swift in Sources */,
 				CE309F6F2189A88C0012C6EC /* ViewController.swift in Sources */,
+				CE7533222328A69B00DA88D6 /* DFUConstants.swift in Sources */,
 				CE850F6421D0C8DE004344A7 /* WeakScriptMessageDelegate.swift in Sources */,
 				CE9BD19921D36EFA0039FBEB /* MataEvaluator.swift in Sources */,
 				CEDC88F2219C23CA005BD8DB /* UserViewController.swift in Sources */,
+				CE7533322328D5AB00DA88D6 /* NORScannerViewController.swift in Sources */,
+				CE7533342328D5AB00DA88D6 /* NORScannerDelegate.swift in Sources */,
 				CE9BD19521D0F76C0039FBEB /* ReceiveDataCenter.swift in Sources */,
 				CE309F6D2189A88C0012C6EC /* AppDelegate.swift in Sources */,
+				CE75331B2327B13E00DA88D6 /* DFUUpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +346,13 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE309F712189A88C0012C6EC /* Base */,
+				9443C4AF233A710C000121AC /* zh-HK */,
+				9443C4B1233A7117000121AC /* zh-Hans */,
+				9443C4B3233A7123000121AC /* en-GB */,
+				9443C4B5233A7132000121AC /* en-AU */,
+				9443C4B7233A7137000121AC /* de */,
+				9443C4B9233A713E000121AC /* en-IN */,
+				9443C4BB233A7151000121AC /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -285,6 +361,13 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE309F762189A89E0012C6EC /* Base */,
+				9443C4B0233A710C000121AC /* zh-HK */,
+				9443C4B2233A7117000121AC /* zh-Hans */,
+				9443C4B4233A7123000121AC /* en-GB */,
+				9443C4B6233A7132000121AC /* en-AU */,
+				9443C4B8233A7137000121AC /* de */,
+				9443C4BA233A713E000121AC /* en-IN */,
+				9443C4BC233A7151000121AC /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -296,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -357,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -416,6 +501,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AD77L8U6UJ;
 				INFOPLIST_FILE = MatataCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -423,6 +509,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3.2;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -445,6 +532,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AD77L8U6UJ;
 				INFOPLIST_FILE = MatataCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -452,6 +540,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3.2;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
