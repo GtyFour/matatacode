@@ -1,0 +1,42 @@
+
+/* Class = "UISegmentedControl"; 4em-38-ToN.segmentTitles[0] = "MatataBot"; ObjectID = "4em-38-ToN"; */
+"4em-38-ToN.segmentTitles[0]" = "MatataBot";
+
+/* Class = "UISegmentedControl"; 4em-38-ToN.segmentTitles[1] = "MatataTower"; ObjectID = "4em-38-ToN"; */
+"4em-38-ToN.segmentTitles[1]" = "MatataTower";
+
+/* Class = "UISegmentedControl"; 4em-38-ToN.segmentTitles[2] = "MatataController"; ObjectID = "4em-38-ToN"; */
+"4em-38-ToN.segmentTitles[2]" = "MatataController";
+
+/* Class = "UIButton"; normalTitle = "SCAN"; ObjectID = "HaT-Yv-atV"; */
+"HaT-Yv-atV.normalTitle" = "SCAN";
+
+/* Class = "UIBarButtonItem"; title = "关于"; ObjectID = "J6R-Tr-Ze9"; */
+"J6R-Tr-Ze9.title" = "关于";
+
+/* Class = "UIButton"; normalTitle = "Watch Guide Video"; ObjectID = "JZt-2R-wBe"; */
+"JZt-2R-wBe.normalTitle" = "Watch Guide Video";
+
+/* Class = "UIBarButtonItem"; title = "课程类型"; ObjectID = "Kk8-mR-KrG"; */
+"Kk8-mR-KrG.title" = "课程类型";
+
+/* Class = "UITabBarItem"; title = "Code"; ObjectID = "Leh-vL-538"; */
+"Leh-vL-538.title" = "Code";
+
+/* Class = "UIBarButtonItem"; title = "发布"; ObjectID = "Va8-wB-Lkc"; */
+"Va8-wB-Lkc.title" = "发布";
+
+/* Class = "UILabel"; text = "Dis-connected"; ObjectID = "gdA-tC-DJI"; */
+"gdA-tC-DJI.text" = "Dis-connected";
+
+/* Class = "UILabel"; text = "Connecting MatataBot..."; ObjectID = "jFo-WG-Hc3"; */
+"jFo-WG-Hc3.text" = "Connecting MatataBot...";
+
+/* Class = "UIBarButtonItem"; title = "我的代码"; ObjectID = "kRj-nL-Iwm"; */
+"kRj-nL-Iwm.title" = "我的代码";
+
+/* Class = "UITabBarItem"; title = "社区"; ObjectID = "uyv-r6-M1W"; */
+"uyv-r6-M1W.title" = "社区";
+
+/* Class = "UITabBarItem"; title = "Upgrade"; ObjectID = "wFd-NS-Q65"; */
+"wFd-NS-Q65.title" = "Upgrade";
